@@ -9,8 +9,69 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: "#FAF9F6",
+        bluePrimary: "#006AF5",
+        blueSecondary: "#46648B",
+        blackPrimary: "#0B1215",
+        cardBlue: "#B4C0D1",
+        cardGrey: "#C0C0BD",
+        cardWhite: "#EFECE5",
+        cardDarkGrey: "#868684",
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        helvetica: ["'Helvetica Neue', sans-serif"],
+        mono: ["'Chivo Mono'"],
+      },
+      fontSize: {
+        h1: [
+          "40px",
+          {
+            lineHeight: "1.2",
+            fontWeight: "700",
+          },
+        ],
+        h2: [
+          "32px",
+          {
+            lineHeight: "1.3",
+            fontWeight: "700",
+          },
+        ],
+        h3: [
+          "22px",
+          {
+            lineHeight: "1.3",
+            fontWeight: "400",
+          },
+        ],
+        h4: [
+          "20px",
+          {
+            lineHeight: "1.4",
+            fontWeight: "400",
+          },
+        ],
+        p: [
+          "10px",
+          {
+            lineHeight: "1.5",
+            fontWeight: "400",
+          },
+        ],
+        li: [
+          "20px",
+          {
+            lineHeight: "1.6",
+            fontWeight: "400",
+          },
+        ],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
