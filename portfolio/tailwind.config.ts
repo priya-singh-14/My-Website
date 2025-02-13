@@ -12,6 +12,7 @@ export default {
         primary: "#FAF9F6",
         bluePrimary: "#006AF5",
         blueSecondary: "#46648B",
+        blueSecondaryLight: "#5B7FAE",
         blackPrimary: "#0B1215",
         cardBlue: "#B4C0D1",
         cardGrey: "#C0C0BD",
