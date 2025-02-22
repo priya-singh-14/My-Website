@@ -1,7 +1,5 @@
 import PageLayout from "../components/page-layout";
-import { Project } from "../utils/types";
-
-var devProjects: Project[] = [{title: "title 1"}, {title: "title 2"}, {title: "title 3"}, {title: "title 4"}]
+import { devProjects } from "../utils/projects";
 
 export default function Development() {
   return (

@@ -1,33 +1,35 @@
 "use client";
 
 import Link from "next/link";
+import { Project } from "../utils/types";
 
-// props: title, image path, mockup path, index
 interface ProjectCardProps {
-  title: string;
+  project: Project;
   index: number;
 }
 
-export default function ProjectCard(props: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const colorOptions: string[] = [
     "bg-cardBlue",
     "bg-cardGrey",
     "bg-cardWhite",
     "bg-cardDarkGrey",
   ];
-  const color =
-    colorOptions[props.index] ||
-    colorOptions[props.index % colorOptions.length];
-
-  console.log(colorOptions.length);
-
+  const color = colorOptions[index % colorOptions.length];
 
   return (
-    <Link href="/testpage">
-    <div>
-      <div className={`flex aspect-square ${color}`}></div>
-      <h4 className="font-mono text-h4 pt-3">{props.title}</h4>
-    </div></Link>
+    <Link
+      href={`/project-details/${encodeURIComponent("" + project.id)}`}
+      passHref
+    >
+      <div className="relative cursor-pointer">
+        <img
+          src={"/" + project.cardImage}
+          className="mt-10 ml-10 w-5/6 absolute"
+        ></img>
+        <div className={` aspect-square ${color}`}></div>
+        <h4 className="font-mono text-h4 pt-3">{project.title}</h4>
+      </div>
+    </Link>
   );
 }
-

@@ -1,16 +1,14 @@
 export interface Project {
+    id : string,
     title: string,
     cardImage?: string,
-    mockup?: string,
-}
-
-export interface ProjectDetails {
-    title: string,
+    mockup: string,
     description: string,
     techstack: string,
-    mockup?: string,
+    link?: string,
+    purpose?: string,
+    process?: string,
     demo?: string,
     imageSm?: string,
     imageLg?: string,
 }
-
