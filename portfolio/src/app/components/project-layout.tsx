@@ -42,7 +42,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
               PROCESS + LEARNING GOALS
             </h4>
             <p className="w-full text-p font-helvetica ml-10 mt-6">
-              {"/" + project.process}
+              {project.process}
             </p>
           </div>
           <video
