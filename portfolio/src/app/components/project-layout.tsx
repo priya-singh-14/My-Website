@@ -16,7 +16,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
           {project.description}
         </h4>
         <div className="w-full flex">
-          <h4 className="w-full text-h4 font-mono mt-6 ml-10 uppercase">
+          <h4 className="w-full text-h4 font-mono mt-6 ml-10 uppercase text-cardDarkGrey">
             {project.techstack}
           </h4>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -50,7 +50,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             className="aspect-square ml-28 z-10 w-1/3 h-1/4"
           />
         </div>
-        <div className="relative flex mt-32 h-80 bg-blueSecondaryLight">
+        {/* <div className="relative flex mt-32 h-80 bg-blueSecondaryLight">
           <div className="w-full relative m-auto">
             <img
               src={"/" + project.imageLg}
@@ -61,7 +61,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
               className="absolute left-80 bottom-24 aspect-square z-20 w-1/4 shadow-xl"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

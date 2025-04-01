@@ -31,7 +31,7 @@ export default function PageLayout(props: PageLayoutProps) {
           {props.canvasCaption || ""}
         </h4>
       </div>
-      <div className="p-10 gap-10 items-center justify-center m-auto grid grid-cols-3">
+      <div className="p-10 gap-10 items-center justify-center m-auto grid grid-cols-2">
         {props.projects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}

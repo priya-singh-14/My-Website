@@ -22,14 +22,15 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       href={`/project-details/${encodeURIComponent("" + project.id)}`}
       passHref
     >
-      <div className="relative cursor-pointer">
-        <img
-          src={"/" + project.cardImage}
-          className="mt-10 ml-10 w-5/6 absolute"
-        ></img>
-        <div className={` aspect-square ${color}`}></div>
-        <h4 className="font-mono text-h4 pt-3">{project.title}</h4>
+      <div className={`hover:shadow-md transform transition ${color}`}>
+        <div className="relative cursor-pointer">
+          <img
+            src={"/" + project.cardImage}
+            className="m-auto p-4 overflow-hidden object-contain"
+          ></img>
+        </div>
       </div>
+      <h4 className="font-mono text-h4 pt-3">{project.title}</h4>
     </Link>
   );
 }

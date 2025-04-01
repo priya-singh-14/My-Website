@@ -3,7 +3,7 @@ import { Project } from "./types";
 export const devProjects: Project[] = [
   {
     id: "0",
-    cardImage: "star.svg",
+    cardImage: "starred.png",
     title: "Starred - Browser Wishlist",
     description: "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
     techstack: "React, Typescript, Python, Next.js, Firebase",
@@ -16,7 +16,7 @@ export const devProjects: Project[] = [
   },
   {
     id: "1",
-    cardImage: "cairn.svg",
+    cardImage: "cairn2.png",
     title: "Cairn - Trip Scheduler",
     description: "desc 2",
     techstack: "ts",
@@ -27,9 +27,11 @@ export const devProjects: Project[] = [
   },
   {
     id: "2",
+    cardImage: "cc.png",
     title: "Candid Candies",
     description: "Overview: A Candy Heart inspired message-board web application",
     techstack: "Javascript | HTML | CSS | React | MongoDB | Adobe Fresco | Adobe Illustrator",
+    purpose: "Candid Candies is a message-board web application that allows for the drafting and posting of messages onto a candy heart inspired landing page. The UI includes hand-drawn visual elements with coded functionality using React.js, showcases an ability to combine front-end development skills with hand-drawn designs. This project is currently in development, in collaboration with Arushi Aggarwal.",
     mockup: "string",
     demo: "comp.jpg",
     imageSm: "comp.jpg",
@@ -37,6 +39,7 @@ export const devProjects: Project[] = [
   },
   {
     id: "3",
+    cardImage: "cairn.png",
     title: "Polaris - Peer Mentorship",
     description: "desc 4",
     techstack: "ts",
@@ -47,6 +50,7 @@ export const devProjects: Project[] = [
   },
   {
     id: "4",
+    cardImage: "stock.png",
     title: "StockView - Stock Simulator",
     description: "Overview: desc 5",
     purpose: "StockView is a stock trading simulation program, coded in Java, that utilizes SOLID principles and MVC architecture to create an environment for simulating stock trading. The program supports over 700 stock tickers, and functionalities such as building multiple portfolios, determining x-day averages, buying, selling, and valuating stocks and portfolios on certain dates, and creating bar-graph representations of stock and portfolio performance among other functionalities. The project features both text-based and Swing GUI interfaces, enabling users to query real-time stock data through integrated API retrieval using AlphaVantageAPI. To enhance performance, we implemented a data caching mechanisms, allowing for more efficient API usage and improved query responsiveness. Built in collaboration with Ayomide Addey. Available on Github upon request.",
@@ -61,6 +65,7 @@ export const devProjects: Project[] = [
 export const designProjects: Project[] = [
   {
     id: "6",
+    cardImage: "roster.png",
     title: "The Roster - Soccer Social Network",
     description: "desc 1",
     techstack: "ts",
@@ -72,7 +77,7 @@ export const designProjects: Project[] = [
   {
     id: "7",
     title: "Cairn - Trip Scheduler",
-    cardImage: "cairn.svg",
+    cardImage: "cairn.png",
     description: "desc 2",
     techstack: "ts",
     mockup: "string",
@@ -82,6 +87,7 @@ export const designProjects: Project[] = [
   },
   {
     id: "8",
+    cardImage: "inspira.png",
     title: "Inspira - Artist Resources",
     description: "Overview: Resource curations for creatives",
     techstack: "Figma",
@@ -94,6 +100,7 @@ export const designProjects: Project[] = [
   },
   {
     id: "9",
+    cardImage: "ssf.png",
     title: "Securing Safe Food - Allergen-Safe Food Bank",
     description: "desc 4",
     techstack: "ts",
@@ -101,5 +108,5 @@ export const designProjects: Project[] = [
     demo: "comp.jpg",
     imageSm: "comp.jpg",
     imageLg: "comp.jpg",
-  },
+  }
 ];
