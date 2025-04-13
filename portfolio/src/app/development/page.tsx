@@ -3,6 +3,6 @@ import { devProjects } from "../utils/projects";
 
 export default function Development() {
   return (
-    <PageLayout title={"DEVELOPMENT"} description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."} canvasImage={"bw.svg"} projects={devProjects}></PageLayout>
+    <PageLayout title={"DEVELOPMENT"} description={"With a background in Computer Science and Design, I thrive at the intersection of creativity and logic. My development work lets me build seamless connections between intuitive user interfaces and robust backend systems—bringing thoughtful, functional experiences to life through code."} canvasImage={"bw.svg"} projects={devProjects}></PageLayout>
   );
 }
