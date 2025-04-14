@@ -1,11 +1,60 @@
+"use client";
+import { useState } from "react";
 import { Project } from "../utils/types";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 interface ProjectLayoutProps {
   project: Project;
 }
 
 export default function ProjectLayout({ project }: ProjectLayoutProps) {
-  console.log(project.mockup);
+  const ImageCarousel = () => {
+    const images = project.carousel;
+
+    const responsive = {
+      all: {
+        breakpoint: { max: 3000, min: 0 },
+        items: 1,
+      },
+    };
+
+    return (
+      <div className="w-full">
+        <Carousel
+          responsive={responsive}
+          arrows={true}
+          infinite={true}
+          autoPlay={false}
+          keyBoardControl={true}
+          containerClass="carousel-container"
+          itemClass="carousel-item"
+        >
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-auto max-h-[800px] object-contain"
+            />
+          ))}
+        </Carousel>
+      </div>
+    );
+  };
+
+  const Bullets = () => {
+    const bullets = project.bullets;
+
+    return (
+      <ul className="list-disc">
+        {bullets.map((str, index) => (
+          <li key={index} className="text-p font-helvetica ml-2">{str}</li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <div className="w-full">
       <div className="w-full text-blackPrimary">
@@ -20,18 +69,24 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             {project.techstack}
           </h4>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <h4 className="mr-12 mt-6 text-h4 font-mono text-bluePrimary">
+            <h4
+              className="mr-12 mt-6 text-h4 font-mono text-bluePrimary hover:text-black"
+              href={project.link}
+            >
               LINK
             </h4>
           </a>
         </div>
-        <div className="z-0 flex h-full pb-10 mt-20 bg-blueSecondaryLight text-left">
-          <img src={"/" + project.mockup} className="ml-10 z-10 w-1/2 h-1/2" />
-          <div className="w-1/2 justify-end text-white">
+        <div className="z-0 flex h-full pb-10 mt-10 bg-blueSecondaryLight text-left">
+          <img
+            src={"/" + project.mockup}
+            className="flex mx-10 pt-5 z-10 w-2/5 min-w-[1/5]"
+          />
+          <div className="w-3/5 justify-end text-primary">
             <h4 className="w-2/3 text-h4 font-mono top-0 pt-8 ml-10">
               PURPOSE + PLANNING
             </h4>
-            <p className="w-2/3 text-p font-helvetica ml-10 mt-6">
+            <p className="w-4/5 right-0 text-p font-helvetica ml-10 mt-6">
               {project.purpose}
             </p>
           </div>
@@ -44,24 +99,14 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             <p className="w-full text-p font-helvetica ml-10 mt-6">
               {project.process}
             </p>
+            <div className="ml-12 mt-10">
+              <Bullets></Bullets>
+            </div>
           </div>
-          <video
-            src={"/" + project.demo}
-            className="aspect-square ml-28 z-10 w-1/3 h-1/4"
-          />
+          <div className="mt-10 w-2/5 border-cardGrey border-2 mb-10 mx-auto">
+            <ImageCarousel></ImageCarousel>
+          </div>
         </div>
-        {/* <div className="relative flex mt-32 h-80 bg-blueSecondaryLight">
-          <div className="w-full relative m-auto">
-            <img
-              src={"/" + project.imageLg}
-              className="m-auto mr-80 aspect-square relative bottom-36 z-10 w-1/3"
-            />
-            <img
-              src={"/" + project.imageSm}
-              className="absolute left-80 bottom-24 aspect-square z-20 w-1/4 shadow-xl"
-            />
-          </div>
-        </div> */}
       </div>
     </div>
   );

@@ -6,9 +6,9 @@ export interface Project {
     description: string,
     techstack: string,
     link?: string,
+    carousel: Array<string>,
+    bullets: Array<string>,
     purpose?: string,
     process?: string,
     demo?: string,
-    imageSm?: string,
-    imageLg?: string,
 }
