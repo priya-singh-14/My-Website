@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { Project } from "../utils/types";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -49,10 +48,28 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
     return (
       <ul className="list-disc">
         {bullets.map((str, index) => (
-          <li key={index} className="text-p font-helvetica ml-2">{str}</li>
+          <li key={index} className="text-p font-helvetica ml-2 mb-2">
+            {str}
+          </li>
         ))}
       </ul>
     );
+  };
+
+  const Link = () => {
+    const link = project.link;
+
+    if (link !== "")
+      return (
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <h4
+            className="mr-12 mt-6 text-h4 font-mono text-bluePrimary hover:text-black"
+            href={project.link}
+          >
+            LINK
+          </h4>
+        </a>
+      );
   };
 
   return (
@@ -68,14 +85,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
           <h4 className="w-full text-h4 font-mono mt-6 ml-10 uppercase text-cardDarkGrey">
             {project.techstack}
           </h4>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            <h4
-              className="mr-12 mt-6 text-h4 font-mono text-bluePrimary hover:text-black"
-              href={project.link}
-            >
-              LINK
-            </h4>
-          </a>
+          <Link></Link>
         </div>
         <div className="z-0 flex h-full pb-10 mt-10 bg-blueSecondaryLight text-left">
           <img
@@ -89,6 +99,9 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             <p className="w-4/5 right-0 text-p font-helvetica ml-10 mt-6">
               {project.purpose}
             </p>
+            <p className="w-4/5 right-0 text-p font-helvetica ml-10 mt-6">
+              {project.details}
+            </p>
           </div>
         </div>
         <div className="flex w-full">
@@ -99,12 +112,14 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             <p className="w-full text-p font-helvetica ml-10 mt-6">
               {project.process}
             </p>
-            <div className="ml-12 mt-10">
+            <div className="ml-12 mt-10 mb-20">
               <Bullets></Bullets>
             </div>
           </div>
-          <div className="mt-10 w-2/5 border-cardGrey border-2 mb-10 mx-auto">
-            <ImageCarousel></ImageCarousel>
+          <div className="w-1/2">
+            <div className="mt-20 mx-auto mb-20 h-96 w-3/4">
+              <ImageCarousel></ImageCarousel>{" "}
+            </div>
           </div>
         </div>
       </div>

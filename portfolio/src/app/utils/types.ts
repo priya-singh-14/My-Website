@@ -8,7 +8,8 @@ export interface Project {
     link?: string,
     carousel: Array<string>,
     bullets: Array<string>,
-    purpose?: string,
-    process?: string,
+    purpose: string,
+    details?: string,
+    process: string,
     demo?: string,
 }
