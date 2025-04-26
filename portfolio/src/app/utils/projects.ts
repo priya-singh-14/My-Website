@@ -1,19 +1,22 @@
 import { Project } from "./types";
 
 export const devProjects: Project[] = [
-  // {
-  //   id: "0",
-  //   cardImage: "starred.png",
-  //   title: "Starred - Browser Wishlist",
-  //   description: "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
-  //   techstack: "React, Typescript, Python, Next.js, Firebase",
-  //   mockup: "comp.jpg",
-  //   purpose: "lorem",
-  //   process: "lorem",
-  //   demo: "demo.mov",
-  //   imageSm: "comp.jpg",
-  //   imageLg: "comp.jpg",
-  // },
+  {
+    id: "0",
+    cardImage: "starred.png",
+    title: "Starred - Browser Wishlist",
+    description:
+      "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
+    techstack: "React, Typescript, Python, Next.js, Firebase",
+    mockup: ".jpg",
+    purpose: "",
+    details: "",
+    process: "",
+    demo: "",
+    link: "",
+    carousel: ["hi"],
+    bullets: ["hi"],
+  },
   {
     id: "1",
     cardImage: "cairn2.png",
@@ -25,7 +28,7 @@ export const devProjects: Project[] = [
     purpose:
       "Cairn is a trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints. The web-app allows its users to add events they find interesting while recommending a schedule that works around their existing plans.",
     details:
-      "This project was completed with a team of six developers, affiliated with NExT— Northeastern's Software Consulting Organization. While previously deployed with Azure Container Services, the deployment was taken down to avoid costs. For a code walk or a demo, please reach out to schedule a meeting.",
+      "This project was completed with a team of six developers, affiliated with NExT— Northeastern Univeristy's Software Consulting Group. While previously deployed with Azure Container Services, the deployment was taken down to avoid costs. For a code walk or a demo, please reach out to schedule a meeting. For design details, please visit the Design tab.",
     process:
       "Cairn leverages multiple API's, scheduling and recommendation algorithms, and a streamlined UI to help users find attractions that match their interests. The platform then suggests times for those activities, and easily incorporate them into a personalized schedule.",
     mockup: "cairnmock.png",
@@ -41,7 +44,7 @@ export const devProjects: Project[] = [
     ],
     bullets: [
       "Used agile development methodologies within a team of six to iteratively improve the product across weekly sprints",
-      "Conducted user research to understand traveler pain points and inform features",
+      "Implemented the FullCalendar Library with our front-end design styling to support scheduling and calendar export",
       "Integrated multiple APIs (Geodb Cities, TripAdvisor, Pexel Images) to create a robust, streamlined interface",
       "Strategized an approach to constraint-based scheduling using modified greedy algorithms to balance user preferences with real-world limitations",
       "Used Adobe Services to add a layer of interactivity to the platform, but offering a 'stacked-cairn' view of a user's calendar",
@@ -127,11 +130,20 @@ export const designProjects: Project[] = [
     techstack: "Figma",
     mockup: "ssfmock.png",
     demo: "comp.jpg",
-    purpose: "",
-    process: "",
-    carousel: [],
+    purpose:
+      "Securing Safe Food is a national nonprofit dedicated to fighting food insecurity among individuals with food allergies and improving access to allergen-free foods. In partnership with Code4Community, I worked with a team of Product Managers, Software Developers, and Product Designers to help build a series of internal dashboards to help facilitate to the process of connecting food pantries to safe food manufacturers and volunteers.",
+    details: "All designs on this page were created by Priya Singh.",
+    process:
+      "The designs featured belong to an Admin and a Volunteer Dashboard, with respective workflows related to order management, pantry applications, food order forms, and various other requirements outlined by the client organization.",
+    carousel: ["/ssfcar1.svg", "/ssfcar3.svg", "/ssfcar4.svg","/ssfcar5.svg" ],
     link: "https://www.figma.com/proto/2Y0g8UL3sjWaIo1dAVgnGa/Admin-Dashboard-WF---Volunteer-Dashboard-WF?node-id=174-516&t=WKkO7tVec9CXwOru-1",
-    bullets: ["/cairnhome.png", "/cal.png", "/cairncal.png"],
+    bullets: [
+      "Created a comprehensive design system built on the base components of the Chakra UI Kit to allow for easy integration by frontend developers",
+      "Transitioned from low, mid, to high-fidelity prototypes for multiple workflows",
+      "Presented designs to clients and prospective members of the organization at varying stages of the design process",
+      "Received and implemented client feedback throughout the course of the engagement",
+    ],
+    video: "/ssfdemo.mov"
   },
   {
     id: "9",
@@ -140,14 +152,20 @@ export const designProjects: Project[] = [
     description: "Overview: Resource curation for creatives and designers",
     techstack: "Figma",
     purpose:
-      "Inspira is a resource-curation website for creatives, looking to use generative AI to complement artistic processes, rather than take away from them. This project began with an understanding of the relationship between artists and generative AI. As an artist myself, I have experienced the frustration of generative AI being used to produce artwork through the exploitation of artists online. I wanted to restructure the relationship between artists and AI by providing an environment where this technology can uplift the creative process in a systemized manner, rather than rob from it.",
+      "Inspira is a resource-curation website for creatives, using AI to streamling artistic planning. This project began with an understanding of the relationship between artists and AI. As an artist myself, I have experienced the frustration of AI being built on the exploitation of artists online. I wanted to restructure the relationship between artists and AI by providing an environment where this technology can uplift the creative process in a systemized manner, rather than be a reductive version of it.",
     process:
-      "The current prototype supports primary workflows, such as logging in and signing up, creating a new workspace, saving generated resources to a profile, and exploring a page of publically available workspaces categorized by art form.  These workflows were visualized through both a hand-drawn and digital sitemap. These workflows were identified through benchmarking, as well as my own role as a user of these platforms. I identified the aspects of these UI's that I thought worked well, and ones that I did not want to bring into my own project.",
+      "Inspira’s current prototype supports primary workflows, such as logging in and signing up, creating a new workspace, saving generated resources to a profile, and exploring a page of publicly available workspaces categorized by art form.",
     mockup: "inspiramock.png",
     demo: "comp.jpg",
-    carousel: [],
+    carousel: ["/ins1.svg", "/ins2.svg", "/ins3.svg","/ins4.svg","/ins5.svg"],
     link: "https://www.figma.com/proto/2sqRWNFGCqo7NDtJ0mshn6/Inspira?node-id=0-1&t=Mt0uoOGQE06pcISk-1",
-    bullets: ["/cairnhome.png", "/cal.png", "/cairncal.png"],
+    bullets: [
+      "Visualized workflows through both hand-drawn and digital sitemaps",
+      "Conducted interviews with student artists on campus, to identify pain-points of existing UI's and ways to mitigate them in this project",
+      "Building on the base application to integrate responsive design for smaller screen sizes, and a dark mode functionality to the UI",
+      "Began preliminary research into the Pinterest API and the proper tech stack needed to begin development",
+    ],
+    video: "/inspirademo.mov"
   },
   {
     id: "6",
@@ -157,13 +175,21 @@ export const designProjects: Project[] = [
       "Overview: A trip planning application that works around your schedule",
     techstack: "Figma | Adobe Illustrator | Adobe Photoshop | Adobe Fresco",
     purpose:
-      "Cairn is a trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-    process: "",
+      "Cairn is a trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints. The web-app allows its users to add events they find interesting while recommending a schedule that works around their existing plans.    ",
+    details: "For technical details, please visit the Dev tab.",
+    process:
+      "The design of Cairn aims to provide guidance to the user in a streamlined, yet engaging way. Since the purpose of the platform lies in quick, unburdened travel planning, I kept the design of the web-app image-forward, with a simple color palette that lets the interest of the travel destination hold the user’s attention through images sourced by the Pexel and Tripadvisor API’s. Through benchmarking sources like Airbnb and Google Calendar, I was able to isolate key parts of the UI to use in Cairn.",
     mockup: "cairnmock.png",
     demo: "comp.jpg",
-    carousel: [],
+    carousel: ["/ccar1.svg", "/ccar2.svg", "/ccar3.svg"],
     link: "https://www.figma.com/proto/84U9JPWEv4sPGqOanXzCHl/Cairn-Figma-File?node-id=0-1&t=SKmPnTkVxxwShHql-1",
-    bullets: ["/cairnhome.png", "/cal.png", "/cairncal.png"],
+    bullets: [
+      "Performed lighthouse accessibility tests and contrast ratio assessments throughout the project",
+      "Created user personas to draft requirements of the software and understand traveler pain points",
+      "Hand-drew lofi’s in the early planning stages, before transitioning to digital lofi’s",
+      "Received and integrated internal team feedback on the color, layout, and type hierarchy of the design prototype",
+    ],
+    video: "/cairndemo.mov"
   },
 
   {
@@ -175,10 +201,17 @@ export const designProjects: Project[] = [
     techstack: "Figma | Adobe Illustrator | Adobe Photoshop | Adobe Fresco",
     mockup: "rostermock.png",
     demo: "comp.jpg",
-    carousel: [],
-    purpose: "",
-    process: "",
+    carousel: ["/r1.svg", "/r2.svg", "/r3.svg","/r4.svg","/r5.svg","/r6.svg","/r7.svg","/r8.svg"],
+    purpose:
+      "For new and excited soccer fans who seek an engaging, inclusive platform to learn about the game and connect with others, The Roster is a comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans. Unlike typical sports apps or forums, The Roster offers a welcoming, judgment-free environment tailored to fans who may not have an existing soccer community and offers everything from real-time discussions, detailed player insights, and personalized team recommendations all in one convenient place.    ",
+    process:
+      "Through extensive user research, including creating personas conducting primary-user interviews, storyboarding primary workflows and benchmarking existing UI’s, The Roster offers a inclusive learning and socialization experience for new fans of international soccer.",
     link: "https://www.figma.com/proto/O750ndrFJbdkG5839WBfdM/Interaction-Design?node-id=235-1802&t=P5EdDkXXwaRX0moA-1",
-    bullets: ["/cairnhome.png", "/cal.png", "/cairncal.png"],
+    bullets: [
+      "Scripted and conducted interviews for the primary demographic of young women of color based in large cities, to gain a stronger understanding of the needs of the platform",
+      "Researched and progressively iterated through brand-design by hand-drawing and digitally rendering logos, creating a brand-ethos, and eventually building a digital identity",
+      "Presented a final presentation and demo to a panel of UX Designers at MathWorks and WebEx in a final critique",
+    ],
+    video: "/rosterdemo.mov"
   },
 ];

@@ -56,6 +56,23 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
     );
   };
 
+  const Video = () => {
+    const video = project.video;
+
+    return (
+      <div className="w-3/4 m-auto">
+        <video
+          className="overflow-hidden bject-cover"
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+    )
+  }
+
   const Link = () => {
     const link = project.link;
 
@@ -123,6 +140,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
           </div>
         </div>
       </div>
+      <Video></Video>
     </div>
   );
 }

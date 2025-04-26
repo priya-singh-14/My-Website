@@ -12,4 +12,5 @@ export interface Project {
     details?: string,
     process: string,
     demo?: string,
+    video?: string
 }
