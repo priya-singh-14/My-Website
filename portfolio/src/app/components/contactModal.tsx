@@ -44,6 +44,7 @@ export default function ContactModal(props: ContactModalProps) {
       setEmail("");
       setMessage("");
     } catch (error) {
+      console.error("Email sending error:", error);
       setError("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
