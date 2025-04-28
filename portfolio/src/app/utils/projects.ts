@@ -143,7 +143,7 @@ export const designProjects: Project[] = [
       "Presented designs to clients and prospective members of the organization at varying stages of the design process",
       "Received and implemented client feedback throughout the course of the engagement",
     ],
-    video: "/ssfdemo.mov"
+    video: "/ssfdemo.mp4"
   },
   {
     id: "9",
@@ -165,7 +165,7 @@ export const designProjects: Project[] = [
       "Building on the base application to integrate responsive design for smaller screen sizes, and a dark mode functionality to the UI",
       "Began preliminary research into the Pinterest API and the proper tech stack needed to begin development",
     ],
-    video: "/inspirademo.mov"
+    video: "/inspirademo.mp4"
   },
   {
     id: "6",
@@ -212,6 +212,6 @@ export const designProjects: Project[] = [
       "Researched and progressively iterated through brand-design by hand-drawing and digitally rendering logos, creating a brand-ethos, and eventually building a digital identity",
       "Presented a final presentation and demo to a panel of UX Designers at MathWorks and WebEx in a final critique",
     ],
-    video: "/rosterdemo.mov"
+    video: "/rosterdemo.mp4"
   },
 ];

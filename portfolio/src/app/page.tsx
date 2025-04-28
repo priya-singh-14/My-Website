@@ -18,7 +18,7 @@ export default function Home() {
         ></img>
         <video
           className="w-1/2 h-96 overflow-hidden m-1 object-cover mr-10"
-          src="/demo.mov"
+          src="/demo.mp4"
           autoPlay
           loop
           muted
