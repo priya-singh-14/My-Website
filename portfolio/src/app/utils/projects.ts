@@ -189,7 +189,7 @@ export const designProjects: Project[] = [
       "Hand-drew lofi’s in the early planning stages, before transitioning to digital lofi’s",
       "Received and integrated internal team feedback on the color, layout, and type hierarchy of the design prototype",
     ],
-    video: "/cairndemo.mov"
+    video: "https://drive.google.com/file/d/1p6oY-iSZJXze_R9YH80K8xXvjJb3A0fS/view?usp=sharing"
   },
 
   {
