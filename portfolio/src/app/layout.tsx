@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./components/navbar"
 import NavBar from "./components/navbar";
-// import { Chivo_Mono } from "next/font/google";
+import { Chivo_Mono } from "next/font/google";
 
-// const chivo = Chivo_Mono({ subsets: ["latin"], weight: ["100","200","300","400", "700"] });
+const chivo = Chivo_Mono({ subsets: ["latin"], weight: ["100","200","300","400", "700"] });
 
 export const metadata: Metadata = {
   title: "Priya Singh",
