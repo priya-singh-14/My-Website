@@ -1,22 +1,22 @@
 import { Project } from "./types";
 
 export const devProjects: Project[] = [
-  {
-    id: "0",
-    cardImage: "starred.png",
-    title: "Starred - Browser Wishlist",
-    description:
-      "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
-    techstack: "React, Typescript, Python, Next.js, Firebase",
-    mockup: ".jpg",
-    purpose: "",
-    details: "",
-    process: "",
-    demo: "",
-    link: "",
-    carousel: ["hi"],
-    bullets: ["hi"],
-  },
+  // {
+  //   id: "0",
+  //   cardImage: "starred.png",
+  //   title: "Starred - Browser Wishlist",
+  //   description:
+  //     "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
+  //   techstack: "React, Typescript, Python, Next.js, Firebase",
+  //   mockup: ".jpg",
+  //   purpose: "",
+  //   details: "",
+  //   process: "",
+  //   demo: "",
+  //   link: "",
+  //   carousel: ["hi"],
+  //   bullets: ["hi"],
+  // },
   {
     id: "1",
     cardImage: "cairn2.png",
