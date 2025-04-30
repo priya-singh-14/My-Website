@@ -56,7 +56,7 @@ export default function ContactModal(props: ContactModalProps) {
   return (
     <div className="w-full">
       <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="z-50 bg-primary p-6 shadow-lg max-w-xl w-full mx-auto rounded-lg">
+        <div className="h-full md:h-auto z-50 bg-primary p-6 shadow-lg max-w-xl w-full mx-auto rounded-lg">
           <div className="w-full text-left flex pb-5">
             <h2 className="w-full text-p">Contact Me</h2>
             <button

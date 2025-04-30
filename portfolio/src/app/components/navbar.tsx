@@ -33,7 +33,7 @@ export default function Navbar() {
 
        {/* hamburger menu */}
         <button
-          className="md:hidden pr-7 text-blueSecondary z-30 relative"
+          className="md:hidden pr-2 text-blueSecondary z-30 relative"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
@@ -61,11 +61,9 @@ export default function Navbar() {
           </svg>
         </button>
       </nav>
-
-      {/* Fullscreen Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-20 text-3xl font-mono">
+          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-mono">
             <Link
               className="text-black py-2"
               href="/development"

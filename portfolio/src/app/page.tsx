@@ -9,15 +9,15 @@ export default function Home() {
       </div>
       <div className="flex w-full h-full">
         <img
-          className="w-1/4 h-96 m-1 overflow-hidden object-cover ml-10 bg-black"
+          className="w-1/2 h-60 md:w-1/4 md:h-96 m-1 overflow-hidden md:object-cover ml-10 bg-black"
           src="headshot.png"
         ></img>
         <img
-          className="w-1/4 h-96 m-1 overflow-hidden object-cover"
+          className="w-1/2 h-60 md:w-1/4 md:h-96 m-1 overflow-hidden object-cover mr-10 md:mr-0"
           src="sketch.jpg"
         ></img>
         <video
-          className="w-1/2 h-96 overflow-hidden m-1 object-cover mr-10"
+          className="hidden md:block w-1/2 h-96 overflow-hidden m-1 object-cover mr-10"
           src="/demo.mp4"
           autoPlay
           loop
@@ -25,14 +25,24 @@ export default function Home() {
           playsInline
         />
       </div>
-      <div className="flex w-full h-full">
-        
+      <div className="w-full md:hidden">
+        {" "}
+        <video
+          className="h-80 overflow-hidden m-1 object-cover mx-2"
+          src="/demo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+      <div className="flex w-full h-full pb-10 md:pb-0">
         <img
-          className="w-3/4 h-80 m-2 overflow-hidden object-cover ml-10"
+          className="ml-10 m-1 md:w-3/4 md:h-80 md:m-2 overflow-hidden object-cover md:ml-10"
           src="notes.jpg"
         ></img>
         <img
-          className="w-1/4 h-80 m-2 overflow-hidden object-cover mr-10"
+          className="mr-10 m-1 md:w-1/4 md:h-80 md:m-2 overflow-hidden object-cover md:mr-10"
           src="comp.jpg"
         ></img>
       </div>
