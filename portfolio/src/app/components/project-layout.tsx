@@ -164,7 +164,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
         </div>
       </div>
       <Video></Video>
-      <div className="md:hidden bottom-0 h-10 mt-10 bg-blueSecondary"></div>
+      <div className="bottom-0 h-10 mt-10 bg-blueSecondary"></div>
     </div>
   );
 }

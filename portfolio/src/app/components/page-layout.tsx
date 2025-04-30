@@ -12,7 +12,7 @@ interface PageLayoutProps {
 
 export default function PageLayout(props: PageLayoutProps) {
   return (
-    <div className="w-full">
+    <div className="w-full pb-10">
       <div className="pt-5 flex mb-5">
         <div className="w-full md:w-1/3">
           <h3 className="mx-5 md:mx-10 font-mono text-h3 pt-12 pb-5 text-blackPrimary">
@@ -31,7 +31,7 @@ export default function PageLayout(props: PageLayoutProps) {
           {props.canvasCaption || ""}
         </h4>
       </div>
-      <div className="pt-20 mx-5 md:mx-10 gap-x-12 gap-y-10 items-center justify-center m-auto grid sm:grid-cols-1 md:grid-cols-2">
+      <div className="pt-10 md:pt-20 mx-5 md:mx-10 gap-x-12 gap-y-10 items-center justify-center m-auto grid sm:grid-cols-1 md:grid-cols-2">
         {props.projects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
