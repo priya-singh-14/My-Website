@@ -110,7 +110,7 @@ export default function ContactModal(props: ContactModalProps) {
               <button
                 type="submit"
                 onSubmit={handleSubmit}
-                className="text-sm p-2 w-1/6 border border-cardDarkGrey text-p font-light text-cardDarkGrey hover:bg-cardDarkGrey hover:text-primary transition duration-200"
+                className="text-sm p-2 w-1/4 border border-cardDarkGrey text-p font-light text-cardDarkGrey hover:bg-cardDarkGrey hover:text-primary transition duration-200"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Submit"}

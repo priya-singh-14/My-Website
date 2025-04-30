@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="flex justify-between items-center text-li text-blueSecondary font-mono pt-7 px-5 w-full bg-transparent">
-        <Link className="pl-5 hover:text-bluePrimary md:pl-4" href="/">
+        <Link className="hover:text-bluePrimary md:pl-4" href="/">
           PRIYA SINGH
         </Link>
 
