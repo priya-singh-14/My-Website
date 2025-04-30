@@ -36,11 +36,11 @@ export default function Home() {
       </div>
       <div className="flex w-full h-full pb-10 md:pb-0">
         <img
-          className="ml-5 m-1 w-1/2 h-50 md:w-3/4 md:h-80 md:m-2 overflow-hidden object-cover md:ml-10"
+          className="ml-5 m-1 w-1/2 h-50 md:w-3/4 md:h-80 md:m-2 overflow-hidden object-cover md:ml-5"
           src="notes.jpg"
         ></img>
         <img
-          className="mr-5 m-1 w-1/2 h-50 md:w-1/4 md:h-80 md:m-2 overflow-hidden object-cover md:mr-10"
+          className="mr-5 m-1 w-1/2 h-50 md:w-1/4 md:h-80 md:m-2 overflow-hidden object-cover md:mr-5"
           src="comp.jpg"
         ></img>
       </div>

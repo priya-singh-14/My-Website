@@ -8,39 +8,6 @@ interface ProjectLayoutProps {
 }
 
 export default function ProjectLayout({ project }: ProjectLayoutProps) {
-  // const ImageCarousel = () => {
-  //   const images = project.carousel;
-
-  //   const responsive = {
-  //     all: {
-  //       breakpoint: { max: 3000, min: 0 },
-  //       items: 1,
-  //     },
-  //   };
-
-  //   return (
-  //     <div className="w-full">
-  //       <Carousel
-  //         responsive={responsive}
-  //         arrows={true}
-  //         infinite={true}
-  //         autoPlay={false}
-  //         keyBoardControl={true}
-  //         containerClass="carousel-container"
-  //         itemClass="carousel-item"
-  //       >
-  //         {images.map((img, index) => (
-  //           <img
-  //             key={index}
-  //             src={img}
-  //             alt={`Slide ${index + 1}`}
-  //             className="w-full h-auto max-h-[800px] object-contain"
-  //           />
-  //         ))}
-  //       </Carousel>
-  //     </div>
-  //   );
-  // };
 
   const ImageCarousel = () => {
     const images = project.carousel;
@@ -66,6 +33,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
     return (
       <div className="w-full carousel-wrapper">
         <Carousel
+        
           responsive={responsive}
           arrows={true}
           infinite={true}
@@ -73,7 +41,6 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
           keyBoardControl={true}
           containerClass="carousel-container"
           itemClass="carousel-item"
-          removeArrowOnDeviceType={["mobile"]}
         >
           {images.map((img, index) => (
             <img
