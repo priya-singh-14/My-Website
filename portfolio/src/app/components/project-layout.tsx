@@ -141,14 +141,14 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
   return (
     <div className="w-full">
       <div className="w-full text-blackPrimary">
-        <h4 className="text-lg flex md:text-h4 font-mono mt-16 mx-10 uppercase">
+        <h4 className="text-lg flex md:text-h4 font-mono mt-16 mx-5 md:mx-10 uppercase">
           {project.title}
         </h4>
-        <h4 className="text-lg flex md:text-h4 font-mono mt-6 mx-10 uppercase">
+        <h4 className="text-lg flex md:text-h4 font-mono mt-6 mx-5 md:mx-10 uppercase">
           {project.description}
         </h4>
         <div className="w-full flex">
-          <h4 className="text-lg w-full md:text-h4 font-mono mt-6 mx-10 uppercase text-cardDarkGrey">
+          <h4 className="text-lg w-full md:text-h4 font-mono mt-6 mx-5 md:mx-10 uppercase text-cardDarkGrey">
             {project.techstack}
           </h4>
           <Link></Link>
@@ -159,13 +159,13 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             className="hidden md:block flex mx-10 pt-5 z-10 w-2/5 min-w-[1/5]"
           />
           <div className="w-full mr-10 md:w-3/5 md:justify-end text-primary">
-            <h4 className="w-2/3 text-h4 font-mono top-0 pt-8 ml-10">
+            <h4 className="w-full md:w-2/3 text-h4 font-mono top-0 pt-8 mx-5 md:mx-10">
               PURPOSE + PLANNING
             </h4>
-            <p className="text-md w-full right-0 md:text-p font-helvetica ml-10 pr-4 mt-6">
+            <p className="text-md w-full right-0 md:text-p font-helvetica mx-5 md:mx-10 md:pr-10 pr-4 mt-6">
               {project.purpose}
             </p>
-            <p className="text-md w-full right-0 md:text-p font-helvetica ml-10 pr-4 mt-6">
+            <p className="text-md w-full right-0 md:text-p font-helvetica mx-5 md:mx-10 md:pr-10 pr-4 mt-6">
               {project.details}
             </p>
             <img
@@ -179,7 +179,7 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
             <h4 className="text-lg md:text-h4 font-mono mt-16 mx-4 md:mx-10">
               PROCESS + LEARNING GOALS
             </h4>
-            <p className="text-md w-full md:text-p font-helvetica mx-4 md:mx-10 mt-6">
+            <p className="text-md md:text-p font-helvetica mx-4 pr-2 md:mx-10 mt-6">
               {project.process}
             </p>
             <div className="mx-6 md:mx-12 mt-10 mb-10 md:mb-20">

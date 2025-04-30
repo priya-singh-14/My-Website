@@ -30,7 +30,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ></img>
         </div>
       </div>
-      <h4 className="font-mono text-h4 pt-3">{project.title}</h4>
+      <h4 className="font-mono text-h4 pt-3 text-blackPrimary">{project.title}</h4>
     </Link>
   );
 }

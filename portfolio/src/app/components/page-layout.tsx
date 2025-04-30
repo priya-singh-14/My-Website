@@ -15,10 +15,10 @@ export default function PageLayout(props: PageLayoutProps) {
     <div className="w-full">
       <div className="pt-5 flex mb-5">
         <div className="w-full md:w-1/3">
-          <h3 className="mx-10 font-mono text-h3 pt-12 pb-5 text-blackPrimary">
+          <h3 className="mx-5 md:mx-10 font-mono text-h3 pt-12 pb-5 text-blackPrimary">
             {props.title}
           </h3>
-          <h4 className="mx-10 justify-left font-mono text-b text-blackPrimary">
+          <h4 className="mx-5 md:mx-10 justify-left font-mono text-b text-blackPrimary">
             {props.description}
           </h4>
         </div>
@@ -31,7 +31,7 @@ export default function PageLayout(props: PageLayoutProps) {
           {props.canvasCaption || ""}
         </h4>
       </div>
-      <div className="pt-20 p-10 gap-x-12 gap-y-10 items-center justify-center m-auto grid sm:grid-cols-1 md:grid-cols-2">
+      <div className="pt-20 mx-5 md:mx-10 gap-x-12 gap-y-10 items-center justify-center m-auto grid sm:grid-cols-1 md:grid-cols-2">
         {props.projects.map((project, index) => (
           <ProjectCard key={index} project={project} index={index} />
         ))}
