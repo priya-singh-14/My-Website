@@ -58,7 +58,7 @@ export default function ContactModal(props: ContactModalProps) {
       <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
         <div className="h-full md:h-auto z-50 bg-primary p-6 shadow-lg max-w-xl w-full mx-auto rounded-lg">
           <div className="w-full text-left flex pb-5">
-            <h2 className="w-full text-p">Contact Me</h2>
+            <h2 className="w-full text-p text-blackPrimary">Contact Me</h2>
             <button
               className="w-full pr-2 text-right text-cardDarkGrey text-p font-light hover:text-bluePrimary"
               onClick={props.onClose}
@@ -68,7 +68,7 @@ export default function ContactModal(props: ContactModalProps) {
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
           {success && (
-            <p className="text-green-500 text-sm">Message sent successfully!</p>
+            <p className="text-green-500 text-sm">Message Sent!</p>
           )}
 
           <form onSubmit={handleSubmit} className="flex flex-col">
