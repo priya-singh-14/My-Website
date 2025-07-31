@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <div className="pl-5 flex w-full">
-        <h1 className="text-xl font-light text-left font-mono w-2/3 my-5 md:text-h1 md:font-light text-black md:text-left">
+        <h1 className="font-light text-left font-mono w-2/3 my-5 md:text-h1 md:font-light text-black md:text-left">
           SOFTWARE ENGINEER AND PRODUCT DESIGNER CURRENTLY BASED IN BOSTON.
         </h1>
       </div>
@@ -53,10 +53,10 @@ export default function Home() {
       </div>
       <div className="flex w-full h-full">
         <LandingVideo
-          cover={"landing-page-assets/inspira_gif.mov"}
+          cover={"demo.mp4"}
           width={2 / 3}
           height={1 / 3}
-          hoverCaption={"DESIGN 01: RE:CEIPT / MAY 2025"}
+          hoverCaption={"DESIGN 02: INSPIRA / OCTOBER 2024"}
           path={""}
         ></LandingVideo>
         <LandingCard
