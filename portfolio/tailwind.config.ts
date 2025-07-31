@@ -22,8 +22,10 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        helvetica: ["'Helvetica Neue', sans-serif"],
-        mono: ["'Chivo Mono'"],
+        mono: ["'IBM Plex Mono'"],
+        sans: ["'IBM Plex Sans'"],
+        condensed: ["'IBM Plex Sans Condensed'"],
+
       },
       fontSize: {
         h1: [
