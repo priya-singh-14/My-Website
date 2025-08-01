@@ -33,6 +33,7 @@ export default function LandingVideo(props: LandingVideoProps) {
         loop
         muted
         playsInline
+        controls={false}
       />
       <div
         className={`absolute bottom-0 left-0 p-4 text-white font-mono transition-opacity ${

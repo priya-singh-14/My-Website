@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FAF9F6",
+        primary: "#FFFFFC",
+        greyPrimary: "#433D3C",
         bluePrimary: "#006AF5",
         blueSecondary: "#46648B",
         blueSecondaryLight: "#5B7FAE",
@@ -32,32 +33,39 @@ export default {
           "40px",
           {
             lineHeight: "1.2",
-            fontWeight: "700",
+            fontWeight: "300",
           },
         ],
         h2: [
           "32px",
           {
             lineHeight: "1.3",
-            fontWeight: "700",
+            fontWeight: "400",
           },
         ],
         h3: [
-          "22px",
+          "24px",
           {
             lineHeight: "1.3",
             fontWeight: "400",
           },
         ],
         h4: [
-          "20px",
+          "22px",
           {
             lineHeight: "1.4",
             fontWeight: "400",
           },
         ],
         p: [
-          "18px",
+          "20px",
+          {
+            lineHeight: "1.5",
+            fontWeight: "400",
+          },
+        ],
+        p2: [
+          "16px",
           {
             lineHeight: "1.5",
             fontWeight: "400",
