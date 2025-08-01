@@ -10,22 +10,22 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex justify-between items-center text-li text-blueSecondary font-mono pt-7 px-5 w-full bg-transparent">
-        <Link className="hover:text-bluePrimary md:pl-4" href="/">
+      <nav className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent px-5">
+        <Link className="hover:underline" href="/">
           PRIYA SINGH
         </Link>
 
         {/* navbar */}
-        <div className="font-mono hidden md:flex pr-7 space-x-12">
-          <Link className="hover:text-bluePrimary" href="/development">
+        <div className="font-condensed  hidden md:flex pr-7 space-x-12">
+          <Link className="hover:underline" href="/development">
             DEV
           </Link>
-          <Link className="hover:text-bluePrimary" href="/design">
+          <Link className="hover:underline" href="/design">
             DESIGN
           </Link>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="hover:text-bluePrimary"
+            className="hover:underline"
           >
             CONTACT
           </button>
@@ -33,7 +33,7 @@ export default function Navbar() {
 
        {/* hamburger menu */}
         <button
-          className="md:hidden pr-2 text-blueSecondary z-30 relative"
+          className="md:hidden pr-2 text-greyPrimary z-30 relative"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
@@ -63,7 +63,7 @@ export default function Navbar() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-mono">
+          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-condensed ">
             <Link
               className="text-black py-2"
               href="/development"
@@ -90,7 +90,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      <div className="font-mono">
+      <div className="font-condensed">
         <ContactModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
