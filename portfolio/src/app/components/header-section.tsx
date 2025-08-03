@@ -1,26 +1,25 @@
 "use client";
-import { HeaderSection, ProjectSection } from "../utils/types";
-import "react-multi-carousel/lib/styles.css";
+import { HeaderSection } from "../utils/types";
 
 interface HeaderSectionProps {
-  headerDetails: HeaderSection;
+  sectionDetails: HeaderSection;
 }
 
-export default function HeaderSection({ headerDetails }: HeaderSectionProps) {
+export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
   return (
     <div className="flex w-full h-full border border-blackPrimary border-opacity-25 p-10">
-      <div className="w-1/2">
+      <div className="w-1/2 pr-20">
         <h3 className="font-mono text-h3 px-5 text-blackPrimary uppercase">
-          {headerDetails.title}
+          {sectionDetails.title}
         </h3>
         <p className="font-mono font-light px-5 text-greyPrimary uppercase">
-          {headerDetails.subtitle}
+          {sectionDetails.subtitle}
         </p>
         <p className="font-sans text-p2 p-5 text-blackPrimary">
-          {headerDetails.description}
+          {sectionDetails.description}
         </p>
         <div className="w-1/2 m-5 w-full flex flex-wrap gap-2">
-          {headerDetails.tags.map((tag, i) => {
+          {sectionDetails.tags.map((tag, i) => {
             return (
               <div key={i} className="bottom-0 border border-greyPrimary">
                 <p className="text-sm text-nowrap px-2 py-1 font-mono uppercase text-greyPrimary">
@@ -31,7 +30,7 @@ export default function HeaderSection({ headerDetails }: HeaderSectionProps) {
           })}{" "}
         </div>
         <div className="w-1/2 m-5 w-full flex flex-wrap gap-2">
-          {headerDetails.detailedTags.map((tag, i) => {
+          {sectionDetails.detailedTags.map((tag, i) => {
             return (
               <div
                 key={i}
@@ -45,11 +44,11 @@ export default function HeaderSection({ headerDetails }: HeaderSectionProps) {
           })}{" "}
         </div>
         <p className="uppercase font-mono text-md pt-5 px-5 text-blueAccent">
-          {headerDetails.link}
+          {sectionDetails.link}
         </p>
       </div>
-      <div className="w-1/2">
-        <img src={headerDetails.mockups} className="object-cover"></img>
+      <div className="w-1/2 mr-20">
+        <img src={sectionDetails.mockups} className="object-cover"></img>
       </div>
     </div>
   );

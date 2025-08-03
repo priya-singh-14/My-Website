@@ -20,7 +20,7 @@ export default function OverviewSection({
       </div>
       <div className="w-1/2 px-5 mr-20">
         <h4 className="font-mono text-h4 text-blackPrimary uppercase">
-          User Research
+          The Solution
         </h4>
         <p className="pt-5 text-p2 text-blackPrimary">
           {sectionDetails.uxr.split("/").map((section, index) => (
