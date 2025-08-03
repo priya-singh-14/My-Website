@@ -22,13 +22,13 @@ export default function OverviewSection({
         <h4 className="font-mono text-h4 text-blackPrimary uppercase">
           The Solution
         </h4>
-        <p className="pt-5 text-p2 text-blackPrimary">
+        <div className="pt-5 text-p2 text-blackPrimary">
           {sectionDetails.uxr.split("/").map((section, index) => (
             <p key={index} className="pb-4">
               {section}{" "}
             </p>
           ))}
-        </p>
+        </div>
       </div>
     </div>
   );
