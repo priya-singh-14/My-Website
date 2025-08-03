@@ -11,10 +11,13 @@ export default {
       colors: {
         primary: "#FFFFFC",
         greyPrimary: "#433D3C",
+        blackPrimary: "#0B1215",
+        greyLight: "#C3C2C1",
+        blueAccent: "576981",
+        //
         bluePrimary: "#006AF5",
         blueSecondary: "#46648B",
         blueSecondaryLight: "#5B7FAE",
-        blackPrimary: "#0B1215",
         cardBlue: "#B4C0D1",
         cardGrey: "#C0C0BD",
         cardWhite: "#EFECE5",

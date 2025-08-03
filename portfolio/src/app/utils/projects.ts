@@ -1,22 +1,81 @@
-import { Project } from "./types";
+import { Project, NewProject, HeaderSection, ProjectSection, AllSectionTypes } from "./types";
+
+
+export const sections: AllSectionTypes[] = [
+  {
+    type: "header",
+    title: "PockIt",
+    subtitle: "Development 01 / July 2025",
+    description: "A stylized web-scraping and wish-listing platform that features authentication, database storage, and webpage parsing.",
+    tags: ["REACT", "TYPESCRIPT", "TAILWIND", "PYTHON", "FIGMA", "ADOBE CC"],
+    detailedTags: ["1", "2", "3"],
+    mockups: "string",
+    link: "string",
+  },
+];
+
+export const allProjects: NewProject[] = [
+  {
+    id: "0",
+    title: "PockIt",
+    coverImage: "work-page-assets/pockit.png",
+    description: "A stylized web-scraping and wish-listing platform that features authentication, database storage, and webpage parsing.",
+    subtitle: "Design/Development 01 / July 2025",
+    tags: ["React", "Typescript", "tailwind", "python", "figma", "adobe cc"],
+    sections: sections
+  },
+  {
+    id: "1",
+    title: "RE:CEIPT",
+    coverImage: "work-page-assets/receipt.png",
+    description: "A mobile application to help financially-independent young adults develop sustainable spending habits by integrating financial tracking with eco-friendly purchase suggestions.",
+    subtitle: "Design 01 / MAY 2025",
+    tags: ["figma", "notion", "miro"],
+  },
+  {
+    id: "2",
+    title: "Cairn",
+    coverImage: "work-page-assets/cairn.png",
+    description: "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
+    subtitle: "Design/Development 02 / January 2025",
+    tags: ["React", "Typescript", "tailwind", "express", "vite", "figma", "adobe cc", "azure", "linear", "notion"],
+  },
+  {
+    id: "3",
+    title: "Securing Safe Food",
+    coverImage: "work-page-assets/ssf.png",
+    description: "Securing Safe Food (SSF) is a national nonprofit dedicated to fighting food insecurity among individuals with food allergies and improving access to allergen-free foods.",
+    subtitle: "Design 02 / January 2025",
+    tags: ["figma", "trello", "miro"],
+  },
+  {
+    id: "4",
+    title: "The Roster",
+    coverImage: "work-page-assets/roster.png",
+    description: "A comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
+    subtitle: "Design 03 / December 2024",
+    tags: ["figma", "adobe cc", "miro"],
+  },
+  {
+    id: "5",
+    title: "Polaris",
+    coverImage: "work-page-assets/polaris.png",
+    description: "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
+    subtitle: "Development 01 / December 2024",
+    tags: ["Python", "MYSQL", "HTML/CSS", "flask", "streamlit"],
+  },
+  // {
+  //   id: "6",
+  //   title: "Inspira",
+  //   coverImage: "",
+  //   description: "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
+  //   subtitle: "Design 04 / October 2024",
+  //   tags: ["React", "Typescript", "tailwind", "express", "vite", "figma", "adobe cc", "azure", "linear", "notion"],
+  //   sections:[header]
+  // },
+];
 
 export const devProjects: Project[] = [
-  // {
-  //   id: "0",
-  //   cardImage: "starred.png",
-  //   title: "Starred - Browser Wishlist",
-  //   description:
-  //     "A stylized and accessible wishlisting platform that features authentication, database storage, and webpage parsing.",
-  //   techstack: "React, Typescript, Python, Next.js, Firebase",
-  //   mockup: ".jpg",
-  //   purpose: "",
-  //   details: "",
-  //   process: "",
-  //   demo: "",
-  //   link: "",
-  //   carousel: ["hi"],
-  //   bullets: ["hi"],
-  // },
   {
     id: "1",
     cardImage: "cairn2.png",
@@ -109,16 +168,6 @@ export const devProjects: Project[] = [
       "In the future, considering to include user authentication through MongoDB and message interaction features to enhance a interactive community aspect of the platform",
     ],
   },
-  // {
-  //   id: "4",
-  //   cardImage: "stock.png",
-  //   title: "StockView - Stock Simulator",
-  //   description: "Overview: desc 5",
-  //   purpose: "StockView is a stock trading simulation program, coded in Java, that utilizes SOLID principles and MVC architecture to create an environment for simulating stock trading. The program supports over 700 stock tickers, and functionalities such as building multiple portfolios, determining x-day averages, buying, selling, and valuating stocks and portfolios on certain dates, and creating bar-graph representations of stock and portfolio performance among other functionalities. The project features both text-based and Swing GUI interfaces, enabling users to query real-time stock data through integrated API retrieval using AlphaVantageAPI. To enhance performance, we implemented a data caching mechanisms, allowing for more efficient API usage and improved query responsiveness. Built in collaboration with Ayomide Addey. Available on Github upon request.",
-  //   techstack: "Java | JavaSwing | AlphaVantage API",
-  //   mockup: "string",
-  //   demo: "comp.jpg",
-  // },
 ];
 
 export const designProjects: Project[] = [
@@ -135,7 +184,7 @@ export const designProjects: Project[] = [
     details: "All designs on this page were created by Priya Singh.",
     process:
       "The designs featured belong to an Admin and a Volunteer Dashboard, with respective workflows related to order management, pantry applications, food order forms, and various other requirements outlined by the client organization.",
-    carousel: ["/ssfcar1.svg", "/ssfcar3.svg", "/ssfcar4.svg","/ssfcar5.svg" ],
+    carousel: ["/ssfcar1.svg", "/ssfcar3.svg", "/ssfcar4.svg", "/ssfcar5.svg"],
     link: "https://www.figma.com/proto/2Y0g8UL3sjWaIo1dAVgnGa/Admin-Dashboard-WF---Volunteer-Dashboard-WF?node-id=174-516&t=WKkO7tVec9CXwOru-1",
     bullets: [
       "Created a comprehensive design system built on the base components of the Chakra UI Kit to allow for easy integration by frontend developers",
@@ -143,7 +192,7 @@ export const designProjects: Project[] = [
       "Presented designs to clients and prospective members of the organization at varying stages of the design process",
       "Received and implemented client feedback throughout the course of the engagement",
     ],
-    video: "/ssfdemo.mp4"
+    video: "/ssfdemo.mp4",
   },
   {
     id: "9",
@@ -157,7 +206,7 @@ export const designProjects: Project[] = [
       "Inspira’s current prototype supports primary workflows, such as logging in and signing up, creating a new workspace, saving generated resources to a profile, and exploring a page of publicly available workspaces categorized by art form.",
     mockup: "inspiramock.png",
     demo: "comp.jpg",
-    carousel: ["/ins1.svg", "/ins2.svg", "/ins3.svg","/ins4.svg","/ins5.svg"],
+    carousel: ["/ins1.svg", "/ins2.svg", "/ins3.svg", "/ins4.svg", "/ins5.svg"],
     link: "https://www.figma.com/proto/2sqRWNFGCqo7NDtJ0mshn6/Inspira?node-id=0-1&t=Mt0uoOGQE06pcISk-1",
     bullets: [
       "Visualized workflows through both hand-drawn and digital sitemaps",
@@ -165,7 +214,7 @@ export const designProjects: Project[] = [
       "Building on the base application to integrate responsive design for smaller screen sizes, and a dark mode functionality to the UI",
       "Began preliminary research into the Pinterest API and the proper tech stack needed to begin development",
     ],
-    video: "/inspirademo.mp4"
+    video: "/inspirademo.mp4",
   },
   {
     id: "6",
@@ -189,7 +238,7 @@ export const designProjects: Project[] = [
       "Hand-drew lofi’s in the early planning stages, before transitioning to digital lofi’s",
       "Received and integrated internal team feedback on the color, layout, and type hierarchy of the design prototype",
     ],
-    video: "/cairndemo.mp4"
+    video: "/cairndemo.mp4",
   },
 
   {
@@ -201,7 +250,16 @@ export const designProjects: Project[] = [
     techstack: "Figma | Adobe Illustrator | Adobe Photoshop | Adobe Fresco",
     mockup: "rostermock.png",
     demo: "comp.jpg",
-    carousel: ["/r1.svg", "/r2.svg", "/r3.svg","/r4.svg","/r5.svg","/r6.svg","/r7.svg","/r8.svg"],
+    carousel: [
+      "/r1.svg",
+      "/r2.svg",
+      "/r3.svg",
+      "/r4.svg",
+      "/r5.svg",
+      "/r6.svg",
+      "/r7.svg",
+      "/r8.svg",
+    ],
     purpose:
       "For new and excited soccer fans who seek an engaging, inclusive platform to learn about the game and connect with others, The Roster is a comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans. Unlike typical sports apps or forums, The Roster offers a welcoming, judgment-free environment tailored to fans who may not have an existing soccer community and offers everything from real-time discussions, detailed player insights, and personalized team recommendations all in one convenient place.    ",
     process:
@@ -212,6 +270,6 @@ export const designProjects: Project[] = [
       "Researched and progressively iterated through brand-design by hand-drawing and digitally rendering logos, creating a brand-ethos, and eventually building a digital identity",
       "Presented a final presentation and demo to a panel of UX Designers at MathWorks and WebEx in a final critique",
     ],
-    video: "/rosterdemo.mp4"
+    video: "/rosterdemo.mp4",
   },
 ];
