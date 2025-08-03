@@ -14,9 +14,13 @@ export default function OverviewSection({
         <h4 className="font-mono text-h4 text-blackPrimary uppercase">
           The Problem
         </h4>
-        <p className="pt-5 text-p2 text-blackPrimary">
-          {sectionDetails.problem}
-        </p>
+        <div className="pt-5 text-p2 text-blackPrimary">
+          {sectionDetails.problem.split("/").map((section, index) => (
+            <p key={index} className="pb-4">
+              {section}{" "}
+            </p>
+          ))}
+        </div>
       </div>
       <div className="w-1/2 px-5 mr-20">
         <h4 className="font-mono text-h4 text-blackPrimary uppercase">

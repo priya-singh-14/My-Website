@@ -27,10 +27,10 @@ export interface HeaderSection extends ProjectSection {
   tags: Array<string>;
   detailedTags: Array<string>;
   mockups: string;
-  link: string;
+  link?: string;
 }
 
-interface OverviewSection extends ProjectSection {
+export interface OverviewSection extends ProjectSection {
   type: "overview";
   problem: string;
   uxr: string;
@@ -41,17 +41,17 @@ interface DataVisSection extends ProjectSection {
   stats: Array<Number>;
 }
 
-interface DDSection extends ProjectSection {
+export interface DDSection extends ProjectSection {
   type: "dd";
   decisions: Array<String>;
 }
 
-interface UXRSection extends ProjectSection {
+export interface UXRSection extends ProjectSection {
   type: "uxr";
   carousel: Map<String, String>;
 }
 
-interface IterationSection extends ProjectSection {
+export interface IterationSection extends ProjectSection {
   type: "iteration";
   wireframes: string;
   system: string;
@@ -59,12 +59,12 @@ interface IterationSection extends ProjectSection {
   colortype: string;
 }
 
-interface DemoSection extends ProjectSection {
+export interface DemoSection extends ProjectSection {
   type: "demo";
   demo: string;
 }
 
-interface FeedbackSection extends ProjectSection {
+export interface FeedbackSection extends ProjectSection {
   type: "feedback";
   subheading: string;
   feedback: Array<String>;

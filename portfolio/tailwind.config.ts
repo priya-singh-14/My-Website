@@ -61,7 +61,7 @@ export default {
           },
         ],
         p: [
-          "20px",
+          "18px",
           {
             lineHeight: "1.5",
             fontWeight: "400",
