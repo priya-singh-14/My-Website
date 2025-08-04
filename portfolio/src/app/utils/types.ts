@@ -36,9 +36,15 @@ export interface OverviewSection extends ProjectSection {
   uxr: string;
 }
 
-interface DataVisSection extends ProjectSection {
+export interface DataVis {
+  values: Map<string, number>;
+}
+
+export interface DataVisSection extends ProjectSection {
   type: "datavis";
-  stats: Array<number>;
+  subheading: string;
+  stats: Array<DataVis>
+  captions?: Array<string>;
 }
 
 export interface DDSection extends ProjectSection {
@@ -70,7 +76,15 @@ export interface FeedbackSection extends ProjectSection {
   feedback: Array<string>;
 }
 
-export type AllSectionTypes = HeaderSection | OverviewSection | DataVisSection | DDSection | UXRSection | IterationSection | DemoSection | FeedbackSection;
+export type AllSectionTypes =
+  | HeaderSection
+  | OverviewSection
+  | DataVisSection
+  | DDSection
+  | UXRSection
+  | IterationSection
+  | DemoSection
+  | FeedbackSection;
 
 export interface NewProject {
   id: string;
