@@ -38,17 +38,17 @@ export interface OverviewSection extends ProjectSection {
 
 interface DataVisSection extends ProjectSection {
   type: "datavis";
-  stats: Array<Number>;
+  stats: Array<number>;
 }
 
 export interface DDSection extends ProjectSection {
   type: "dd";
-  decisions: Array<String>;
+  decisions: Array<string>;
 }
 
 export interface UXRSection extends ProjectSection {
   type: "uxr";
-  carousel: Map<String, String>;
+  carousel: Array<string>;
 }
 
 export interface IterationSection extends ProjectSection {
@@ -67,7 +67,7 @@ export interface DemoSection extends ProjectSection {
 export interface FeedbackSection extends ProjectSection {
   type: "feedback";
   subheading: string;
-  feedback: Array<String>;
+  feedback: Array<string>;
 }
 
 export type AllSectionTypes = HeaderSection | OverviewSection | DataVisSection | DDSection | UXRSection | IterationSection | DemoSection | FeedbackSection;
