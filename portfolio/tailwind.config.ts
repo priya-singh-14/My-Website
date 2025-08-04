@@ -13,7 +13,7 @@ export default {
         greyPrimary: "#433D3C",
         blackPrimary: "#0B1215",
         greyLight: "#C3C2C1",
-        blueAccent: "576981",
+        blueAccent: "#576981",
         //
         bluePrimary: "#006AF5",
         blueSecondary: "#46648B",
