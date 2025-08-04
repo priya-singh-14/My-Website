@@ -16,7 +16,7 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
   };
 
   return (
-    <div className="py-20 flex w-full h-full border border-blackPrimary border-opacity-25 p-10">
+    <div id="header" className="py-20 flex w-full h-full border border-blackPrimary border-opacity-25 p-10">
       <div className="w-1/2 pr-20">
         <h3 className="font-mono text-h3 px-5 pb-3 text-blackPrimary uppercase">
           {sectionDetails.title}
