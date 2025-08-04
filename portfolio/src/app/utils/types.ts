@@ -44,7 +44,7 @@ export interface DataVisSection extends ProjectSection {
   type: "datavis";
   subheading: string;
   stats: Array<DataVis>
-  captions?: Array<string>;
+  captions: Array<string>;
 }
 
 export interface DDSection extends ProjectSection {
