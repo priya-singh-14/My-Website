@@ -19,6 +19,9 @@ export default function Navbar() {
           <Link className="hover:underline" href="/work">
             WORK
           </Link>
+          <Link className="hover:underline" href="/playground">
+            PLAY
+          </Link>
           <button
             onClick={() => setIsModalOpen(true)}
             className="hover:underline"

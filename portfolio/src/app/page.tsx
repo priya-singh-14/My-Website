@@ -39,7 +39,7 @@ export default function Home() {
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}
-          hoverCaption={"DEVELOPMENT 02: CAIRN / JANUARY 2025"}
+          hoverCaption={"DEVELOPMENT & DESIGN 01: CAIRN / JANUARY 2025"}
           path={""}
         ></LandingCard>
         <LandingCard
@@ -56,7 +56,7 @@ export default function Home() {
           cover={"landing-page-assets/demo.mp4"}
           width={2 / 3}
           height={1 / 3}
-          hoverCaption={"DESIGN 02: INSPIRA / OCTOBER 2024"}
+          hoverCaption={"PLAYGROUND 01"}
           path={""}
         ></LandingVideo>
         <LandingCard
@@ -64,7 +64,7 @@ export default function Home() {
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}
-          hoverCaption={"PLAYGROUND 01: BW / SEPTEMBER 2023"}
+          hoverCaption={"PLAYGROUND 02"}
           path={""}
         ></LandingCard>
       </div>
