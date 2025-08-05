@@ -3,7 +3,6 @@ import Link from "next/link";
 import ContactModal from "./contactModal";
 import { useState } from "react";
 
-
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +16,8 @@ export default function Navbar() {
 
         {/* navbar */}
         <div className="font-condensed  hidden md:flex pr-7 space-x-12">
-          <Link className="hover:underline" href="/development">
-            DEV
-          </Link>
-          <Link className="hover:underline" href="/design">
-            DESIGN
+          <Link className="hover:underline" href="/work">
+            WORK
           </Link>
           <button
             onClick={() => setIsModalOpen(true)}
@@ -31,7 +27,7 @@ export default function Navbar() {
           </button>
         </div>
 
-       {/* hamburger menu */}
+        {/* hamburger menu */}
         <button
           className="md:hidden pr-2 text-greyPrimary z-30 relative"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -66,17 +62,10 @@ export default function Navbar() {
           <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-condensed ">
             <Link
               className="text-black py-2"
-              href="/development"
+              href="/work"
               onClick={() => setIsMenuOpen(false)}
             >
-              DEVELOPMENT
-            </Link>
-            <Link
-              className="text-black py-2"
-              href="/design"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              DESIGN
+              WORK
             </Link>
             <button
               onClick={() => {

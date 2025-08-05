@@ -1,5 +1,5 @@
 import ProjectLayout from "@/app/components/project-layout";
-import { devProjects, designProjects } from "@/app/utils/projects";
+import { allProjects } from "@/app/utils/projects";
 import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
@@ -9,8 +9,7 @@ interface ProjectPageProps {
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = designProjects.find((p) => p.id === decodeURIComponent(params.id)) || 
-                 devProjects.find((p) => p.id === decodeURIComponent(params.id));
+  const project = allProjects.find((p) => p.id === decodeURIComponent(params.id));
 
   if (!project) {
     return notFound();
