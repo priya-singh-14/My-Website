@@ -28,7 +28,7 @@ export const allProjects: NewProject[] = [
     coverImage: "work-page-assets/cairn.png",
     description:
       "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-    subtitle: "Design/Development 02 / January 2025",
+    subtitle: "Design & Development 02 / January 2025",
     tags: [
       "React",
       "Typescript",
@@ -63,13 +63,13 @@ export const allProjects: NewProject[] = [
     tags: ["figma", "adobe cc", "miro"],
     sections: rosterSections
   },
-  {
-    id: "5",
-    title: "Polaris",
-    coverImage: "work-page-assets/polaris.png",
-    description:
-      "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-    subtitle: "Development 01 / December 2024",
-    tags: ["Python", "MYSQL", "HTML/CSS", "flask", "streamlit"],
-  },
+  // {
+  //   id: "5",
+  //   title: "Polaris",
+  //   coverImage: "work-page-assets/polaris.png",
+  //   description:
+  //     "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
+  //   subtitle: "Development 01 / December 2024",
+  //   tags: ["Python", "MYSQL", "HTML/CSS", "flask", "streamlit"],
+  // },
 ];

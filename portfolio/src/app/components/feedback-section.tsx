@@ -17,11 +17,11 @@ export default function FeedbackSection({
   };
 
   return (
-    <div className="w-full h-full p-10 mb-20">
+    <div className="w-full h-full p-10">
       <h4 className="text-h4 font-mono uppercase px-5 mr-20 text-blackPrimary">
         Feedback & Takeaways
       </h4>
-      <div className="flex gap-4 px-4 pt-10">
+      <div className="flex gap-4 px-4 pt-10 pb-20">
         {sectionDetails.feedback.map((feedback, index) => (
           <div
             key={index}

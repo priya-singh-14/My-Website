@@ -53,7 +53,7 @@ export default function Home() {
       </div>
       <div className="flex w-full h-full">
         <LandingVideo
-          cover={"demo.mp4"}
+          cover={"landing-page-assets/demo.mp4"}
           width={2 / 3}
           height={1 / 3}
           hoverCaption={"DESIGN 02: INSPIRA / OCTOBER 2024"}

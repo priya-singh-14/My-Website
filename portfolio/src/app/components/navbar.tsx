@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent px-5">
+      <nav id="header" className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent px-5">
         <Link className="hover:underline" href="/">
           PRIYA SINGH
         </Link>

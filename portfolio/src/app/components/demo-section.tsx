@@ -14,10 +14,8 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
         <video
           className="overflow-hidden object-cover"
           src={video}
-          autoPlay
-          loop
-          muted
           playsInline
+          controls
         />
       </div>
     );

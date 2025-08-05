@@ -330,7 +330,7 @@ export const rosterSections: AllSectionTypes[] = [
     type: "iteration",
     wireframes: "/roster-assets/hifi.png",
     system: "/roster-assets/lofi2.png",
-    microint: "/roster-assets/features.png",
+    microint: "/roster-assets/lofi.png",
     colortype: "/roster-assets/colorstype.png",
   },
   {
