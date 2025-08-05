@@ -14,7 +14,7 @@ export const receiptSections: AllSectionTypes[] = [
       "Designer",
       "Team Project",
     ],
-    mockups: "/mockup2.png",
+    mockups: "/receipt-assets/mockup.png",
     link: "https://www.figma.com/proto/Sq8TPvfGQCSByfO4OIbr6s/Re-ceipt?page-id=30%3A2&node-id=33-303&viewport=359%2C-31%2C0.16&t=4ldiJUVVxb9PhPN2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=33%3A282&show-proto-sidebar=1",
   },
   {

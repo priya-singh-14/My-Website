@@ -30,7 +30,7 @@ export default function IterationSection({
         </div>
       </div>
       <img
-        className="w-full mt-5 mx-5 object-cover"
+        className="w-full mt-5 px-5 object-contain"
         src={sectionDetails.colortype}
       ></img>
     </div>
