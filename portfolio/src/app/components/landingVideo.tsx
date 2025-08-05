@@ -26,7 +26,7 @@ export default function LandingVideo(props: LandingVideoProps) {
         className={`aspect-${
           props.aspect
         } w-full h-full object-cover transition-all ${
-          isHovered && props.hoverCaption ? "cursor-pointer blur-sm brightness-[.65]" : ""
+          isHovered && props.hoverCaption ? "cursor-pointer md:blur-sm md:brightness-[.65]" : ""
         }`}
         src={props.cover}
         autoPlay
@@ -37,7 +37,7 @@ export default function LandingVideo(props: LandingVideoProps) {
       />
       <div
         className={`absolute bottom-0 left-0 p-4 text-white font-mono transition-opacity ${
-          isHovered ? "opacity-100" : "opacity-0 duration-150"
+          isHovered ? "md:opacity-100 opacity-0" : "opacity-0"
         }`}
       >
         <div className="bg-opacity-50 px-3 py-2">{props.hoverCaption}</div>

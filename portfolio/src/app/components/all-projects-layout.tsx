@@ -27,14 +27,14 @@ export default function AllProjectsLayout(props: AllProjectsProps) {
 
   return (
     <div className="w-full pb-10">
-      <h2 className="mx-10 md:mx-10 font-mono text-h2 pt-12 pb-5 text-blackPrimary">
+      <h2 className="mx-5 md:mx-10 md:mx-10 font-mono font-light text-h2 pt-7 pb-5 text-blackPrimary">
         {props.title}
       </h2>
       <h4 className="mx-5 md:mx-10 justify-left font-mono text-b text-blackPrimary">
         {props.description}
       </h4>
-      <hr className="mx-10"></hr>
-      <div className="flex flex-wrap gap-2 mx-10 mt-5">
+      <hr className="mx-5 md:mx-10"></hr>
+      <div className="flex flex-wrap gap-2 mx-5 md:mx-10 mt-5 font-condensed">
         <button
           onClick={() => setViewedProjects("All")}
           className={`text-greyPrimary ${

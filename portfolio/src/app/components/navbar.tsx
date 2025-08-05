@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav id="header" className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent px-5">
+      <nav id="header" className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent md:px-10 px-5">
         <Link className="hover:underline" href="/">
           PRIYA SINGH
         </Link>
@@ -69,6 +69,13 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               WORK
+            </Link>
+            <Link
+              className="text-black py-2"
+              href="/playground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              PLAY
             </Link>
             <button
               onClick={() => {

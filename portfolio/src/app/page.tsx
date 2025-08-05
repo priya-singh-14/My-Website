@@ -4,8 +4,8 @@ import LandingVideo from "./components/landingVideo";
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="pl-5 flex w-full">
-        <h1 className="font-light text-left font-mono w-3/4 my-5 md:text-h1 md:font-light text-black md:text-left">
+      <div className="md:px-10 px-5 flex w-full">
+        <h1 className="font-light text-left font-mono w-3/4 my-5 text-h4 md:text-h1 md:font-light text-black md:text-left">
           SOFTWARE ENGINEER AND PRODUCT DESIGNER CURRENTLY BASED IN BOSTON.
         </h1>
       </div>
