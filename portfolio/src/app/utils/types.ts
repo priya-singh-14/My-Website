@@ -1,20 +1,3 @@
-export interface Project {
-  id: string;
-  title: string;
-  cardImage?: string;
-  mockup: string;
-  description: string;
-  techstack: string;
-  link?: string;
-  carousel: Array<string>;
-  bullets: Array<string>;
-  purpose: string;
-  details?: string;
-  process: string;
-  demo?: string;
-  video?: string;
-}
-
 export interface ProjectSection {
   type: string;
 }
@@ -57,6 +40,12 @@ export interface UXRSection extends ProjectSection {
   carousel: Array<string>;
 }
 
+
+export interface QuoteSection extends ProjectSection {
+  type: "quote";
+  quotes: Array<string>;
+}
+
 export interface IterationSection extends ProjectSection {
   type: "iteration";
   wireframes: string;
@@ -82,6 +71,7 @@ export type AllSectionTypes =
   | DataVisSection
   | DDSection
   | UXRSection
+  | QuoteSection
   | IterationSection
   | DemoSection
   | FeedbackSection;
