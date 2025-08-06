@@ -32,46 +32,43 @@ export default function DataVisSection({
     return null;
   };
 
-  const COLORS = [
-    "#433D3C",
-    "#576981",
-    "#D5D0DD",
-    "#A7BBE6",
-  ];
+  const COLORS = ["#433D3C", "#576981", "#D5D0DD", "#A7BBE6"];
 
   return (
-    <div className="w-full h-full p-10 mb-20">
+    <div className="w-full h-full p-5 md:p-10 md:mb-20">
       <h4 className="text-h4 font-mono px-5 ">USER RESEARCH</h4>
-      <p className="text-p p-5 text-greyPrimary font-sans text-light">
+      <p className="text-p2 md:text-p p-5 text-greyPrimary font-sans text-light">
         {sectionDetails.subheading}
       </p>
-      <div className="md:flex xs:flex-wrap py-10">
+      <div className="flex flex-wrap  py-10 md:flex-nowrap md:w-full">
         {sectionDetails.stats.map((item, index) => (
-          <ResponsiveContainer key={index} width="100%" height={300}>
-            <PieChart>
-              <Pie
-                data={toChartData(item.values)}
-                cx="50%"
-                cy="50%"
-                innerRadius={80}
-                outerRadius={120}
-                paddingAngle={2}
-                dataKey="value"
-                label={({ name, value }) => `${value}%`}
-              >
-                {toChartData(item.values).map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Tooltip content={<CustomTooltip />}></Tooltip>
-            </PieChart>
-            <p className="px-20 pt-10 font-condensed text-left text-p2 text-blackPrimary">
-              {sectionDetails.captions[index]}
-            </p>
-          </ResponsiveContainer>
+          <div key={index} className="w-full mb-20 md:pb-0">
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={toChartData(item.values)}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={80}
+                  outerRadius={120}
+                  paddingAngle={2}
+                  dataKey="value"
+                  label={({ name, value }) => `${value}%`}
+                >
+                  {toChartData(item.values).map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip content={<CustomTooltip />}></Tooltip>
+              </PieChart>
+              <p className="px-20 md:pt-10 mb-10 font-condensed text-left text-sm text-blackPrimary md:text-p2">
+                {sectionDetails.captions[index]}
+              </p>
+            </ResponsiveContainer>
+          </div>
         ))}
       </div>
     </div>
