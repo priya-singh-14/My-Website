@@ -28,7 +28,7 @@ export default function LandingCard(props: LandingCardProps) {
           props.aspect
         } w-full h-full object-cover transition-all ${
           isHovered && props.hoverCaption
-            ? "md:blur-sm md:brightness-[.65] duration-150"
+            ? "md:blur-sm md:brightness-[.65]"
             : ""
         }`}
         alt="Landing Card"
