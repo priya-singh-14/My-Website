@@ -12,23 +12,23 @@ export default function NewProjectCard({ project }: ProjectCardProps) {
       href={`/project-details/${encodeURIComponent("" + project.id)}`}
       passHref
     >
-      <div className="w-full flex flex-col md:flex-row border border-greyLight p-5 md:p-0 md:border-opacity-0">
+      <div className="w-full flex flex-col border border-greyLight p-3 md:flex-row md:p0 md:border-opacity-100">
         <img 
           className="w-full md:w-1/2 object-cover" 
           src={"/" + project.coverImage}
           alt={project.title}
         />
         <div className="w-full h-auto md:w-1/2 md:px-4 md:py-0 py-4">
-          <h3 className="font-mono text-lg md:text-h3 px-2 md:px-5 text-blackPrimary uppercase">
+          <h3 className="font-mono text-lg px-2 text-blackPrimary uppercase md:text-h3 md:px-5 md:pb-2">
             {project.title}
           </h3>
           <p className="font-mono font-light px-2 pb-4 md:px-5 md:pb-0 text-sm md:text-base text-greyPrimary uppercase">
             {project.subtitle}
           </p>
-          <p className="font-sans text-sm md:text-p2 p-2 pb-4 md:p-5 text-blackPrimary">
+          <p className="font-sans text-sm p-2 pb-4 md:text-p2 md:p-5 text-blackPrimary">
             {project.description}
           </p>
-          <div className="mx-2 md:mx-5 mb-2 md:mb-5 flex flex-wrap gap-2">
+          <div className="mx-2 md:mx-5 md:mb-5 flex flex-wrap gap-2">
             {project.tags.map((tag, i) => {
               return (
                 <div key={i} className="border border-greyPrimary rounded-md">

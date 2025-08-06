@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-full">
       <div className="md:px-10 px-5 flex w-full">
-        <h1 className="font-light text-left font-mono w-3/4 my-5 text-h4 md:text-h1 md:font-light text-black md:text-left">
+        <h1 className="font-light text-left font-mono my-5 text-h4 text-blackPrimary md:w-3/4 md:text-h1">
           SOFTWARE ENGINEER AND PRODUCT DESIGNER CURRENTLY BASED IN BOSTON.
         </h1>
       </div>

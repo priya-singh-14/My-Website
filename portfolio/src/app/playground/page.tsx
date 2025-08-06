@@ -1,14 +1,13 @@
 import LandingCard from "../components/landingCard";
 import LandingVideo from "../components/landingVideo";
 
-
 export default function Home() {
   return (
     <div className="w-full pb-10">
-    <h2 className="mx-5 md:mx-10 font-mono font-light text-h2 pt-7 pb-5 text-blackPrimary">
-      PLAY
-    </h2>
-    <hr className="mx-5 md:mx-10 pb-5"></hr>
+      <h2 className="text-h3 mx-5 md:mx-10 font-mono font-light md:text-h2 pt-7 pb-5 text-blackPrimary">
+        PLAY
+      </h2>
+      <hr className="mx-5 md:mx-10 pb-5"></hr>
       <div className="flex px-5 md:px-10 pb-2 gap-x-2">
         <LandingCard
           cover={"landing-page-assets/graphic_cover.png"}
@@ -29,13 +28,13 @@ export default function Home() {
       <div className="flex w-full h-full px-5 md:px-10 pb-2 gap-x-2">
         <LandingVideo
           cover={"playground-assets/2048.mp4"}
-          width={2/ 3}
+          width={2 / 3}
           height={1 / 3}
           aspect={"square"}
           hoverCaption={"COFFEE THEMED 2048"}
           path={""}
         ></LandingVideo>
-         <LandingVideo
+        <LandingVideo
           cover={"playground-assets/cafe.mp4"}
           width={1 / 3}
           height={1 / 3}
@@ -45,7 +44,7 @@ export default function Home() {
         ></LandingVideo>
       </div>
       <div className="flex w-full h-full px-5 md:px-10 pb-2 gap-x-2">
-      <LandingCard
+        <LandingCard
           cover={"playground-assets/type.png"}
           width={1 / 4}
           height={1 / 4}
