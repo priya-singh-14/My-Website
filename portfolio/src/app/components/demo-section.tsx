@@ -22,11 +22,12 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
   };
 
   return (
-    <div id="final-solution" className="w-full h-full p-10">
-      <h4 className="text-h4 font-mono uppercase px-5 mr-20 pb-10 text-blackPrimary">
+    <div id="final-solution" className="w-full h-full p-5 md:p-10">
+      <h4 className="text-h4 font-mono uppercase px-5 md:mr-20 md:pb-10 text-blackPrimary">
         Final Solution
       </h4>
-      <Video></Video>
+      <div className="p-5 md:p-0">
+      <Video></Video></div>
     </div>
   );
 }

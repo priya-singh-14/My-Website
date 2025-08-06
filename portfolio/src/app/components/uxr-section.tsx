@@ -55,12 +55,12 @@ export default function UXRSection({ sectionDetails }: UXRSectionProps) {
   };
 
   return (
-    <div className="w-full h-full p-10">
+    <div className="w-full h-full p-5 md:p-10">
       <h4 className="text-h4 font-mono uppercase px-5 pb-10 mr-20 text-blackPrimary">
         User Research
       </h4>
-      <ImageCarousel></ImageCarousel>
-      <div className="flex pt-10"></div>
+      <div className="px-5 md:px-0">
+      <ImageCarousel></ImageCarousel></div>
     </div>
   );
 }
