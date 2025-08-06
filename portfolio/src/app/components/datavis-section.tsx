@@ -40,10 +40,10 @@ export default function DataVisSection({
       <p className="text-p2 md:text-p p-5 text-greyPrimary font-sans text-light">
         {sectionDetails.subheading}
       </p>
-      <div className="flex flex-wrap  py-10 md:flex-nowrap md:w-full">
+      <div className="flex flex-wrap py-10 md:flex-nowrap md:w-full">
         {sectionDetails.stats.map((item, index) => (
           <div key={index} className="w-full mb-20 md:pb-0">
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={350}>
               <PieChart>
                 <Pie
                   data={toChartData(item.values)}
@@ -64,7 +64,7 @@ export default function DataVisSection({
                 </Pie>
                 <Tooltip content={<CustomTooltip />}></Tooltip>
               </PieChart>
-              <p className="px-20 md:pt-10 mb-10 font-condensed text-left text-sm text-blackPrimary md:text-p2">
+              <p className="px-5 md:px-20 md:pt-10 mb-10 font-condensed text-left text-sm text-blackPrimary md:text-p2">
                 {sectionDetails.captions[index]}
               </p>
             </ResponsiveContainer>
