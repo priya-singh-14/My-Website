@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface LandingCardProps {
   cover: string;
@@ -22,7 +23,7 @@ export default function LandingCard(props: LandingCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img
+      <Image
         src={props.cover}
         className={`aspect-${
           props.aspect
@@ -32,7 +33,7 @@ export default function LandingCard(props: LandingCardProps) {
             : ""
         }`}
         alt="Landing Card"
-      />
+      ></Image>
       <div
         className={`absolute bottom-0 left-0 p-4 text-white font-mono font-light transition-opacity ${
           isHovered ? "md:opacity-100 opacity-0" : "opacity-0"

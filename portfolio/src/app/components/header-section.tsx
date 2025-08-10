@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { HeaderSection } from "../utils/types";
 
 interface HeaderSectionProps {
@@ -18,7 +19,11 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
   return (
     <div className="p-5 py-10 md:py-20 flex flex-wrap w-full h-full border border-blackPrimary border-opacity-25">
       <div className="md:hidden w-full h-auto mb-10">
-        <img src={sectionDetails.mockups} className="object-cover"></img>
+        <Image
+          src={sectionDetails.mockups}
+          className="object-cover"
+          alt="project mockup"
+        ></Image>
       </div>
       <div className="w-full md:w-1/2 md:pr-20">
         <h3 className="font-mono text-h3 px-5 pb-3 text-blackPrimary uppercase">
@@ -62,7 +67,11 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
         </button>
       </div>
       <div className="hidden md:block md:w-1/2">
-        <img src={sectionDetails.mockups} className="object-cover"></img>
+        <Image
+          src={sectionDetails.mockups}
+          className="object-cover"
+          alt="project mockup"
+        ></Image>
       </div>
     </div>
   );

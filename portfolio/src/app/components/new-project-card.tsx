@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { NewProject } from "../utils/types";
 
 interface ProjectCardProps {
@@ -13,7 +14,7 @@ export default function NewProjectCard({ project }: ProjectCardProps) {
       passHref
     >
       <div className="w-full flex flex-col border border-greyLight p-3 md:flex-row md:p0 md:border-opacity-100">
-        <img 
+        <Image
           className="w-full md:w-1/2 object-cover" 
           src={"/" + project.coverImage}
           alt={project.title}

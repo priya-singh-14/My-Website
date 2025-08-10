@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Suspense } from 'react'
 
 interface LandingVideoProps {
   cover: string;
@@ -22,19 +23,23 @@ export default function LandingVideo(props: LandingVideoProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <video
-        className={`aspect-${
-          props.aspect
-        } w-full h-full object-cover transition-all ${
-          isHovered && props.hoverCaption ? "cursor-pointer md:blur-sm md:brightness-[.65]" : ""
-        }`}
-        src={props.cover}
-        autoPlay
-        loop
-        muted
-        playsInline
-        controls={false}
-      />
+      <Suspense fallback={<p>Loading video...</p>}>
+        <video
+          className={`aspect-${
+            props.aspect
+          } w-full h-full object-cover transition-all ${
+            isHovered && props.hoverCaption
+              ? "cursor-pointer md:blur-sm md:brightness-[.65]"
+              : ""
+          }`}
+          src={props.cover}
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+        />
+      </Suspense>
       <div
         className={`absolute bottom-0 left-0 p-4 text-white font-mono transition-opacity ${
           isHovered ? "md:opacity-100 opacity-0" : "opacity-0"
