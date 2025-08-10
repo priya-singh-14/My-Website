@@ -1,4 +1,4 @@
-import { cairnSections, pockItSections, receiptSections, rosterSections, ssfSections } from "./sections";
+import { cairnSections, pockItSections, polarisSections, receiptSections, rosterSections, ssfSections } from "./sections";
 import { NewProject } from "./types";
 
 export const allProjects: NewProject[] = [
@@ -28,7 +28,7 @@ export const allProjects: NewProject[] = [
     coverImage: "work-page-assets/cairn.png",
     description:
       "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-    subtitle: "Design & Development 02 / January 2025",
+    subtitle: "Development 01 / January 2025",
     tags: [
       "React",
       "Typescript",
@@ -63,13 +63,13 @@ export const allProjects: NewProject[] = [
     tags: ["figma", "adobe cc", "miro"],
     sections: rosterSections
   },
-  // {
-  //   id: "5",
-  //   title: "Polaris",
-  //   coverImage: "work-page-assets/polaris.png",
-  //   description:
-  //     "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-  //   subtitle: "Development 01 / December 2024",
-  //   tags: ["Python", "MYSQL", "HTML/CSS", "flask", "streamlit"],
-  // },
+  {
+    id: "5",
+    title: "Polaris",
+    coverImage: "work-page-assets/polaris.png",
+    description:"A peer-guidance platform that connects students to mentors, helping them find career resources, apply to jobs, and grow their career network.",
+    subtitle: "Development 02 / December 2024",
+    tags: ["Python", "Flask", "Streamlit", "MySQL", "Docker", "Git"],
+    sections: polarisSections
+  },
 ];

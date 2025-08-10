@@ -99,7 +99,7 @@ export const cairnSections: AllSectionTypes[] = [
   {
     type: "header",
     title: "Cairn",
-    subtitle: "Design & Development Case Study 01 / January 2025",
+    subtitle: "Development Case Study 01 / January 2025",
     description:
       "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
     tags: [
@@ -255,7 +255,7 @@ export const rosterSections: AllSectionTypes[] = [
     subtitle: "Design Case Study 03 / December 2024",
     description:
       "The Roster is a comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
-    tags: ["figma", "adobe cc", "notion", "miro"],
+    tags: ["figma", "adobe cc", "miro"],
     detailedTags: ["Personal Project", "Designer"],
     mockups: "/roster-assets/mockup.png",
   },
@@ -345,7 +345,68 @@ export const rosterSections: AllSectionTypes[] = [
       "Benchmarking analysis provided crisp, actionable takeaways for stakeholders",
       "Beginner user journey could be unclear, need clearer starting point for complete newcomers to soccer",
       "ADA contrast compliance needs attention",
-      "Role and value of roster feature must be clarified or highlighted more prominently"
-    ],    
+      "Role and value of roster feature must be clarified or highlighted more prominently",
+    ],
+  },
+];
+
+export const polarisSections: AllSectionTypes[] = [
+  {
+    type: "header",
+    title: "Polaris",
+    subtitle: "Development Case Study 02 / December 2024",
+    description:
+      "A peer-guidance platform that connects students to mentors, helping them find career resources, apply to jobs, and grow their career network.",
+    tags: ["Python", "Flask", "Streamlit", "MySQL", "Docker", "Git"],
+    detailedTags: ["Personal Project", "Developer"],
+    mockups: "/polaris-assets/mockup.png",
+  },
+  {
+    type: "overview",
+    problem:
+      "Students navigating the co-op and early career search often struggle to find tailored guidance from people who have successfully been through the process. Current university resources can be generalized, leaving gaps in specific industry knowledge and personalized support. Employers also lack efficient ways to discover and connect with students who fit their hiring needs. Advisors face difficulty managing these relationships at scale while ensuring quality mentorship.",
+    uxr: "Polaris is a multi-user platform where students (mentees), alumni or upperclassmen (mentors), advisors, and employers collaborate to enhance career readiness and opportunities./Mentees get matched with mentors in their field, receive guidance, build public profiles, and apply directly to positions.Mentors track mentee progress, offer targeted feedback, and receive advisor guidance. Advisors manage matches, host networking events, and oversee platform engagement. Employers browse student profiles, receive applications, and connect via events.",
+  },
+  {
+    type: "dd",
+    decisions: [
+      "System Design / A containerized microservices architecture with separate services for API, frontend, and database, orchestrated using Docker Compose.",
+      "API Design/ RESTful API built with Flask to handle CRUD operations for user profiles, applications, event management, and chat. Ensures modular endpoints for each persona’s needs.",
+      "Database Schema/ MySQL database with tables for users, mentorship_matches, events, applications, and chat_logs. Foreign keys ensure relationships between personas and their interactions.",
+    ],
+  },
+  {
+    type: "uxr",
+    carousel: [
+      "/polaris-assets/userstory1.png",
+      "/polaris-assets/userstory2.png",
+      "/polaris-assets/userstory3.png",
+      "/polaris-assets/userstory4.png",
+      "/polaris-assets/erdiagram.png",
+      "/polaris-assets/dbdiagram.png",
+      "/polaris-assets/sitemap.png",
+    ],
+  },
+  {
+    type: "iteration",
+    wireframes: "/polaris-assets/hifi.png",
+    system: "/polaris-assets/lofi.png",
+    microint: "/polaris-assets/features.png",
+    colortype: "/polaris-assets/colorstype.png",
+  },
+  {
+    type: "demo",
+    demo: "/polaris-assets/demo.mp4",
+  },
+  {
+    type: "feedback",
+    subheading: "",
+    feedback: [
+      "Gained experience with full-stack development using Flask + Streamlit",
+      "Learned Docker containerization and environment configuration.",
+      "Overcame team-based development challenges when building software with varying software development skill levels.",
+      "In the future, add authentication for data privacy and security",
+      "Enhance mentor-mentee matching with machine learning for better recommendations.",
+    ],
   },
 ];
