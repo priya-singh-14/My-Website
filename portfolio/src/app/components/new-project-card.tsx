@@ -15,6 +15,8 @@ export default function NewProjectCard({ project }: ProjectCardProps) {
     >
       <div className="w-full flex flex-col border border-greyLight p-3 md:flex-row md:p0 md:border-opacity-100">
         <Image
+        width={500}
+        height={500}
           className="w-full md:w-1/2 object-cover" 
           src={"/" + project.coverImage}
           alt={project.title}

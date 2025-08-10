@@ -24,12 +24,14 @@ export default function LandingCard(props: LandingCardProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Image
-        src={props.cover}
+        src={"/" + props.cover}
+        width={500}
+        height={500}
         className={`aspect-${
           props.aspect
         } w-full h-full object-cover transition-all ${
           isHovered && props.hoverCaption
-            ? "md:blur-sm md:brightness-[.65]"
+            ? "md:blur-xs md:brightness-[.65]"
             : ""
         }`}
         alt="Landing Card"

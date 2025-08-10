@@ -29,7 +29,7 @@ export default function LandingVideo(props: LandingVideoProps) {
             props.aspect
           } w-full h-full object-cover transition-all ${
             isHovered && props.hoverCaption
-              ? "cursor-pointer md:blur-sm md:brightness-[.65]"
+              ? "cursor-pointer md:md:blur-xs md:brightness-[.65]"
               : ""
           }`}
           src={props.cover}
