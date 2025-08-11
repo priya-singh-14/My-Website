@@ -15,7 +15,6 @@ export const receiptSections: AllSectionTypes[] = [
       "Team Project",
     ],
     mockups: "/receipt-assets/mockup.png",
-    link: "https://www.figma.com/proto/Sq8TPvfGQCSByfO4OIbr6s/Re-ceipt?page-id=30%3A2&node-id=33-303&viewport=359%2C-31%2C0.16&t=4ldiJUVVxb9PhPN2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=33%3A282&show-proto-sidebar=1",
   },
   {
     type: "overview",
@@ -81,6 +80,7 @@ export const receiptSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/receipt-assets/demo.mp4",
+    link: "https://www.figma.com/proto/Sq8TPvfGQCSByfO4OIbr6s/Re-ceipt?page-id=30%3A2&node-id=33-303&viewport=359%2C-31%2C0.16&t=4ldiJUVVxb9PhPN2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=33%3A282&show-proto-sidebar=1",
   },
   {
     type: "feedback",
@@ -184,6 +184,7 @@ export const cairnSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/cairn-assets/demo.mp4",
+    link: "https://github.com/selvarajuv/cairn",
   },
   {
     type: "feedback",
@@ -233,6 +234,7 @@ export const ssfSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/ssf-assets/demo.mp4",
+    link: "https://www.figma.com/proto/2Y0g8UL3sjWaIo1dAVgnGa/Admin-Dashboard-WF---Volunteer-Dashboard-WF?page-id=174%3A516&node-id=174-517&viewport=25%2C339%2C0.02&t=k5VtLwKvXVOY3GLi-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=174%3A543",
   },
   {
     type: "feedback",
@@ -336,6 +338,7 @@ export const rosterSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/roster-assets/demo.mp4",
+    link: "https://www.figma.com/proto/O750ndrFJbdkG5839WBfdM/Interaction-Design?page-id=235%3A1801&node-id=235-1802&viewport=273%2C335%2C0.03&t=7j8IcZ8Fww9wrFTT-1&scaling=scale-down&content-scaling=fixed"
   },
   {
     type: "feedback",
@@ -397,6 +400,7 @@ export const polarisSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/polaris-assets/demo.mp4",
+    link: "https://github.com/priya-singh-14/Polaris",
   },
   {
     type: "feedback",

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { HeaderSection } from "../utils/types";
 
@@ -21,6 +20,8 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
       <div className="md:hidden w-full h-auto mb-10">
         <Image
           src={sectionDetails.mockups}
+          width={1000}
+          height={1000}
           className="object-cover"
           alt="project mockup"
         ></Image>
@@ -68,6 +69,8 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
       </div>
       <div className="hidden md:block md:w-1/2">
         <Image
+          width={1000}
+          height={1000}
           src={sectionDetails.mockups}
           className="object-cover"
           alt="project mockup"

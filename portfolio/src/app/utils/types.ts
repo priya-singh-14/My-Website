@@ -10,7 +10,6 @@ export interface HeaderSection extends ProjectSection {
   tags: Array<string>;
   detailedTags: Array<string>;
   mockups: string;
-  link?: string;
 }
 
 export interface OverviewSection extends ProjectSection {
@@ -57,6 +56,7 @@ export interface IterationSection extends ProjectSection {
 export interface DemoSection extends ProjectSection {
   type: "demo";
   demo: string;
+  link?: string;
 }
 
 export interface FeedbackSection extends ProjectSection {
