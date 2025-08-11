@@ -11,11 +11,11 @@ export default function Home() {
       </div>
       <div className="flex w-full h-full">
         <LandingCard
-          cover={"landing-page-assets/pockit_cover.png"}
+          cover={"landing-page-assets/bento_cover.png"}
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}
-          hoverCaption={"DEVELOPMENT 01: POCKIT / JULY 2025"}
+          hoverCaption={"[IN DEVELOPMENT]: BENTO / AUGUST 2025"}
           path={""}
         ></LandingCard>
         <LandingCard
@@ -39,7 +39,7 @@ export default function Home() {
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}
-          hoverCaption={"DEVELOPMENT & DESIGN 01: CAIRN / JANUARY 2025"}
+          hoverCaption={"DEVELOPMENT 01: CAIRN / JANUARY 2025"}
           path={""}
         ></LandingCard>
         <LandingCard
