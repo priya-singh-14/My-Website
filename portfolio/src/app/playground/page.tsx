@@ -10,7 +10,7 @@ export default function Home() {
       <hr className="mx-5 md:mx-10 pb-5"></hr>
       <div className="flex px-5 md:px-10 pb-2 gap-x-2">
         <LandingCard
-          cover={"landing-page-assets/graphic_cover.png"}
+          cover={"landing-page-assets/bwstudy.png"}
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}

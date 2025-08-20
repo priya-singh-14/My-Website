@@ -60,7 +60,7 @@ export default function Home() {
           path={""}
         ></LandingVideo>
         <LandingCard
-          cover={"landing-page-assets/graphic_cover.png"}
+          cover={"landing-page-assets/bwstudy.png"}
           width={1 / 3}
           height={1 / 3}
           aspect={"square"}
