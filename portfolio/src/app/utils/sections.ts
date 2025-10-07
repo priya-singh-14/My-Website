@@ -217,6 +217,15 @@ export const ssfSections: AllSectionTypes[] = [
     uxr: "To facilitate the connection of food manufacturers to pantries around the country, SSF requires comprehensive and intuitive admin and volunteer dashboards for their contributors to easily connect allergen-safe food to victims of food insecurity.",
   },
   {
+    type: "uxr",
+    carousel: [
+      "/ssf-assets/sitemap.png",
+      "/ssf-assets/sitemap-1.png",
+      "/ssf-assets/sitemap-2.png",
+      "/ssf-assets/sitemap-3.png",
+    ],
+  },
+  {
     type: "dd",
     decisions: [
       "Safety-First Workflow Management / Food pantries require specialized separation and tracking systems for allergen-free products, as improper handling can result in life-threatening reactions for recipients. The dashboard must prioritize fail-safe workflows that prevent cross-contamination through clear visual hierarchies, mandatory safety checkpoints, and error-prevention mechanisms built directly into the user interface.",
@@ -226,9 +235,9 @@ export const ssfSections: AllSectionTypes[] = [
   },
   {
     type: "iteration",
-    wireframes: "/ssf-assets/hifi.png",
-    system: "/ssf-assets/lofi.png",
-    microint: "/ssf-assets/system.png",
+    wireframes: "/ssf-assets/cl.png",
+    system: "/ssf-assets/styles.png",
+    microint: "/ssf-assets/features.png",
     colortype: "/ssf-assets/colorstype.png",
   },
   {
