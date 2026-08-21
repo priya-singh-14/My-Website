@@ -3,13 +3,14 @@ import { allProjects } from "@/app/utils/projects";
 import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = allProjects.find((p) => p.id === decodeURIComponent(params.id));
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { id } = await params;
+  const project = allProjects.find((p) => p.id === decodeURIComponent(id));
 
   if (!project) {
     return notFound();

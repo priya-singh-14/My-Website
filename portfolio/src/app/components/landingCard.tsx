@@ -1,50 +1,58 @@
-"use client";
-import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { colSpanClasses } from "../utils/grid";
 
 interface LandingCardProps {
   cover: string;
   width: number;
-  height?: number;
-  aspect?: string;
-  hoverCaption?: string;
-  path: string;
+  title?: string;
+  subtitle?: string;
+  path?: string;
   priority?: boolean;
+  colSpan?: number;
 }
 
 export default function LandingCard(props: LandingCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const widthStyle = { flexGrow: props.width, flexBasis: 0 };
+  const gridClass = props.colSpan ? colSpanClasses[props.colSpan] : "";
 
-  const widthStyle = { width: `${props.width * 100}%` };
+  const content = (
+    <>
+      <div className="relative w-full flex-1 min-h-0">
+        <Image
+          src={"/" + props.cover}
+          fill
+          priority={props.priority}
+          className="object-cover"
+          alt={props.title ?? "Landing Card"}
+        ></Image>
+      </div>
+      {props.title && (
+        <div className="pt-3 shrink-0">
+          <p className="font-semibold text-greyPrimary">{props.title}</p>
+          {props.subtitle && (
+            <p className="text-greyPrimary text-sm opacity-70">
+              {props.subtitle}
+            </p>
+          )}
+        </div>
+      )}
+    </>
+  );
+
+  const rootClassName = `flex flex-col min-w-0 h-full ${gridClass}`;
+
+  if (props.path) {
+    return (
+      <Link href={props.path} style={widthStyle} className={rootClassName}>
+        {content}
+      </Link>
+    );
+  }
 
   return (
-    <div
-      className={`aspect-${props.aspect} relative cursor-pointer`}
-      style={widthStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Image
-        src={"/" + props.cover}
-        width={500}
-        height={500}
-        priority={props.priority}
-        className={`aspect-${
-          props.aspect
-        } w-full h-full object-cover transition-all ${
-          isHovered && props.hoverCaption
-            ? "md:blur-xs md:brightness-[.65]"
-            : ""
-        }`}
-        alt="Landing Card"
-      ></Image>
-      <div
-        className={`absolute bottom-0 left-0 p-4 text-white font-mono font-light transition-opacity ${
-          isHovered ? "md:opacity-100 opacity-0" : "opacity-0"
-        }`}
-      >
-        <div className="bg-opacity-50 px-3 py-2">{props.hoverCaption}</div>
-      </div>
+    <div style={widthStyle} className={rootClassName}>
+      {content}
     </div>
   );
 }

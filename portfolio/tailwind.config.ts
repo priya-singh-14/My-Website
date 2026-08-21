@@ -9,10 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FFFFFC",
-        greyPrimary: "#433D3C",
+        primary: "#FFFFFF",
+        greyPrimary: "#5E5E5B",
         blackPrimary: "#0B1215",
         greyLight: "#C3C2C1",
+        greyAccent: "#939291",
         blueAccent: "#576981",
         //
         bluePrimary: "#006AF5",
@@ -29,7 +30,7 @@ export default {
         mono: ["'IBM Plex Mono'"],
         sans: ["'IBM Plex Sans'"],
         condensed: ["'IBM Plex Sans Condensed'"],
-
+        manrope: ["'Manrope'"],
       },
       fontSize: {
         h1: [
@@ -64,21 +65,21 @@ export default {
           "18px",
           {
             lineHeight: "1.5",
-            fontWeight: "400",
+            fontWeight: "200",
           },
         ],
         p2: [
           "16px",
           {
             lineHeight: "1.5",
-            fontWeight: "400",
+            fontWeight: "300",
           },
         ],
         li: [
-          "20px",
+          "16px",
           {
             lineHeight: "1.6",
-            fontWeight: "400",
+            fontWeight: "300",
           },
         ],
       },

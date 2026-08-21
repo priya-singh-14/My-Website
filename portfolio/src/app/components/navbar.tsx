@@ -1,33 +1,28 @@
 "use client";
 import Link from "next/link";
 import ContactModal from "./contactModal";
+import Modal from "./modal";
+import AboutContent from "./about-content";
+import ArchiveContent from "./archive-content";
 import { useState } from "react";
 
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isArchiveOpen, setIsArchiveOpen] = useState(false);
 
   return (
     <>
-      <nav id="header" className="flex justify-between items-center text-li text-greyPrimary font-condensed py-7 w-full bg-transparent md:px-10 px-5">
-        <Link className="hover:underline" href="/">
-          PRIYA SINGH
+      <nav id="header" className="flex justify-between items-center text-li text-greyPrimary font-manrope py-5 w-full bg-transparent px-5">
+        <Link className="text-greyAccent" href="/">
+          %
         </Link>
-
         {/* navbar */}
-        <div className="font-condensed  hidden md:flex pr-7 space-x-12">
-          <Link className="hover:underline" href="/work">
-            WORK
-          </Link>
-          <Link className="hover:underline" href="/playground">
-            PLAY
-          </Link>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="hover:underline"
-          >
-            CONTACT
-          </button>
+        <div className="font-manrope text-li hidden md:flex space-x-12">
+          <button onClick={() => setIsAboutOpen(true)}>About</button>
+          <button onClick={() => setIsArchiveOpen(true)}>Archive</button>
+          <button onClick={() => setIsModalOpen(true)}>Contact</button>
         </div>
 
         {/* hamburger menu */}
@@ -62,21 +57,25 @@ export default function Navbar() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-condensed ">
-            <Link
+          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-manrope">
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsAboutOpen(true);
+              }}
               className="text-black py-2"
-              href="/work"
-              onClick={() => setIsMenuOpen(false)}
             >
-              WORK
-            </Link>
-            <Link
+              About
+            </button>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsArchiveOpen(true);
+              }}
               className="text-black py-2"
-              href="/playground"
-              onClick={() => setIsMenuOpen(false)}
             >
-              PLAY
-            </Link>
+              Archive
+            </button>
             <button
               onClick={() => {
                 setIsMenuOpen(false);
@@ -84,7 +83,7 @@ export default function Navbar() {
               }}
               className="text-black py-2"
             >
-              CONTACT
+              Contact
             </button>
           </div>
         </div>
@@ -95,6 +94,12 @@ export default function Navbar() {
           onClose={() => setIsModalOpen(false)}
         ></ContactModal>
       </div>
+      <Modal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)}>
+        <AboutContent />
+      </Modal>
+      <Modal isOpen={isArchiveOpen} onClose={() => setIsArchiveOpen(false)}>
+        <ArchiveContent />
+      </Modal>
     </>
   );
 }

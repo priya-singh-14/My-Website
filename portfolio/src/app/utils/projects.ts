@@ -1,17 +1,7 @@
-import { cairnSections, pockItSections, polarisSections, receiptSections, rosterSections, ssfSections } from "./sections";
+import { cairnSections, polarisSections, receiptSections, rosterSections, ssfSections } from "./sections";
 import { NewProject } from "./types";
 
 export const allProjects: NewProject[] = [
-  // {
-  //   id: "0",
-  //   title: "PockIt",
-  //   coverImage: "work-page-assets/pockit.png",
-  //   description:
-  //     "A stylized web-scraping and wish-listing platform that features authentication, database storage, and webpage parsing.",
-  //   subtitle: "Design/Development 01 / July 2025",
-  //   tags: ["React", "Typescript", "tailwind", "python", "figma", "adobe cc"],
-  //   sections: pockItSections,
-  // },
   {
     id: "1",
     title: "RE:CEIPT",
@@ -55,21 +45,20 @@ export const allProjects: NewProject[] = [
   },
   {
     id: "4",
-    title: "The Roster",
+    title: "Klaviyo",
     coverImage: "work-page-assets/roster.png",
     description:
       "A comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
-    subtitle: "Design 03 / December 2024",
+    subtitle: "Ascent Design System",
     tags: ["figma", "adobe cc", "miro"],
-    sections: rosterSections
   },
   {
     id: "5",
-    title: "Polaris",
-    coverImage: "work-page-assets/polaris.png",
-    description:"A peer-guidance platform that connects students to mentors, helping them find career resources, apply to jobs, and grow their career network.",
-    subtitle: "Development 02 / December 2024",
-    tags: ["Python", "Flask", "Streamlit", "MySQL", "Docker", "Git"],
-    sections: polarisSections
-  },
+    title: "Verizon",
+    coverImage: "work-page-assets/roster.png",
+    description:
+      "A comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
+    subtitle: "Ascent Design System",
+    tags: ["figma", "adobe cc", "miro"],
+  }
 ];

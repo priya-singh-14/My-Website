@@ -12,6 +12,7 @@ export default function NewProjectCard({ project }: ProjectCardProps) {
     <Link
       href={`/project-details/${encodeURIComponent("" + project.id)}`}
       passHref
+      className="md:col-span-12"
     >
       <div className="w-full flex flex-col border border-greyLight p-3 md:flex-row md:p0 md:border-opacity-100">
         <Image
