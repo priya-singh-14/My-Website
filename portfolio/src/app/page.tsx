@@ -24,6 +24,7 @@ export default function Home() {
           height={1 / 3}
           hoverCaption={"DESIGN 01: RE:CEIPT / MAY 2025"}
           path={""}
+          priority
         ></LandingCard>
       </div>
       <div className="flex w-full h-full">

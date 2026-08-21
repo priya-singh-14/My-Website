@@ -9,6 +9,7 @@ interface LandingCardProps {
   aspect?: string;
   hoverCaption?: string;
   path: string;
+  priority?: boolean;
 }
 
 export default function LandingCard(props: LandingCardProps) {
@@ -27,6 +28,7 @@ export default function LandingCard(props: LandingCardProps) {
         src={"/" + props.cover}
         width={500}
         height={500}
+        priority={props.priority}
         className={`aspect-${
           props.aspect
         } w-full h-full object-cover transition-all ${
