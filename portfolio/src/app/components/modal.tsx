@@ -18,15 +18,17 @@ export default function Modal(props: ModalProps) {
     >
       <GlassOverlay />
       <div
-        className="relative min-h-full w-full px-6 py-6 md:px-[51px] md:py-[26px] font-manrope"
+        className="relative flex h-full min-h-full w-full flex-col px-5 py-6 md:py-[26px] font-manrope"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          className="absolute top-6 right-6 md:top-[26px] md:right-[51px] text-p2 text-primary hover:text-greyLight"
-          onClick={props.onClose}
-        >
-          Close
-        </button>
+        <div className="flex justify-end">
+          <button
+            className="text-p2 text-primary hover:text-greyLight"
+            onClick={props.onClose}
+          >
+            Close
+          </button>
+        </div>
         {props.children}
       </div>
     </div>

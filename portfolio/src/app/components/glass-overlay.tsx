@@ -1,8 +1,8 @@
 const BLUR_LAYERS = [
-  { blur: 2, from: 0, to: 20 },
-  { blur: 4, from: 20, to: 40 },
-  { blur: 8, from: 40, to: 60 },
-  { blur: 16, from: 60, to: 80 },
+  { blur: 4, from: 0, to: 12 },
+  { blur: 8, from: 12, to: 30 },
+  { blur: 12, from: 30, to: 55 },
+  { blur: 20, from: 55, to: 80 },
   { blur: 32, from: 80, to: 100 },
 ];
 

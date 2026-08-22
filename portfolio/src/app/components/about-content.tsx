@@ -1,9 +1,11 @@
+import Image from "next/image";
+
 export default function AboutContent() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 mt-10 md:mt-2">
-      <div className="md:col-span-1 flex flex-col gap-10">
+    <div className="flex flex-col md:flex-row md:justify-between gap-20 pt-8 md:mt-2 mb-10 pb-10">
+      <div className="flex w-full flex-col gap-10 md:w-[28%] md:shrink-0">
         <p className="text-p2 text-primary/90 font-light">
-          Hi, I&apos;m Priya. I'm actively looking for full time product design and design engineering roles at this time.
+          Hi, I&apos;m Priya. I&apos;m actively looking for full time product design and design engineering roles at this time.
           <br />
           <br />
           Want to chat? You can find me on{" "}
@@ -71,20 +73,37 @@ export default function AboutContent() {
         </div>
       </div>
 
-      <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5 content-start">
-        {["Caption", "Caption", "Caption", "Caption"].map((caption, i) => (
-          <div key={i} className="flex flex-col gap-2">
-            <div className="w-full aspect-[4/3] bg-primary/10" />
-            <div>
-              <p className="text-li font-semibold text-primary/40">
-                {caption}
-              </p>
-              <p className="text-li font-light text-primary/40">
-                maybe another caption or other metadata
-              </p>
-            </div>
+      <div className="flex w-full flex-col gap-5 md:w-[38%] md:shrink-0">
+        <div className="relative w-full aspect-[691/436] overflow-hidden">
+          <Image
+            src="/about-assets/me.jpeg"
+            alt="Priya Singh"
+            fill
+            sizes="(max-width: 768px) 100vw, 66vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="relative aspect-square overflow-hidden">
+            <Image
+              src="/about-assets/tile.png"
+              alt="Decorative tile pattern"
+              fill
+              sizes="(max-width: 768px) 50vw, 23vw"
+              className="object-cover"
+            />
           </div>
-        ))}
+          <div className="relative aspect-square overflow-hidden">
+            <Image
+              src="/about-assets/flw.png"
+              alt="Flowers against a wall"
+              fill
+              sizes="(max-width: 768px) 50vw, 23vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

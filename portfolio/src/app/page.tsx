@@ -1,4 +1,5 @@
 import LandingCard from "./components/landingCard";
+import LandingVideo from "./components/landingVideo";
 import Typewriter from "@/components/fancy/text/typewriter";
 
 export default function Home() {
@@ -52,8 +53,8 @@ export default function Home() {
         ></LandingCard>
       </div>
       <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-8 px-5">
-        <LandingCard
-          cover={"landing-page-assets/cairn_cover.png"}
+        <LandingVideo
+          cover={"/landing-page-assets/c4c.mp4"}
           width={1 / 3}
           colSpan={4}
           title={"Code4Community"}
@@ -61,7 +62,7 @@ export default function Home() {
             "Making equitable software for the benefit of US Based nonprofits."
           }
           path={"/project-details/2"}
-        ></LandingCard>
+        ></LandingVideo>
         <LandingCard
           cover={"landing-page-assets/receipt_mockup.png"}
           width={1 / 3}

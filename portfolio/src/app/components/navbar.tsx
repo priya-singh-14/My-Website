@@ -1,12 +1,16 @@
 "use client";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Modal from "./modal";
-import AboutContent from "./about-content";
-import ArchiveContent from "./archive-content";
 import { useState } from "react";
 
+// Deferred out of the shared navbar bundle (present on every page) since
+// these pull in the archive grid's engine/motion code, which is only ever
+// needed once someone actually opens one of these modals.
+const AboutContent = dynamic(() => import("./about-content"), { ssr: false });
+const ArchiveContent = dynamic(() => import("./archive-content"), { ssr: false });
+
 export default function Navbar() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
