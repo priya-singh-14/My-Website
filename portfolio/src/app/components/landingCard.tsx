@@ -10,6 +10,7 @@ interface LandingCardProps {
   path?: string;
   priority?: boolean;
   colSpan?: number;
+  rawImg?: boolean;
 }
 
 export default function LandingCard(props: LandingCardProps) {
@@ -18,14 +19,26 @@ export default function LandingCard(props: LandingCardProps) {
 
   const content = (
     <>
-      <div className="relative w-full flex-1 min-h-0">
-        <Image
-          src={"/" + props.cover}
-          fill
-          priority={props.priority}
-          className="object-cover"
-          alt={props.title ?? "Landing Card"}
-        ></Image>
+      <div
+        className={`relative w-full flex-1 min-h-0 flex items-center justify-center overflow-hidden ${
+          props.rawImg ? "bg-blackPrimary" : ""
+        }`}
+      >
+        {props.rawImg ? (
+          <img
+            src={"/" + props.cover}
+            alt={props.title ?? "Landing Card"}
+            width={480}
+          />
+        ) : (
+          <Image
+            src={"/" + props.cover}
+            fill
+            priority={props.priority}
+            className="object-cover"
+            alt={props.title ?? "Landing Card"}
+          ></Image>
+        )}
       </div>
       {props.title && (
         <div className="pt-3 shrink-0">

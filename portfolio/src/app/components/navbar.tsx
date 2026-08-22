@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import ContactModal from "./contactModal";
 import Modal from "./modal";
 import AboutContent from "./about-content";
 import ArchiveContent from "./archive-content";
@@ -22,7 +21,6 @@ export default function Navbar() {
         <div className="font-manrope text-li hidden md:flex space-x-12">
           <button onClick={() => setIsAboutOpen(true)}>About</button>
           <button onClick={() => setIsArchiveOpen(true)}>Archive</button>
-          <button onClick={() => setIsModalOpen(true)}>Contact</button>
         </div>
 
         {/* hamburger menu */}
@@ -63,7 +61,7 @@ export default function Navbar() {
                 setIsMenuOpen(false);
                 setIsAboutOpen(true);
               }}
-              className="text-black py-2"
+              className="text-black py-2 text-li "
             >
               About
             </button>
@@ -72,28 +70,13 @@ export default function Navbar() {
                 setIsMenuOpen(false);
                 setIsArchiveOpen(true);
               }}
-              className="text-black py-2"
+              className="text-black py-2  text-li "
             >
               Archive
-            </button>
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsModalOpen(true);
-              }}
-              className="text-black py-2"
-            >
-              Contact
             </button>
           </div>
         </div>
       )}
-      <div className="font-condensed">
-        <ContactModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        ></ContactModal>
-      </div>
       <Modal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)}>
         <AboutContent />
       </Modal>

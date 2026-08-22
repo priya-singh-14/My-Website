@@ -3,7 +3,7 @@ export default function AboutContent() {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 mt-10 md:mt-2">
       <div className="md:col-span-1 flex flex-col gap-10">
         <p className="text-p2 text-primary/90 font-light">
-          Hi, I&apos;m Priya.
+          Hi, I&apos;m Priya. I'm actively looking for full time product design and design engineering roles at this time.
           <br />
           <br />
           Want to chat? You can find me on{" "}

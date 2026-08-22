@@ -1,0 +1,57 @@
+<svg class="ax-svg" xmlns="http://www.w3.org/2000/svg" viewBox="131 -46 1184 588" role="img" aria-label="ascent logo animation" preserveAspectRatio="xMidYMid meet">
+<style>
+ .ax-svg{color:#ffffff}
+
+@keyframes ax-sw-base{0%{transform:scaleY(0)}1.85%{transform:scaleY(0);animation-timing-function:cubic-bezier(.16,1,.3,1)}23.15%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@keyframes ax-sw-notch{0%{transform:scaleY(0)}4.07%{transform:scaleY(0);animation-timing-function:cubic-bezier(.16,1,.3,1)}25.37%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@keyframes ax-sw-peak{0%{transform:scaleY(0)}7.41%{transform:scaleY(0);animation-timing-function:cubic-bezier(.16,1,.3,1)}28.7%{transform:scaleY(1)}100%{transform:scaleY(1)}}
+@keyframes ax-breath{0%{transform:scale(1)}29.63%{transform:scale(1);animation-timing-function:cubic-bezier(.45,0,.55,1)}37.04%{transform:scale(1.016)}44.44%{transform:scale(1)}100%{transform:scale(1)}}
+@keyframes ax-stage{0%{opacity:0;transform:none}7.41%{opacity:1;transform:none}79.63%{opacity:1;transform:none;animation-timing-function:cubic-bezier(.5,0,.9,.35)}89.81%{opacity:0;transform:translateY(-26px) scale(.982)}100%{opacity:0;transform:translateY(-26px) scale(.982)}}
+@keyframes ax-word{0%{transform:none}81.85%{transform:none;animation-timing-function:cubic-bezier(.5,0,.9,.35)}92.04%{transform:translateY(-12px)}100%{transform:translateY(-12px)}}
+@keyframes ax-l0{0%{opacity:0;transform:translateX(-4px)}40.74%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}52.22%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+@keyframes ax-l1{0%{opacity:0;transform:translateX(-4px)}42.69%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}54.17%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+@keyframes ax-l2{0%{opacity:0;transform:translateX(-4px)}44.63%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}56.11%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+@keyframes ax-l3{0%{opacity:0;transform:translateX(-4px)}46.57%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}58.06%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+@keyframes ax-l4{0%{opacity:0;transform:translateX(-4px)}48.52%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}60.0%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+@keyframes ax-l5{0%{opacity:0;transform:translateX(-4px)}50.46%{opacity:0;transform:translateX(-4px);animation-timing-function:cubic-bezier(.22,.61,.36,1)}61.94%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+
+ #ax-stage{transform-box:fill-box;transform-origin:50% 50%;animation:ax-stage 5.4s linear infinite}
+ #ax-mark{transform-box:fill-box;transform-origin:50% 84%;animation:ax-breath 5.4s linear infinite}
+ #ax-word{transform-box:fill-box;transform-origin:50% 50%;animation:ax-word 5.4s linear infinite}
+ .ax-sweep{transform-box:fill-box;transform-origin:50% 100%;will-change:transform}
+ #ax-sw-base{animation:ax-sw-base 5.4s linear infinite}
+ #ax-sw-notch{animation:ax-sw-notch 5.4s linear infinite}
+ #ax-sw-peak{animation:ax-sw-peak 5.4s linear infinite}
+ .ax-l{transform-box:fill-box;transform-origin:50% 50%;will-change:transform,opacity}
+ #ax-l0{animation:ax-l0 5.4s linear infinite}
+ #ax-l1{animation:ax-l1 5.4s linear infinite}
+ #ax-l2{animation:ax-l2 5.4s linear infinite}
+ #ax-l3{animation:ax-l3 5.4s linear infinite}
+ #ax-l4{animation:ax-l4 5.4s linear infinite}
+ #ax-l5{animation:ax-l5 5.4s linear infinite}
+ @media (prefers-reduced-motion:reduce){
+  #ax-stage,#ax-mark,#ax-word,.ax-sweep,.ax-l{animation:none!important;transform:none!important;opacity:1!important}
+  .ax-sweep{transform:scaleY(1)!important}
+ }
+</style>
+<defs>
+  <mask id="ax-m-base"  maskUnits="userSpaceOnUse"><rect id="ax-sw-base"  class="ax-sweep" x="405" y="191" width="166" height="110" fill="#fff"/></mask>
+  <mask id="ax-m-notch" maskUnits="userSpaceOnUse"><rect id="ax-sw-notch" class="ax-sweep" x="405" y="191" width="166" height="110" fill="#fff"/></mask>
+  <mask id="ax-m-peak"  maskUnits="userSpaceOnUse"><rect id="ax-sw-peak"  class="ax-sweep" x="405" y="191" width="166" height="110" fill="#fff"/></mask>
+ </defs>
+ <g id="ax-stage" fill="currentColor">
+  <g id="ax-mark">
+   <g mask="url(#ax-m-base)"><path d="M530.95 246.5L452.789 299H565L530.95 246.5Z"/></g>
+   <g mask="url(#ax-m-notch)"><path d="M462.849 280.471L442.729 246.5L411 299H434.216L462.849 280.471Z"/></g>
+   <g mask="url(#ax-m-peak)"><path d="M488.828 194L456.658 249.588L471.362 274.294L517.02 242.717L488.828 194Z"/></g>
+  </g>
+  <g id="ax-word">
+    <path id="ax-l0" class="ax-l" d="M602.46 227.59 L598.59 231.15 L596.11 234.55 L593.94 239.97 L593.79 241.67 L594.41 242.60 L595.34 243.06 L598.74 243.22 L608.03 244.61 L609.42 243.53 L609.73 241.83 L611.28 239.19 L615.15 235.94 L617.62 234.86 L621.65 233.93 L628.61 233.93 L632.48 234.86 L634.96 236.10 L638.36 239.35 L640.22 242.75 L640.84 246.47 L640.99 251.89 L639.76 252.97 L620.25 252.81 L613.13 253.59 L609.88 254.36 L604.93 256.22 L601.84 257.92 L597.97 260.86 L595.18 264.27 L593.01 267.98 L591.31 274.48 L591.16 280.98 L592.24 286.71 L594.72 291.82 L597.97 295.38 L601.06 297.54 L605.55 299.71 L608.65 300.64 L611.74 300.95 L612.36 301.57 L622.73 301.57 L623.50 300.95 L627.53 300.33 L634.03 297.70 L640.07 293.06 L640.53 293.06 L640.99 293.83 L640.84 298.94 L641.77 300.17 L654.77 300.17 L655.70 298.47 L655.70 246.31 L655.08 241.21 L654.15 238.11 L651.05 232.54 L647.49 228.51 L643.47 225.73 L639.60 223.72 L634.03 222.01 L628.61 221.24 L622.11 221.09 L615.61 221.86 L609.27 223.72 Z M640.99 265.04 L640.99 274.17 L640.07 278.82 L636.97 283.15 L632.17 286.55 L629.85 287.64 L625.67 288.72 L619.94 289.19 L615.92 288.72 L612.21 287.64 L610.35 286.55 L607.10 283.15 L605.86 278.66 L606.17 274.48 L608.03 270.77 L612.21 267.21 L616.08 265.51 L621.49 264.42 L639.91 264.27 Z"/>
+    <path id="ax-l1" class="ax-l" d="M696.09 221.86 L690.99 222.79 L683.71 225.73 L678.91 229.13 L675.82 232.69 L673.96 236.25 L672.88 240.59 L672.88 247.40 L673.96 251.58 L676.59 255.91 L680.62 259.78 L683.40 261.64 L692.07 265.35 L708.48 270.15 L714.67 272.93 L717.30 275.26 L718.23 277.11 L718.23 281.76 L716.37 285.01 L713.12 287.79 L708.17 289.65 L703.68 290.11 L696.87 289.50 L693.93 288.57 L690.52 286.55 L688.66 285.01 L686.81 282.53 L686.19 279.59 L686.34 278.20 L685.26 277.11 L673.19 277.11 L672.10 278.04 L672.26 282.99 L673.03 286.09 L675.82 290.89 L681.54 296.00 L687.27 298.78 L693.46 300.48 L700.43 301.10 L700.89 301.57 L705.07 301.57 L705.53 301.10 L712.96 300.33 L718.23 298.78 L722.41 296.77 L727.36 293.06 L729.99 289.81 L732.00 286.09 L733.08 281.45 L733.08 275.57 L732.16 271.54 L730.30 267.98 L726.12 263.49 L720.39 259.93 L710.33 256.22 L696.87 252.35 L690.21 249.25 L687.89 246.93 L686.81 243.84 L686.96 241.05 L688.35 238.27 L690.99 235.79 L695.32 233.93 L700.27 233.16 L703.83 233.16 L708.94 233.93 L713.27 235.79 L714.82 236.87 L717.14 239.35 L718.38 242.13 L718.38 244.61 L719.62 245.69 L730.92 245.69 L732.16 244.77 L732.16 240.59 L730.45 235.32 L728.29 231.92 L725.04 228.51 L720.55 225.57 L713.74 222.94 L708.32 221.86 Z"/>
+    <path id="ax-l2" class="ax-l" d="M779.05 221.09 L772.86 222.01 L769.46 222.94 L765.43 224.65 L762.34 226.50 L757.54 230.37 L753.67 235.17 L750.88 240.90 L749.03 248.02 L748.10 256.84 L748.25 268.76 L749.03 274.64 L750.88 281.60 L754.91 289.03 L758.78 293.36 L764.81 297.70 L772.09 300.48 L776.11 301.10 L776.42 301.57 L787.10 301.57 L787.87 300.95 L790.82 300.64 L796.70 298.78 L800.41 296.92 L805.36 293.21 L809.08 289.34 L812.02 284.08 L813.88 278.66 L813.72 276.34 L812.95 275.72 L809.08 274.95 L805.36 274.64 L803.51 274.02 L800.10 273.86 L799.33 274.95 L799.17 276.96 L798.24 279.44 L796.23 282.53 L791.12 286.71 L785.71 288.57 L777.35 288.57 L774.72 287.79 L771.00 285.78 L767.75 282.84 L765.59 279.44 L763.88 273.86 L762.96 264.73 L763.11 254.83 L764.04 247.55 L765.59 243.06 L767.44 240.12 L769.92 237.65 L774.56 234.86 L778.59 233.93 L784.01 233.78 L789.11 235.02 L793.76 237.80 L796.39 240.43 L798.09 242.91 L799.17 245.85 L799.33 248.02 L800.57 249.72 L801.65 249.87 L812.33 248.48 L813.72 247.86 L814.34 246.47 L812.79 240.28 L810.01 234.86 L807.22 231.30 L802.89 227.59 L798.09 224.65 L790.82 222.01 L783.85 221.09 Z"/>
+    <path id="ax-l3" class="ax-l" d="M853.19 221.86 L849.32 222.94 L845.30 224.65 L840.03 228.21 L835.70 232.54 L831.68 239.19 L829.82 245.08 L828.89 250.34 L828.58 264.11 L828.89 269.68 L829.82 275.26 L831.83 282.07 L834.46 287.48 L837.40 291.35 L841.43 295.22 L843.90 296.92 L849.32 299.56 L852.57 300.64 L855.20 300.79 L856.13 301.57 L869.29 301.57 L869.59 301.10 L872.85 300.64 L878.42 298.78 L885.23 294.91 L890.64 289.96 L892.81 286.86 L892.81 285.32 L883.37 278.82 L882.29 278.51 L880.74 280.83 L876.56 285.01 L871.92 287.64 L867.12 288.72 L860.62 288.72 L855.36 287.64 L852.72 286.55 L849.94 284.70 L847.46 282.22 L845.61 279.59 L843.59 273.71 L843.44 267.67 L844.06 267.21 L893.43 267.21 L894.67 265.66 L894.51 256.53 L893.58 248.02 L892.50 242.91 L891.88 241.98 L891.88 240.90 L888.01 232.85 L883.99 228.21 L880.74 225.73 L877.18 223.87 L870.99 221.86 L863.71 221.09 L858.92 221.09 Z M843.75 249.25 L845.45 243.37 L846.69 241.21 L848.39 239.04 L851.18 236.72 L854.43 234.86 L860.31 233.78 L864.49 233.93 L868.20 234.86 L870.83 236.10 L873.00 237.65 L876.10 240.90 L877.95 244.15 L878.11 245.38 L878.88 246.78 L879.81 254.67 L879.35 255.14 L843.90 255.14 L843.28 254.21 Z"/>
+    <path id="ax-l4" class="ax-l" d="M964.78 225.88 L959.05 222.94 L955.18 221.86 L950.08 221.24 L945.28 221.24 L943.73 221.70 L940.64 221.86 L937.23 222.94 L931.97 226.04 L928.41 229.60 L927.79 228.67 L927.79 223.25 L926.86 222.48 L914.79 222.32 L913.24 223.10 L913.09 298.47 L913.86 300.17 L926.40 300.33 L927.94 299.09 L927.79 250.34 L928.25 246.31 L930.11 241.67 L933.83 237.49 L936.15 235.79 L938.31 234.86 L942.80 233.93 L947.14 234.09 L950.39 234.86 L952.71 235.94 L956.73 239.35 L958.59 241.98 L959.67 244.61 L960.60 248.94 L960.60 299.25 L962.15 300.33 L973.29 300.33 L975.31 299.56 L975.31 244.61 L974.53 239.97 L972.52 234.55 L969.11 229.75 Z"/>
+    <path id="ax-l5" class="ax-l" d="M1003.01 202.20 L1002.08 203.75 L1002.08 221.70 L1001.00 222.48 L991.87 222.32 L991.25 222.63 L990.47 223.56 L990.47 233.31 L991.87 234.55 L1001.00 234.40 L1002.24 235.32 L1002.08 283.46 L1002.55 287.33 L1003.32 289.96 L1004.56 292.75 L1008.43 296.92 L1012.30 298.78 L1015.39 299.71 L1020.65 300.48 L1027.77 300.64 L1033.19 300.17 L1034.12 299.25 L1034.12 288.88 L1033.81 288.10 L1033.35 287.79 L1026.38 287.79 L1021.58 286.71 L1018.33 284.08 L1016.63 280.52 L1016.17 275.57 L1016.17 235.32 L1016.94 234.40 L1033.50 234.55 L1034.89 234.09 L1034.89 222.79 L1032.73 222.32 L1016.94 222.48 L1016.17 221.39 L1016.32 203.91 L1015.86 202.67 L1014.93 202.20 Z"/>
+  </g>
+ </g>
+</svg>

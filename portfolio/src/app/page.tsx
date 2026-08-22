@@ -1,4 +1,5 @@
 import LandingCard from "./components/landingCard";
+import Typewriter from "@/components/fancy/text/typewriter";
 
 export default function Home() {
   return (
@@ -6,32 +7,47 @@ export default function Home() {
       <div className="px-5 w-full my-5 text-blackPrimary md:w-3/4">
         <p className="text-p2 md:text-p">
           <span className="font-semibold">priya@Mac ~ %</span> Priya Singh is a
-          product designer and engineer with an obsessive commitment to detail.
-          She is invested in end-to-end product design, and will never skip an
-          opportunity to build from canvas to code.
-        </p>
-        <p className="text-p2 md:text-p mt-4">
-          Currently, she&apos;s completing her undergraduate degree
-          @Northeastern and building enterprise design systems @Klaviyo.
-          <span className="inline-block w-[6px] h-3.5 bg-greyAccent ml-1" />
+          design engineer with an obsessive commitment to detail.
+          <br />
+          <Typewriter
+            as="span"
+            speed={25}
+            loop={false}
+            showCursor={false}
+            parts={[
+              {
+                text: "Currently, she's completing her undergraduate degree ",
+              },
+              { text: "@Northeastern", href: "https://www.northeastern.edu/" },
+              {
+                text: " and building enterprise design systems ",
+              },
+              { text: "@Klaviyo", href: "https://www.klaviyo.com/" },
+              { text: "." },
+            ]}
+          />
+          <span className="inline-block w-[6px] h-3.5 bg-greyAccent ml-1 animate-pulse" />
         </p>
       </div>
       <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-8 px-5">
         <LandingCard
-          cover={"landing-page-assets/klaviyo_cover.svg"}
+          cover={"klaviyo-assets/ascent-reveal-loop.svg"}
           width={2 / 3}
           colSpan={8}
           title={"Klaviyo"}
           subtitle={"Ascent Design System"}
           path={"/project-details/1"}
           priority
+          rawImg
         ></LandingCard>
         <LandingCard
           cover={"landing-page-assets/cairn_cover.png"}
           width={1 / 3}
           colSpan={4}
           title={"Verizon"}
-          subtitle={"Mitigating customer churn with autonomous data aggregation."}
+          subtitle={
+            "Mitigating customer churn with autonomous data aggregation."
+          }
           path={"/project-details/2"}
         ></LandingCard>
       </div>
@@ -41,15 +57,19 @@ export default function Home() {
           width={1 / 3}
           colSpan={4}
           title={"Code4Community"}
-          subtitle={"Making equitable software for the benefit of US Based nonprofits."}
+          subtitle={
+            "Making equitable software for the benefit of US Based nonprofits."
+          }
           path={"/project-details/2"}
         ></LandingCard>
         <LandingCard
-          cover={"landing-page-assets/cairn_cover.png"}
+          cover={"landing-page-assets/receipt_mockup.png"}
           width={1 / 3}
           colSpan={4}
           title={"Re:ceipt"}
-          subtitle={"Teaching financial literacy as a sustainable practice among Gen Z"}
+          subtitle={
+            "Teaching financial literacy as a sustainable practice among Gen Z"
+          }
           path={"/project-details/2"}
         ></LandingCard>
         <LandingCard
@@ -57,7 +77,7 @@ export default function Home() {
           width={1 / 3}
           colSpan={4}
           title={"Cairn"}
-          subtitle={""}
+          subtitle={"Trip scheduling for constraint-based travel."}
           path={"/project-details/2"}
         ></LandingCard>
       </div>
