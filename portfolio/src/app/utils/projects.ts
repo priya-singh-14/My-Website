@@ -1,4 +1,4 @@
-import { cairnSections, polarisSections, receiptSections, rosterSections, ssfSections } from "./sections";
+import { cairnSections, receiptSections} from "./sections";
 import { NewProject } from "./types";
 
 export const allProjects: NewProject[] = [
@@ -35,16 +35,6 @@ export const allProjects: NewProject[] = [
   },
   {
     id: "3",
-    title: "Securing Safe Food",
-    coverImage: "work-page-assets/ssf.png",
-    description:
-      "Securing Safe Food (SSF) is a national nonprofit dedicated to fighting food insecurity among individuals with food allergies and improving access to allergen-free foods.",
-    subtitle: "Design 02 / January 2025",
-    tags: ["figma", "trello", "miro"],
-    sections: ssfSections
-  },
-  {
-    id: "4",
     title: "Klaviyo",
     coverImage: "work-page-assets/roster.png",
     description:
@@ -53,7 +43,7 @@ export const allProjects: NewProject[] = [
     tags: ["figma", "adobe cc", "miro"],
   },
   {
-    id: "5",
+    id: "4",
     title: "Verizon",
     coverImage: "work-page-assets/roster.png",
     description:

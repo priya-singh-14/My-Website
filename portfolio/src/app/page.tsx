@@ -5,7 +5,7 @@ import Typewriter from "@/components/fancy/text/typewriter";
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="px-5 w-full my-5 text-blackPrimary md:w-3/4">
+      <div className="px-5 w-full text-blackPrimary md:w-3/4">
         <p className="text-p2 md:text-p">
           <span className="font-semibold">priya@Mac ~ %</span> Priya Singh is a
           design engineer with an obsessive commitment to detail.
@@ -52,7 +52,7 @@ export default function Home() {
           path={"/project-details/2"}
         ></LandingCard>
       </div>
-      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-8 px-5">
+      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-4 pb-10 px-5">
         <LandingVideo
           cover={"/landing-page-assets/c4c.mp4"}
           width={1 / 3}
@@ -71,7 +71,7 @@ export default function Home() {
           subtitle={
             "Teaching financial literacy as a sustainable practice among Gen Z"
           }
-          path={"/project-details/2"}
+          path={"/project-details/1"}
         ></LandingCard>
         <LandingCard
           cover={"landing-page-assets/cairn_cover.png"}

@@ -14,6 +14,7 @@ export default {
         blackPrimary: "#0B1215",
         greyLight: "#C3C2C1",
         greyAccent: "#939291",
+        tag: "#E0E0E0",
         blueAccent: "#576981",
         //
         bluePrimary: "#006AF5",
@@ -31,6 +32,7 @@ export default {
         sans: ["'IBM Plex Sans'"],
         condensed: ["'IBM Plex Sans Condensed'"],
         manrope: ["'Manrope'"],
+        generalSans: ["var(--font-general-sans)"],
       },
       fontSize: {
         h1: [

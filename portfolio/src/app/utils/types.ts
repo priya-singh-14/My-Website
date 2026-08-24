@@ -5,11 +5,36 @@ export interface ProjectSection {
 export interface HeaderSection extends ProjectSection {
   type: "header";
   title: string;
-  subtitle: string;
   description: string;
-  tags: Array<string>;
-  detailedTags: Array<string>;
+  tags?: Array<string>;
+  detailedTags?: Array<string>;
   mockups: string;
+}
+
+export interface MetaSection extends ProjectSection {
+  type: "meta";
+  role?: string;
+  duration?: string;
+  skills?: string;
+  team?: string;
+}
+
+export interface ProcessDecision {
+  title: string;
+  body: string;
+}
+
+export interface ProcessSection extends ProjectSection {
+  type: "process";
+  heading?: string;
+  items: Array<ProcessDecision>;
+}
+
+export interface OutcomesSection extends ProjectSection {
+  type: "outcomes";
+  summary: string;
+  takeaways: Array<string>;
+  retrospective: Array<string>;
 }
 
 export interface OverviewSection extends ProjectSection {
@@ -67,21 +92,24 @@ export interface FeedbackSection extends ProjectSection {
 
 export type AllSectionTypes =
   | HeaderSection
+  | MetaSection
   | OverviewSection
   | DataVisSection
   | DDSection
+  | ProcessSection
   | UXRSection
   | QuoteSection
   | IterationSection
   | DemoSection
-  | FeedbackSection;
+  | FeedbackSection
+  | OutcomesSection;
 
 export interface NewProject {
   id: string;
   title: string;
   coverImage: string;
   description: string;
-  subtitle: string;
+  subtitle?: string;
   tags: Array<string>;
   sections?: Array<AllSectionTypes>;
 }
