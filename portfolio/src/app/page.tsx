@@ -37,12 +37,24 @@ export default function Home() {
           colSpan={8}
           title={"Klaviyo"}
           subtitle={"Ascent Design System"}
-          path={"/project-details/1"}
+          path={"/project-details/3"}
           priority
           rawImg
         ></LandingCard>
+        <LandingVideo
+          cover={"/landing-page-assets/c4c.mp4"}
+          width={1 / 3}
+          colSpan={4}
+          title={"Code4Community"}
+          subtitle={
+            "Making equitable software for the benefit of US based nonprofits."
+          }
+          path={"/project-details/5"}
+        ></LandingVideo>
+      </div>
+      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-4 pb-10 px-5">
         <LandingCard
-          cover={"landing-page-assets/cairn_cover.png"}
+          cover={"landing-page-assets/vzb.png"}
           width={1 / 3}
           colSpan={4}
           title={"Verizon"}
@@ -51,18 +63,6 @@ export default function Home() {
           }
           path={"/project-details/2"}
         ></LandingCard>
-      </div>
-      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-4 pb-10 px-5">
-        <LandingVideo
-          cover={"/landing-page-assets/c4c.mp4"}
-          width={1 / 3}
-          colSpan={4}
-          title={"Code4Community"}
-          subtitle={
-            "Making equitable software for the benefit of US Based nonprofits."
-          }
-          path={"/project-details/2"}
-        ></LandingVideo>
         <LandingCard
           cover={"landing-page-assets/receipt_mockup.png"}
           width={1 / 3}

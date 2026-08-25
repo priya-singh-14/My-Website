@@ -12,6 +12,7 @@ import DataVisSection from "./datavis-section";
 import QuoteSection from "./quote-section";
 import ProcessSection from "./process-section";
 import OutcomesSection from "./outcomes-section";
+import NoteSection from "./note-section";
 import TableOfContents from "./table-of-contents";
 
 const sectionLabels: Partial<Record<AllSectionTypes["type"], string>> = {
@@ -70,6 +71,8 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
         return <DemoSection sectionDetails={section} />
       case "feedback":
           return <FeedbackSection sectionDetails={section} />
+      case "note":
+        return <NoteSection sectionDetails={section} />
       default:
         return null;
     }

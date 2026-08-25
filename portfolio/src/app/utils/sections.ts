@@ -1,28 +1,5 @@
 import { AllSectionTypes } from "./types";
 
-/*
-  OPTIMIZED PASS — what changed and why (mapped to the leaning-out checklist):
-  - Cut restated "what the app is" copy (say-it-once): header.description already
-    does that job, so overview.uxr now carries the ANGLE, not a second definition.
-  - Merged doubled problem statements into one line each (say-it-once + skim).
-  - Rounded and tightened all stat captions (so-what).
-  - Cairn: reframed the third-party survey as explicit secondary research and cut
-    the demographic granularity (age/gender split) — it drove no decision.
-  - Cairn: surfaced "ephemeral / no-DB" as an ENGINEERING decision with a tradeoff,
-    since this is a Development case and the build thinking was buried in the retro.
-  - Foregrounded outcomes; trimmed boilerplate ("Applied Agile methodology").
-
-  YOU MUST SUPPLY (do not let me guess these — they're the protected signal):
-  [A] Re:ceipt individual role — it's written entirely in "we". State what YOU
-      owned vs. your partner. This is the single highest-value fix.
-  [B] One REJECTED direction per case — "we explored X, learned Y, dropped it."
-      Neither case shows a killed path; it's the clearest proof of judgment.
-  [C] Uncaptioned carousels (user stories / sitemap / diagram): keep only the
-      1–2 that drove a decision and caption each with the decision it produced.
-  [D] Cairn repo owner (github.com/selvarajuv) vs. site name — make them match,
-      or a reviewer clicking through sees a different name (papercut).
-*/
-
 export const receiptSections: AllSectionTypes[] = [
   {
     type: "header",
@@ -170,7 +147,6 @@ export const cairnSections: AllSectionTypes[] = [
     heading: "Key Design & Engineering Decisions",
     items: [
       {
-        // Surfaced as a real architecture decision with a tradeoff.
         title: "Stateless by design",
         body: "Cairn stores no user data. It takes your commitments, returns an itinerary, then forgets everything. A deliberate tradeoff of saved trips for privacy and speed (one the retro revisits).",
       },
@@ -182,19 +158,14 @@ export const cairnSections: AllSectionTypes[] = [
         title: "Tailored recommendations",
         body: "Affordability was the top pain point, so onboarding captures budget, interests, and habits before Cairn recommends anything.",
       },
-      // [B] For a Development case, add one more engineering decision framed as a
-      // tradeoff (stack choice + why, or a hard problem you hit and how you solved it).
     ],
   },
   {
     type: "uxr",
-    // [C] If "diagram" is a system/architecture diagram, promote and caption it —
-    // that's gold for a Development case. Cut user stories that don't drive a decision.
     carousel: ["/cairn-assets/diagram.png", "/cairn-assets/userstory1.png"],
   },
   {
     type: "iteration",
-    // [B] Same as Re:ceipt — one line of rationale + one rejected direction.
     wireframes: "/cairn-assets/hifi.png",
     system: "/cairn-assets/lofi.png",
     microint: "/cairn-assets/features.png",
@@ -206,8 +177,6 @@ export const cairnSections: AllSectionTypes[] = [
   },
   {
     type: "outcomes",
-    // Strong for a dev case. If there was a hard engineering problem you solved,
-    // one clause naming it would make this land harder.
     summary:
       "Shipped a full-stack trip-scheduling platform end-to-end — from user research to a React/Express app deployed on Azure.",
     takeaways: [
@@ -217,6 +186,142 @@ export const cairnSections: AllSectionTypes[] = [
     retrospective: [
       "With no captured user base to test against, I leaned on secondary research — real validation is the next step.",
       "User profiles and a database would let travelers save trips — the tradeoff the stateless design consciously deferred.",
+    ],
+  },
+];
+
+export const ascentSections: AllSectionTypes[] = [
+  {
+    type: "header",
+    title: "Klaviyo",
+    description:
+      "A six-month product design co-op on Core Infra, standardizing components, reframing how the platform organizes content, and building the AI tooling the team ships with.",
+    mockups: "/klaviyo-assets/cover.svg",
+  },
+  {
+    type: "meta",
+    role: "Product Design Co-op",
+    duration: "2026",
+    skills: "Design Systems, Design Engineering, AI",
+    team: "Core Infrastructure",
+  },
+  {
+    type: "overview",
+    problem:
+      "Ascent is Klaviyo's enterprise design system. Across six months, three problems overlapped: fragmented components, a non-intuitive organizational model, and AI tools pulling designers off-system.",
+    uxr: "I worked as a design engineer, owning work from spec through code review to merged production.",
+  },
+  {
+    type: "process",
+    heading: "Key Contributions",
+    items: [
+      {
+        title: "Shipped a net-new Carousel all the way to prod",
+        body: "Reducing duplicity in code and addressing accessibility gaps in custom implementations.",
+      },
+      {
+        title:
+          "Redefined platform-wide organizational hierarchy design patterns",
+        body: "Enterprise customers needed a more robust solution to manage account assets.",
+      },
+      {
+        title: "Owned to production",
+        body: "10+ Figma specs to merged beta-library component at 100% test coverage.",
+      },
+    ],
+  },
+  {
+    type: "outcomes",
+    summary:
+      "Total contributions to the system touched more than 56% of all Klaviyo app surfaces.",
+    takeaways: [
+      "My strongest work lived in the seam between design and engineering — and I want to keep working there.",
+      "The durable value in fast-moving AI tooling is building guardrails for where the output fails, not chasing the tools.",
+    ],
+    retrospective: [
+      "Designer or developer — I'm still calibrating where I add the most value on that spectrum.",
+      "Be more vocal: doing work that shifts a mental model isn't enough if I'm quiet about it in the room.",
+    ],
+  },
+];
+
+export const c4cSections: AllSectionTypes[] = [
+  {
+    type: "header",
+    title: "Code4Community",
+    description:
+      "Code4Community is a student-run studio at Northeastern that builds free software for nonprofits. I worked at two altitudes at once: design lead on client projects, and Director of Design across the whole studio.",
+    mockups: "/landing-page-assets/receipt_mockup.png",
+  },
+  {
+    type: "meta",
+    role: "Director of Design",
+    duration: "2025 - Present",
+    skills: "Design Leadership, Product Design",
+    team: "15 Designers / 6 concurrent projects",
+  },
+  {
+    type: "note",
+    variant: "disclaimer",
+    body: "Client work for nonprofit partners. Some visuals are representative or redacted per partner needs.",
+  },
+  {
+    type: "overview",
+    problem:
+      "Running a studio of student designers across multiple independent nonprofit projects requires both a quality bar and mentorship, while still leading design on my own projects.",
+    uxr: "I needed to build the system and the people that could produced quality design work across every project.",
+  },
+  {
+    type: "process",
+    heading: "Leading the pillar",
+    items: [
+      {
+        title: "Team & structure",
+        body: "[How you organized designers across projects — per-project leads, pods, how you allocated people and matched them to work.]",
+      },
+      {
+        title: "Mentorship & critique",
+        body: "[Your concrete cadence — crits, 1:1s, design reviews — and how you coached designers from where they started to shipping. Name the mechanism, not 'I mentored.']",
+      },
+      {
+        title: "Holding one bar across many projects",
+        body: "[How you kept quality consistent across independent teams — shared standards, a component library, review gates, onboarding. This is systems thinking applied to a team.]",
+      },
+      {
+        title: "The hard part",
+        body: "[One genuinely hard leadership moment — a struggling project, a designer who needed real coaching, a client or scope conflict — and what you did. Be specific; this is your senior 'scars' signal.]",
+      },
+    ],
+  },
+  // {
+  //   type: "process",
+  //   heading: "Across the studio",
+  //   items: [
+  //     {
+  //       title: "[Client B]",
+  //       body: "[What C4C built · your role (led / designed) · the outcome — one line.]",
+  //     },
+  //     {
+  //       title: "[Client C]",
+  //       body: "[What C4C built · your role · the outcome — one line.]",
+  //     },
+  //     {
+  //       title: "[Client D]",
+  //       body: "[What C4C built · your role · the outcome — one line.]",
+  //     },
+  //   ],
+  // },
+  {
+    type: "outcomes",
+    summary:
+      "[Studio: N designers mentored, N projects shipped, N nonprofits served, plus any team growth / retention / onboarding-time result. Flagship: its headline outcome.]",
+    takeaways: [
+      "[What leading taught you — a real lesson about design leadership, stated plainly.]",
+      "[What staying hands-on as a designer taught you.]",
+    ],
+    retrospective: [
+      "[An honest growth edge as a leader.]",
+      "[An honest growth edge as a designer.]",
     ],
   },
 ];

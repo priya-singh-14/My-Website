@@ -90,6 +90,12 @@ export interface FeedbackSection extends ProjectSection {
   feedback: Array<string>;
 }
 
+export interface NoteSection extends ProjectSection {
+  type: "note";
+  body: string;
+  variant?: "disclaimer" | "caption";
+}
+
 export type AllSectionTypes =
   | HeaderSection
   | MetaSection
@@ -102,7 +108,8 @@ export type AllSectionTypes =
   | IterationSection
   | DemoSection
   | FeedbackSection
-  | OutcomesSection;
+  | OutcomesSection
+  | NoteSection;
 
 export interface NewProject {
   id: string;
