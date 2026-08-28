@@ -32,7 +32,7 @@ export default function DataVisSection({
     return null;
   };
 
-  const COLORS = ["#433D3C", "#576981", "#D5D0DD", "#A7BBE6"];
+  const COLORS = ["#4D4D4D", "#8A8A8A", "#BEBEBE", "#E4E4E4"];
 
   return (
     <div className="w-full px-5 md:px-[8.33%] py-10">

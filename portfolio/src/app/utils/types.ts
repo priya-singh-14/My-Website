@@ -28,6 +28,7 @@ export interface ProcessSection extends ProjectSection {
   type: "process";
   heading?: string;
   items: Array<ProcessDecision>;
+  mockup?: string;
 }
 
 export interface OutcomesSection extends ProjectSection {
@@ -72,10 +73,10 @@ export interface QuoteSection extends ProjectSection {
 
 export interface IterationSection extends ProjectSection {
   type: "iteration";
-  wireframes: string;
-  system: string;
-  microint: string;
-  colortype: string;
+  wireframes?: string;
+  system?: string;
+  microint?: string;
+  colortype?: string;
 }
 
 export interface DemoSection extends ProjectSection {

@@ -11,12 +11,14 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
     const video = sectionDetails.demo;
 
     return (
-      <div className="mt-4 w-full md:mt-0 md:w-3/4 m-auto">
+      <div className="w-full m-auto border border-[#E3E3E3] rounded-lg">
         <video
-          className="overflow-hidden object-cover rounded-lg"
+          className="overflow-hidden object-cover rounded-lg w-full"
           src={video}
+          autoPlay
+          muted
+          loop
           playsInline
-          controls
         />
       </div>
     );
@@ -45,9 +47,6 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
 
   return (
     <div id="final-solution" className="w-full px-5 md:px-[8.33%] py-10">
-      <h4 className="font-manrope font-semibold text-[14px] text-[#444] mb-3">
-        Final Solution
-      </h4>
       <LinkItem></LinkItem>
       <div className="mt-8">
         <Video></Video>

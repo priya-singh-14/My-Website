@@ -54,17 +54,17 @@ export default function Home() {
       </div>
       <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-4 pb-10 px-5">
         <LandingCard
-          cover={"landing-page-assets/vzb.png"}
+          cover={"landing-page-assets/vz-cover.png"}
           width={1 / 3}
           colSpan={4}
           title={"Verizon"}
           subtitle={
             "Mitigating customer churn with autonomous data aggregation."
           }
-          path={"/project-details/2"}
+          path={"/project-details/4"}
         ></LandingCard>
         <LandingCard
-          cover={"landing-page-assets/receipt_mockup.png"}
+          cover={"landing-page-assets/receipt_cover2.png"}
           width={1 / 3}
           colSpan={4}
           title={"Re:ceipt"}

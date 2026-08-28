@@ -9,7 +9,7 @@ export default function OverviewSection({
   sectionDetails,
 }: OverviewSectionProps) {
   return (
-    <div className="w-full px-5 md:px-[8.33%] py-10 flex flex-wrap md:flex-nowrap gap-10">
+    <div className="w-full px-5 md:px-[8.33%] pt-10 flex flex-wrap md:flex-nowrap gap-10">
       <div className="w-full md:w-1/2">
         <h4 className="font-manrope font-semibold text-[14px] text-[#444] mb-4">
           The Problem

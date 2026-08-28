@@ -1,4 +1,4 @@
-import { ascentSections, c4cSections, cairnSections, receiptSections} from "./sections";
+import { ascentSections, c4cSections, cairnSections, receiptSections, vzSections} from "./sections";
 import { NewProject } from "./types";
 
 export const allProjects: NewProject[] = [
@@ -51,6 +51,7 @@ export const allProjects: NewProject[] = [
       "A comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
     subtitle: "Ascent Design System",
     tags: ["figma", "adobe cc", "miro"],
+    sections: vzSections
   },
   {
     id: "5",

@@ -21,7 +21,6 @@ const sectionLabels: Partial<Record<AllSectionTypes["type"], string>> = {
   process: "Process",
   uxr: "Explorations",
   iteration: "Iteration",
-  demo: "Demo",
   outcomes: "Outcomes",
   dd: "Decisions",
   quote: "Quote",
@@ -37,13 +36,20 @@ interface SectionRendererProps {
 }
 
 export default function ProjectLayout({ project }: ProjectLayoutProps) {
-  const tocItems = (project.sections ?? [])
-    .filter((section) => sectionLabels[section.type])
-    .map((section) => ({
-      id: `section-${section.type}`,
+  const sections = project.sections ?? [];
+  const sectionIds = sections.map((section, index) => `section-${section.type}-${index}`);
+
+  const tocItems: Array<{ id: string; label: string; scrollTarget?: string }> = [];
+  const seenTypes = new Set<string>();
+  sections.forEach((section, index) => {
+    if (!sectionLabels[section.type] || seenTypes.has(section.type)) return;
+    seenTypes.add(section.type);
+    tocItems.push({
+      id: sectionIds[index],
       label: sectionLabels[section.type]!,
       scrollTarget: section.type === "overview" ? "header" : undefined,
-    }));
+    });
+  });
 
   function SectionRenderer({ section }: SectionRendererProps) {
     switch (section.type) {
@@ -82,8 +88,8 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
     <div>
       <TableOfContents items={tocItems} />
       <div className="max-w-[1100px] mx-auto">
-        {project.sections?.map((section, index) => (
-          <div key={index} id={sectionLabels[section.type] ? `section-${section.type}` : undefined}>
+        {sections.map((section, index) => (
+          <div key={index} id={sectionLabels[section.type] ? sectionIds[index] : undefined}>
             <SectionRenderer section={section} />
           </div>
         ))}
