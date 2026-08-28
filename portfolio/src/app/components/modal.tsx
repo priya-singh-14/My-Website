@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import GlassOverlay from "./glass-overlay";
 
@@ -7,6 +8,43 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children?: React.ReactNode;
+}
+
+// Ref-counted so the lock survives one modal opening while another is still
+// unmounting -- the closing modal's cleanup must not release the body while
+// the newly opened one still needs it held.
+let lockCount = 0;
+let restoreBody: (() => void) | null = null;
+
+function lockBodyScroll() {
+  lockCount += 1;
+  if (lockCount > 1) return;
+
+  const { body } = document;
+  const previousOverflow = body.style.overflow;
+  const previousPaddingRight = body.style.paddingRight;
+  // Replace the scrollbar's width with padding so hiding it doesn't shift
+  // the page underneath. No-op on overlay-scrollbar platforms, where the
+  // scrollbar takes up no layout width to begin with.
+  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+  body.style.overflow = "hidden";
+  if (scrollbarWidth > 0) {
+    const current = parseFloat(getComputedStyle(body).paddingRight) || 0;
+    body.style.paddingRight = `${current + scrollbarWidth}px`;
+  }
+
+  restoreBody = () => {
+    body.style.overflow = previousOverflow;
+    body.style.paddingRight = previousPaddingRight;
+  };
+}
+
+function unlockBodyScroll() {
+  lockCount = Math.max(0, lockCount - 1);
+  if (lockCount > 0) return;
+  restoreBody?.();
+  restoreBody = null;
 }
 
 // Asymmetric, staggered fades so the outgoing and incoming layers are never
@@ -27,6 +65,12 @@ const contentFade = {
 };
 
 export default function Modal(props: ModalProps) {
+  useEffect(() => {
+    if (!props.isOpen) return;
+    lockBodyScroll();
+    return unlockBodyScroll;
+  }, [props.isOpen]);
+
   return (
     <AnimatePresence>
       {props.isOpen && (
@@ -42,13 +86,16 @@ export default function Modal(props: ModalProps) {
             <GlassOverlay />
           </motion.div>
           <motion.div
-            className="relative flex h-full min-h-full w-full flex-col px-5 py-6 md:py-[26px] font-manrope"
+            className="relative flex h-full min-h-full w-full flex-col px-5 pt-5 pb-6 md:pb-[26px] font-manrope"
             onClick={(e) => e.stopPropagation()}
             {...contentFade}
           >
-            <div className="flex justify-end">
+            {/* pt-5 + text-li mirror the navbar's own py-5/text-li, so Close
+                lands on the same baseline as the About/Archive buttons it
+                visually replaces. */}
+            <div className="flex shrink-0 justify-end">
               <button
-                className="text-p2 text-primary hover:text-greyLight"
+                className="text-li text-primary hover:text-greyLight"
                 onClick={props.onClose}
               >
                 Close

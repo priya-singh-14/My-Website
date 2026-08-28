@@ -3,6 +3,7 @@ import { useState } from "react";
 import { DemoSection } from "../utils/types";
 import Link from "next/link";
 import MediaSkeleton from "./media-skeleton";
+import { noteTextClass } from "./note-section";
 
 interface DemoSectionProps {
   sectionDetails: DemoSection;
@@ -19,6 +20,7 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
         <MediaSkeleton loaded={loaded} />
         <video
           className="absolute inset-0 h-full w-full object-cover"
+          aria-label={sectionDetails.caption ?? "Product demo"}
           src={video}
           autoPlay
           muted
@@ -56,6 +58,12 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
       <LinkItem></LinkItem>
       <div className="mt-8">
         <Video></Video>
+        {/* mt-3 rather than a note section's own py-3 plus the gap between
+            sections -- a caption belongs to the demo above it, so it sits
+            tight against it. */}
+        {sectionDetails.caption && (
+          <p className={`mt-3 ${noteTextClass}`}>{sectionDetails.caption}</p>
+        )}
       </div>
     </div>
   );

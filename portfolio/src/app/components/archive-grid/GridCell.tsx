@@ -36,6 +36,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
     item.kind === "video" ? (
       <video
         className="absolute inset-0 h-full w-full object-cover"
+        aria-label={alt}
         muted
         loop
         playsInline

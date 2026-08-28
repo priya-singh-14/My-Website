@@ -26,6 +26,7 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
           {isVideo ? (
             <video
               className="overflow-hidden object-cover object-top rounded-lg w-full h-full border border-[#E3E3E3]"
+              aria-label={`${heading} mockup`}
               src={mockup}
               autoPlay
               muted
@@ -38,7 +39,7 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
               src={mockup}
               fill
               className="object-contain object-top"
-              alt=""
+              alt={`${heading} mockup`}
               onLoad={() => setLoaded(true)}
             />
           )}

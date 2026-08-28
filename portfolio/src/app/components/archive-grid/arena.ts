@@ -1,17 +1,8 @@
 import type { GridItem } from "./data";
 
-// Public Are.na channel used as the Archive's pseudo-CMS. Change the slug
-// here if the channel ever moves.
 const arenaChannelSlug = "archive-7lrtekke6pq";
 const arenaContentsUrl = `https://api.are.na/v3/channels/${arenaChannelSlug}/contents?per=100`;
 
-
-// Minimal shape of the fields we actually read from an Are.na v3 block --
-// not the full API response. Image/Link blocks are confirmed against a real
-// response from this channel; Attachment (uploaded video) and Embed field
-// names are best-effort from Are.na's documented schema and haven't been
-// exercised against a live video/embed block yet -- if a video block renders
-// wrong, that's the first place to check.
 interface ArenaImageVariant {
   src: string;
 }

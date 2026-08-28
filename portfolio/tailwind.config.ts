@@ -31,7 +31,7 @@ export default {
         mono: ["'IBM Plex Mono'"],
         sans: ["'IBM Plex Sans'"],
         condensed: ["'IBM Plex Sans Condensed'"],
-        manrope: ["'Manrope'"],
+        manrope: ["var(--font-manrope)"],
         generalSans: ["var(--font-general-sans)"],
       },
       fontSize: {

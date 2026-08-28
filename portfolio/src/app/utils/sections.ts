@@ -66,7 +66,7 @@ export const receiptSections: AllSectionTypes[] = [
       },
       {
         title: "Rejecting Shame Culture",
-        body: "Users responded better to empowerment over strict accountability. We shaped Re:ceipts messaging to focus on positive, achievable steps rather than highlighting failures.",
+        body: "Users responded better to empowerment over strict accountability. We shaped Re:ceipt's messaging to focus on positive, achievable steps rather than highlighting failures.",
       },
       {
         title: "Providing Educational Value",
@@ -84,7 +84,7 @@ export const receiptSections: AllSectionTypes[] = [
       "Won the New Designer Award at the Cornell UX Design-a-thon after presenting our work to a live panel of industry design leaders.",
     takeaways: [
       "Targeting two forms of sustainability in one product could have introduced scope creep quickly. Keeping the research tightly scoped is what helped us maintain the core purpose of the application.",
-      "Working asynchronously 300 miles apart required high-level communication and trust between designers.      ",
+      "Working asynchronously 300 miles apart required high-level communication and trust between designers.",
     ],
     retrospective: [
       "The visual hierarchy needs development. Certain elements compete with others for attention or distract from the contents of the app.",
@@ -98,7 +98,7 @@ export const cairnSections: AllSectionTypes[] = [
     type: "header",
     title: "Cairn",
     description:
-      "A trip planner that drops the attractions you want into a hour-by-hourß schedule and pushes the whole thing to your calendar.",
+      "A trip planner that drops the attractions you want into an hour-by-hour schedule and pushes the whole thing to your calendar.",
     mockups: "/cairn-assets/cover.png",
   },
   {
@@ -145,7 +145,7 @@ export const cairnSections: AllSectionTypes[] = [
       },
     ],
     captions: [
-      "Affordability and overspending are the two biggest pain-points. 44% worry about spending too much, and 51% say they pick a vacation destination based on price.      ",
+      "Affordability and overspending are the two biggest pain points. 44% worry about spending too much, and 51% say they pick a vacation destination based on price.",
       "Those money worries cluster around lodging, transport, and food.",
       "Most people plan through search engines (60%) and travel agency sites (54%), which is what Cairn has to emulate.",
     ],
@@ -156,11 +156,11 @@ export const cairnSections: AllSectionTypes[] = [
     items: [
       {
         title: "Stateless by design",
-        body: "Cairn keeps nothing. The user providers their schedule, the application gives back an itinerary, then it forgets you were there. We gave up saved trips for privacy and speed.",
+        body: "Cairn retains nothing. The user provides their schedule, the application gives back an itinerary, then it forgets you were there. We gave up saved trips for privacy and speed.",
       },
       {
         title: "Built for speed",
-        body: "There's no account to set up, so planning takes minutes. Research informed that users dreaded the hours of research, so we kept the application lean.",
+        body: "There's no account to set up, so planning takes minutes. Research showed that users dreaded the hours of planning, so we kept the application lean.",
       },
       {
         title: "Tailored recommendations",
@@ -199,7 +199,7 @@ export const ascentSections: AllSectionTypes[] = [
     type: "header",
     title: "Klaviyo",
     description:
-      "Klaviyo is an AI-first B2C marketing/CRM platform that helps consumer brands turn their customer data into personalized email, SMS, and push campaigns. It supports fast-growing DTC names like Glossier and Liquid Death to household names like Mattel.",
+      "Klaviyo is an AI-first B2C marketing/CRM platform that helps consumer brands turn their customer data into personalized email, SMS, and push campaigns. It supports fast-growing DTC customers like Glossier and Liquid Death to household names like Mattel.",
     mockups: "/klaviyo-assets/cover.svg",
   },
   {
@@ -212,7 +212,7 @@ export const ascentSections: AllSectionTypes[] = [
   {
     type: "overview",
     problem:
-      "Ascent is Klaviyo's enterprise design system. My contributions to the system include a carousel incentivez by growing screen density, and new content organizatinon patterns built to accomodate enterprise customer needs.",
+      "Ascent is Klaviyo's enterprise design system. My contributions to the system include a carousel incentivized by growing screen density, and new content organization patterns built to accommodate enterprise customer needs.",
     uxr: "I worked as a product designer with codebase access, which meant I owned the work the whole way through spec, code, review, and into production.",
   },
   {
@@ -224,12 +224,12 @@ export const ascentSections: AllSectionTypes[] = [
     heading: "Key Contributions",
     items: [
       {
-        title: "Reducing code redundancy and maintenance.",
+        title: "Reduced code redundancy and maintenance",
         body: "Cut down on six custom carousel implementations and closed the accessibility gaps that all the custom one-off versions had.",
       },
       {
-        title: "Tackled legacy UX debt for scaling customers.",
-        body: "Enterprise customers needed a sturdier way to manage their account assets, so I reworked the patterns for a folder based design pattern that introduced hierarchical categorization.",
+        title: "Tackled legacy UX debt for scaling customers",
+        body: "Enterprise customers needed a sturdier way to manage their account assets, so I reworked the patterns for a folder-based design pattern that introduced hierarchical categorization.",
       },
       {
         title: "Owned to production",
@@ -240,18 +240,15 @@ export const ascentSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/klaviyo-assets/demo2.mov",
-  },
-  {
-    type: "note",
-    variant: "disclaimer",
-    body: "I can't share all of this publicly, but I'm happy to walk through it if you reach out.",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
     type: "outcomes",
     summary:
       "Total contributions touched more than 56% of Klaviyo's app surfaces.",
     takeaways: [
-      "Owning a component from Figma spec through code review taught me to design with the build in mind. Knowing what's is expensive to implement helped tailor my specs to production patterns.",
+      "Owning a component from Figma spec through code review taught me to design with the build in mind. Knowing what's expensive to implement helped tailor my specs to production patterns.",
       "Closing accessibility gaps at the component level fixes them across every surface at once.",
     ],
     retrospective: [
@@ -278,7 +275,6 @@ export const c4cSections: AllSectionTypes[] = [
   },
   {
     type: "note",
-    variant: "disclaimer",
     body: "As Director of Design, I oversee and manage all client projects for a given semester. One client project that I had direct design involvement in (Securing Safe Food) is shared below for context.",
   },
   {
@@ -293,7 +289,7 @@ export const c4cSections: AllSectionTypes[] = [
   },
   {
     type: "process",
-    heading: "Key design decisions",
+    heading: "Key Design Decisions",
     items: [
       {
         title: "A mishandled item can send someone to the hospital",
@@ -318,11 +314,8 @@ export const c4cSections: AllSectionTypes[] = [
   {
     type: "demo",
     demo: "/ssf-assets/carousel.mov",
-  },
-  {
-    type: "note",
-    variant: "disclaimer",
-    body: "Examples of simultaneous client projects.",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
     type: "outcomes",
@@ -356,12 +349,14 @@ export const vzSections: AllSectionTypes[] = [
   {
     type: "overview",
     problem:
-      "Verizon reads churn from its own data (support tickets, billing, feedback forms), but most of that surfaces only after someone's already gone. The public signals that surface prior to churn, like reviews, social posts, complaint threads, and outage reports, went unreported. At a 1.13% quarterly churn rate on postpaid connections, that blind spot works out to more than $150M lost in a single quarter.",
-    uxr: "The dashboard pulls from five public sources, runs NLP over them for sentiment, keywords, and topics, and ties every finding to a specific, definable action. The point was to stop reacting to churn and treatign it pre-emptively.",
+      "Verizon reads churn from its own data (support tickets, billing, feedback forms), but most of that surfaces only after someone's already gone. The public signals that surface prior to churn, like reviews, social posts, complaint threads, and outage reports, go unreported. At a 1.13% quarterly churn rate on postpaid connections, that blind spot works out to more than $150M lost in a single quarter.",
+    uxr: "The dashboard pulls from five public sources, runs NLP over them for sentiment, keywords, and topics, and ties every finding to a specific, definable action. The point was to stop reacting to churn and start treating it pre-emptively.",
   },
   {
     type: "demo",
     demo: "/vz-assets/demo1.mov",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
     type: "process",
@@ -390,11 +385,11 @@ export const vzSections: AllSectionTypes[] = [
     summary:
       "Pulled together 170,000+ public data points and surfaced churn drivers that Verizon's own reporting had never caught.",
     takeaways: [
-      "Being the only design and product voice on an engineering team was an exercise in translation. Reducing stakeholder requests into features and presenting tens of thousands of raw data points into a scannable screen became a critical skill.",
-      "I owned the NLP and analysis layer, sentiment, keywords, and topic modeling, with contributions to data sourcing, collection and cleaning. Constructing the full pipeline across five messy public sources in four months required streamlined engineering to hit deployment deadlines.",
+      "Being the only design and product voice on an engineering team was an exercise in translation. Reducing stakeholder requests into features and condensing tens of thousands of raw data points into a scannable screen became a critical skill.",
+      "I owned the NLP and analysis layer, sentiment, keywords, and topic modeling, with contributions to data sourcing, collection, and cleaning. Constructing the full pipeline across five messy public sources in four months required streamlined engineering to hit deployment deadlines.",
     ],
     retrospective: [
-      "Company sentiment is averaged on each posts overall label, so a post that criticizes Verizon while praising a competitor still counts as positive for Verizon. Per-entity sentiment was accounted for future work, and deprioritized to accomodate deadlines.",
+      "Company sentiment is averaged on each post's overall label, so a post that criticizes Verizon while praising a competitor still counts as positive for Verizon. Per-entity sentiment was deferred to future work, and deprioritized to accommodate deadlines.",
       "Topic modeling relies on a hand-built mapping from raw clusters to business categories. It works today, but as carriers rename plans and new complaints surface, that mapping needs constant manual upkeep.",
     ],
   },

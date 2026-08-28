@@ -83,6 +83,8 @@ export interface DemoSection extends ProjectSection {
   type: "demo";
   demo: string;
   link?: string;
+  // Rendered directly beneath the demo, styled as a note.
+  caption?: string;
 }
 
 export interface FeedbackSection extends ProjectSection {
@@ -94,7 +96,6 @@ export interface FeedbackSection extends ProjectSection {
 export interface NoteSection extends ProjectSection {
   type: "note";
   body: string;
-  variant?: "disclaimer" | "caption";
 }
 
 export type AllSectionTypes =

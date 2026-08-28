@@ -25,6 +25,7 @@ export default function LandingVideo(props: LandingVideoProps) {
         <Suspense fallback={null}>
           <video
             className="absolute inset-0 h-full w-full object-cover"
+            aria-label={props.title ? `${props.title} preview` : "Project preview"}
             src={props.cover}
             autoPlay
             loop

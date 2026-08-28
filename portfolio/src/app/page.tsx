@@ -8,7 +8,7 @@ export default function Home() {
       <div className="px-5 w-full text-blackPrimary md:w-3/4">
         <p className="text-p2 md:text-p">
           <span className="font-medium">priya@Mac ~ %</span> Priya Singh is a
-          design engineer with an obsessive commitment to detail.
+          product designer who thinks in code.
           <br />
           <Typewriter
             as="span"
@@ -46,9 +46,7 @@ export default function Home() {
           width={1 / 3}
           colSpan={4}
           title={"Code4Community"}
-          subtitle={
-            "Making equitable software for the benefit of US based nonprofits."
-          }
+          subtitle={"Building equitable software for US-based nonprofits"}
           path={"/project-details/5"}
         ></LandingVideo>
       </div>
@@ -59,7 +57,7 @@ export default function Home() {
           colSpan={4}
           title={"Verizon"}
           subtitle={
-            "Mitigating customer churn with autonomous data aggregation."
+            "Mitigating customer churn with autonomous data aggregation"
           }
           path={"/project-details/4"}
         ></LandingCard>
@@ -78,7 +76,7 @@ export default function Home() {
           width={1 / 3}
           colSpan={4}
           title={"Cairn"}
-          subtitle={"Trip scheduling for constraint-based travel."}
+          subtitle={"Trip scheduling for constraint-based travel"}
           path={"/project-details/2"}
         ></LandingCard>
       </div>

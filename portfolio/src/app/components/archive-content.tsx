@@ -34,11 +34,14 @@ export default function ArchiveContent() {
       <p className="mb-6 shrink-0 text-p2 text-primary/90">
         I spend a lot of time tinkering around. Here&apos;s what I&apos;ve been up to lately. [drag to browse]
       </p>
-      <div className="-mx-5 min-h-[400px] flex-1">
+      {/* No negative inset: the grid stays inside the modal's px-5 so its
+          cells line up with the landing page's content margins rather than
+          running flush to the viewport edges. */}
+      <div className="min-h-[400px] flex-1">
         {status.state === "loading" && <GridSkeleton />}
         {status.state === "error" && (
-          <p className="px-5 text-p2 text-primary/50">
-            Couldn&apos;t load the archive right now -- try again shortly.
+          <p className="text-p2 text-primary/50">
+            Couldn&apos;t load the archive right now — try again shortly.
           </p>
         )}
         {status.state === "ready" && <InfiniteGrid items={status.items} />}

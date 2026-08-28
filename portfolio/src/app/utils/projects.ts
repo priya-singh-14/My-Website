@@ -8,7 +8,7 @@ export const allProjects: NewProject[] = [
     coverImage: "work-page-assets/receipt.png",
     description:
       "A mobile application to help financially-independent young adults develop sustainable spending habits by integrating financial tracking with eco-friendly purchase suggestions.",
-    subtitle: "Design 01 / MAY 2025",
+    subtitle: "Design 01 / May 2025",
     tags: ["figma", "notion", "miro"],
     sections: receiptSections,
   },

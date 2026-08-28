@@ -10,7 +10,7 @@ export default function AboutContent() {
     setLoadedMap((prev) => ({ ...prev, [key]: true }));
 
   return (
-    <div className="flex flex-col md:flex-row md:justify-between pt-4 md:mt-2">
+    <div className="flex flex-col md:flex-1 md:flex-row md:justify-between pt-4 md:mt-2">
       <div className="flex w-full flex-col gap-10 md:w-[45%] md:shrink-0">
         <p className="md:text-h2 md:font-light text-h4 font-light text-primary/90">
           <Typewriter
@@ -24,8 +24,8 @@ export default function AboutContent() {
         </p>
         <p className="text-p text-primary/90 font-light">
           I&apos;m a technical creative fueled by an ongoing exploration of new
-          technologies, practices, and ideas. I am actively looking for full
-          time product design and design engineering roles at this time.
+          technologies, practices, and ideas. I am open to full-time product
+          design and design engineering roles at this time.
           <br />
           <br />
           Want to chat? You can find me on{" "}
@@ -35,14 +35,14 @@ export default function AboutContent() {
             rel="noopener noreferrer"
             className="underline hover:text-primary"
           >
-            linkedin
+            LinkedIn
           </a>{" "}
           or directly at{" "}
           <a
             href="mailto:priyagracesingh05@gmail.com"
             className="underline hover:text-primary"
           >
-            @priyagracesingh05@gmail.com
+            priyagracesingh05@gmail.com
           </a>
           .
         </p>
@@ -50,7 +50,7 @@ export default function AboutContent() {
         <div className="text-p2">
           <p className="font-bold text-greyAccent mb-2">Experience</p>
           <p className="text-primary/90 font-light mb-4">
-            Klaviyo — Incoming Product Designer
+            Klaviyo — Incoming Product Designer (Part-Time)
             <br />
             2027
           </p>
@@ -69,11 +69,10 @@ export default function AboutContent() {
         <div className="text-p2">
           <p className="font-bold text-greyAccent mb-2">Awards</p>
           <p className="text-primary/90 font-light">
-            2025 Cornell UX Designathon Winner
+            2025 Cornell UX Design-a-thon Winner
           </p>
         </div>
-
-        <div className="flex gap-8">
+        <div className="flex gap-8 md:mt-auto">
           <a
             href="https://github.com/priya-singh-14"
             target="_blank"
@@ -83,7 +82,7 @@ export default function AboutContent() {
             Github <span className="inline-block -rotate-45">→</span>
           </a>
           <a
-            href="/resume.pdf"
+            href="/Priya_Singh_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-p2 text-primary/90 hover:text-primary"

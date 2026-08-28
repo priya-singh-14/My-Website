@@ -32,7 +32,7 @@ export default function LandingCard(props: LandingCardProps) {
         {props.rawImg ? (
           <img
             src={"/" + props.cover}
-            alt={props.title ?? "Landing Card"}
+            alt={props.title ? `${props.title} project cover` : "Project cover"}
             width={480}
             ref={(el) => {
               if (el?.complete) setLoaded(true);
@@ -54,7 +54,7 @@ export default function LandingCard(props: LandingCardProps) {
                 : "100vw"
             }
             className="object-cover"
-            alt={props.title ?? "Landing Card"}
+            alt={props.title ? `${props.title} project cover` : "Project cover"}
             onLoad={() => setLoaded(true)}
           ></Image>
         )}
