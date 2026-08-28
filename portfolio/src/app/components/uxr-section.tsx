@@ -1,14 +1,18 @@
 "use client";
+import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import { UXRSection } from "../utils/types";
+import MediaSkeleton from "./media-skeleton";
 
 interface UXRSectionProps {
   sectionDetails: UXRSection;
 }
 
 export default function UXRSection({ sectionDetails }: UXRSectionProps) {
+  const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
+
   const ImageCarousel = () => {
     const images = sectionDetails.carousel;
 
@@ -42,11 +46,24 @@ export default function UXRSection({ sectionDetails }: UXRSectionProps) {
           itemClass="carousel-item"
         >
           {images.map((img, index) => (
-            <div key={index}>
-              <img
-                src={img}
-                className="pb-5 w-full h-auto object-contain max-h-[800px] md:max-h-[600px] sm:max-h-[400px]"
-              />
+            <div key={index} className="pb-5">
+              <div className="relative w-full aspect-[4/3]">
+                <MediaSkeleton loaded={Boolean(loadedMap[index])} />
+                <img
+                  src={img}
+                  className="absolute inset-0 h-full w-full object-contain"
+                  ref={(el) => {
+                    if (el?.complete) {
+                      setLoadedMap((prev) =>
+                        prev[index] ? prev : { ...prev, [index]: true }
+                      );
+                    }
+                  }}
+                  onLoad={() =>
+                    setLoadedMap((prev) => ({ ...prev, [index]: true }))
+                  }
+                />
+              </div>
             </div>
           ))}
         </Carousel>

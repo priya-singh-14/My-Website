@@ -1,24 +1,30 @@
 "use client";
+import { useState } from "react";
 import { DemoSection } from "../utils/types";
 import Link from "next/link";
+import MediaSkeleton from "./media-skeleton";
 
 interface DemoSectionProps {
   sectionDetails: DemoSection;
 }
 
 export default function DemoSection({ sectionDetails }: DemoSectionProps) {
+  const [loaded, setLoaded] = useState(false);
+
   const Video = () => {
     const video = sectionDetails.demo;
 
     return (
-      <div className="w-full m-auto border border-[#E3E3E3] rounded-lg">
+      <div className="relative w-full aspect-video m-auto border border-[#E3E3E3] rounded-lg overflow-hidden">
+        <MediaSkeleton loaded={loaded} />
         <video
-          className="overflow-hidden object-cover rounded-lg w-full"
+          className="absolute inset-0 h-full w-full object-cover"
           src={video}
           autoPlay
           muted
           loop
           playsInline
+          onLoadedData={() => setLoaded(true)}
         />
       </div>
     );

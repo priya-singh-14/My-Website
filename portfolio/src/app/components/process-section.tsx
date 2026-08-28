@@ -1,6 +1,8 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import { ProcessSection } from "../utils/types";
+import MediaSkeleton from "./media-skeleton";
 
 interface ProcessSectionProps {
   sectionDetails: ProcessSection;
@@ -8,6 +10,7 @@ interface ProcessSectionProps {
 
 export default function ProcessSection({ sectionDetails }: ProcessSectionProps) {
   const { heading = "Key Design Decisions", items, mockup } = sectionDetails;
+  const [loaded, setLoaded] = useState(false);
   const singleColumn = Boolean(mockup);
   const midpoint = singleColumn ? items.length : Math.ceil(items.length / 2);
   const columns = singleColumn
@@ -19,6 +22,7 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
     <div className="relative w-full px-5 md:px-[8.33%] py-10">
       {mockup && (
         <div className="hidden md:block absolute right-[2%] top-10 w-[240px] h-[467px] pointer-events-none">
+          <MediaSkeleton loaded={loaded} className="rounded-lg" />
           {isVideo ? (
             <video
               className="overflow-hidden object-cover object-top rounded-lg w-full h-full border border-[#E3E3E3]"
@@ -27,9 +31,16 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
               muted
               loop
               playsInline
+              onLoadedData={() => setLoaded(true)}
             />
           ) : (
-            <Image src={mockup} fill className="object-contain object-top" alt="" />
+            <Image
+              src={mockup}
+              fill
+              className="object-contain object-top"
+              alt=""
+              onLoad={() => setLoaded(true)}
+            />
           )}
         </div>
       )}

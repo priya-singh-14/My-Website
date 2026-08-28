@@ -7,7 +7,7 @@ export default function Home() {
     <div className="w-full">
       <div className="px-5 w-full text-blackPrimary md:w-3/4">
         <p className="text-p2 md:text-p">
-          <span className="font-semibold">priya@Mac ~ %</span> Priya Singh is a
+          <span className="font-medium">priya@Mac ~ %</span> Priya Singh is a
           design engineer with an obsessive commitment to detail.
           <br />
           <Typewriter
@@ -27,10 +27,10 @@ export default function Home() {
               { text: "." },
             ]}
           />
-          <span className="inline-block w-[6px] h-3.5 bg-greyAccent ml-1 animate-pulse" />
+          <span className="inline-block w-[0.5rem] h-[1rem] bg-blackPrimary ml-1 align-center animate-blink" />
         </p>
       </div>
-      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-8 px-5">
+      <div className="flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full md:h-[465px] mt-8 px-5">
         <LandingCard
           cover={"klaviyo-assets/ascent-reveal-loop.svg"}
           width={2 / 3}
@@ -52,7 +52,7 @@ export default function Home() {
           path={"/project-details/5"}
         ></LandingVideo>
       </div>
-      <div className="flex md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full h-[465px] mt-4 pb-10 px-5">
+      <div className="flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full md:h-[465px] mt-4 pb-10 px-5">
         <LandingCard
           cover={"landing-page-assets/vz-cover.png"}
           width={1 / 3}

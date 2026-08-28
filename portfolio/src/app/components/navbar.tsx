@@ -2,7 +2,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Modal from "./modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Deferred out of the shared navbar bundle (present on every page) since
 // these pull in the archive grid's engine/motion code, which is only ever
@@ -14,6 +14,14 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isArchiveOpen, setIsArchiveOpen] = useState(false);
+
+  // Warms the chunk cache shortly after the page settles so the modal
+  // content is already loaded by the time someone opens it, instead of
+  // popping in mid-animation on the first click.
+  useEffect(() => {
+    import("./about-content");
+    import("./archive-content");
+  }, []);
 
   return (
     <>
@@ -29,7 +37,7 @@ export default function Navbar() {
 
         {/* hamburger menu */}
         <button
-          className="md:hidden pr-2 text-greyPrimary z-30 relative"
+          className="md:hidden pr-2 text-greyAccent z-30 relative"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
@@ -37,20 +45,20 @@ export default function Navbar() {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-5 h-5"
           >
             {isMenuOpen ? (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.25}
                 d="M6 18L18 6M6 6l12 12"
               />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.25}
                 d="M4 6h16M4 12h16M4 18h16"
               />
             )}
@@ -59,13 +67,13 @@ export default function Navbar() {
       </nav>
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-20 text-2xl font-manrope">
+          <div className="flex flex-col items-start px-8 space-y-6 text-2xl font-manrope">
             <button
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsAboutOpen(true);
               }}
-              className="text-black py-2 text-li "
+              className="text-black py-1"
             >
               About
             </button>
@@ -74,7 +82,7 @@ export default function Navbar() {
                 setIsMenuOpen(false);
                 setIsArchiveOpen(true);
               }}
-              className="text-black py-2  text-li "
+              className="text-black py-1"
             >
               Archive
             </button>

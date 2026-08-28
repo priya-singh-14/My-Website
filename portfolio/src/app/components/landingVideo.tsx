@@ -1,6 +1,8 @@
-import { Suspense } from "react";
+"use client";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { colSpanClasses } from "../utils/grid";
+import MediaSkeleton from "./media-skeleton";
 
 interface LandingVideoProps {
   cover: string;
@@ -12,22 +14,27 @@ interface LandingVideoProps {
 }
 
 export default function LandingVideo(props: LandingVideoProps) {
+  const [loaded, setLoaded] = useState(false);
   const widthStyle = { flexGrow: props.width, flexBasis: 0 };
   const gridClass = props.colSpan ? colSpanClasses[props.colSpan] : "";
 
   const content = (
     <>
-      <Suspense fallback={<p>Loading video...</p>}>
-        <video
-          className="w-full h-full flex-1 min-h-0 object-cover"
-          src={props.cover}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
-        />
-      </Suspense>
+      <div className="relative w-full min-h-[280px] md:min-h-0 md:h-full md:flex-1 overflow-hidden">
+        <MediaSkeleton loaded={loaded} />
+        <Suspense fallback={null}>
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            src={props.cover}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls={false}
+            onLoadedData={() => setLoaded(true)}
+          />
+        </Suspense>
+      </div>
       {props.title && (
         <div className="pt-3 shrink-0">
           <p className="font-semibold text-greyPrimary">{props.title}</p>
@@ -41,7 +48,7 @@ export default function LandingVideo(props: LandingVideoProps) {
     </>
   );
 
-  const rootClassName = `flex flex-col min-w-0 h-full ${gridClass}`;
+  const rootClassName = `flex flex-col min-w-0 md:h-full ${gridClass}`;
 
   if (props.path) {
     return (

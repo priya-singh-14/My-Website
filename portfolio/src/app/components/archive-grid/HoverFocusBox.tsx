@@ -20,7 +20,7 @@ const padding = 6;
 const arm = 12;
 const border = "border-primary/80";
 
-function useHoverCapable() {
+export function useHoverCapable() {
   const [capable, setCapable] = useState(false);
   useEffect(() => {
     const query = window.matchMedia("(hover: hover) and (pointer: fine)");

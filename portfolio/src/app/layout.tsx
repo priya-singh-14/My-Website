@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./components/navbar"
 import NavBar from "./components/navbar";
+import CursorDot from "./components/cursor-dot";
 import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Condensed, Manrope } from "next/font/google";
 import localFont from "next/font/local";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`bg-primary ${manrope.className} ${generalSans.variable}`}
       >
       <NavBar></NavBar>
+        <CursorDot />
         {children}
       </body>
     </html>

@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import { MetaSection } from "../utils/types";
 
 interface MetaSectionProps {
@@ -14,7 +15,12 @@ export default function MetaSection({ sectionDetails }: MetaSectionProps) {
   ];
 
   return (
-    <div className="w-full max-w-[1440px]  mx-auto">
+    <motion.div
+      className="w-full max-w-[1440px]  mx-auto"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="px-5 md:px-[8.33%] pt-10 pb-6 grid grid-cols-2 gap-x-10 gap-y-4 lg:flex lg:flex-nowrap lg:justify-between font-manrope text-[14px]">
         {items
           .filter(([, value]) => Boolean(value))
@@ -30,6 +36,6 @@ export default function MetaSection({ sectionDetails }: MetaSectionProps) {
       <div className="px-5 md:px-[8.33%] flex items-center gap-4 py-4">
         <hr className="flex-1 border-t bg-greyAccent" />
       </div>
-    </div>
+    </motion.div>
   );
 }

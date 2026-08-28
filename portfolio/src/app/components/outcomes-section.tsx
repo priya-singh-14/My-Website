@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 import { OutcomesSection } from "../utils/types";
 
 interface OutcomesSectionProps {
@@ -13,10 +14,22 @@ export default function OutcomesSection({
       <h4 className="font-manrope font-semibold text-[14px] mb-4">
         Outcomes
       </h4>
-      <p className="font-generalSans font-light text-[20px] max-w-2xl leading-relaxed mb-12">
+      <motion.p
+        className="font-generalSans font-light text-[20px] max-w-2xl leading-relaxed mb-12"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         {sectionDetails.summary}
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8">
+      </motion.p>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+      >
         <div>
           <h4 className="font-manrope text-[14px] text-[#444] mb-4">
             Takeaways
@@ -47,7 +60,7 @@ export default function OutcomesSection({
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

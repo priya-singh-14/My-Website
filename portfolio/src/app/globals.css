@@ -18,3 +18,11 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+/* Native cursor is replaced by the custom dot (cursor-dot.tsx) on devices
+   that actually have a mouse/trackpad -- left alone on touch. */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

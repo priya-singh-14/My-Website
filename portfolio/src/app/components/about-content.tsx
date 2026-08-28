@@ -1,11 +1,31 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
+import Typewriter from "@/components/fancy/text/typewriter";
+import MediaSkeleton from "./media-skeleton";
 
 export default function AboutContent() {
+  const [loadedMap, setLoadedMap] = useState<Record<string, boolean>>({});
+  const markLoaded = (key: string) => () =>
+    setLoadedMap((prev) => ({ ...prev, [key]: true }));
+
   return (
-    <div className="flex flex-col md:flex-row md:justify-between gap-20 pt-8 md:mt-2 mb-10 pb-10">
-      <div className="flex w-full flex-col gap-10 md:w-[28%] md:shrink-0">
-        <p className="text-p2 text-primary/90 font-light">
-          Hi, I&apos;m Priya. I&apos;m actively looking for full time product design and design engineering roles at this time.
+    <div className="flex flex-col md:flex-row md:justify-between pt-4 md:mt-2">
+      <div className="flex w-full flex-col gap-10 md:w-[45%] md:shrink-0">
+        <p className="md:text-h2 md:font-light text-h4 font-light text-primary/90">
+          <Typewriter
+            as="span"
+            text="Hi, I'm Priya."
+            speed={30}
+            loop={false}
+            showCursor={false}
+          />
+          <span className="inline-block w-[0.5em] h-[1em] bg-primary/90 ml-1 align-center animate-blink" />
+        </p>
+        <p className="text-p text-primary/90 font-light">
+          I&apos;m a technical creative fueled by an ongoing exploration of new
+          technologies, practices, and ideas. I am actively looking for full
+          time product design and design engineering roles at this time.
           <br />
           <br />
           Want to chat? You can find me on{" "}
@@ -73,8 +93,9 @@ export default function AboutContent() {
         </div>
       </div>
 
-      <div className="flex w-full flex-col gap-5 md:w-[38%] md:shrink-0">
+      <div className="hidden md:flex md:w-[40%] flex-col gap-5 md:shrink-0">
         <div className="relative w-full aspect-[691/436] overflow-hidden">
+          <MediaSkeleton loaded={Boolean(loadedMap.me)} />
           <Image
             src="/about-assets/me.jpeg"
             alt="Priya Singh"
@@ -82,25 +103,30 @@ export default function AboutContent() {
             sizes="(max-width: 768px) 100vw, 66vw"
             className="object-cover"
             priority
+            onLoad={markLoaded("me")}
           />
         </div>
         <div className="grid grid-cols-2 gap-5">
           <div className="relative aspect-square overflow-hidden">
+            <MediaSkeleton loaded={Boolean(loadedMap.tile)} />
             <Image
               src="/about-assets/tile.png"
               alt="Decorative tile pattern"
               fill
               sizes="(max-width: 768px) 50vw, 23vw"
               className="object-cover"
+              onLoad={markLoaded("tile")}
             />
           </div>
           <div className="relative aspect-square overflow-hidden">
+            <MediaSkeleton loaded={Boolean(loadedMap.flw)} />
             <Image
               src="/about-assets/flw.png"
               alt="Flowers against a wall"
               fill
               sizes="(max-width: 768px) 50vw, 23vw"
               className="object-cover"
+              onLoad={markLoaded("flw")}
             />
           </div>
         </div>

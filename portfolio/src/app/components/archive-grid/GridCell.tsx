@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Typewriter from "@/components/fancy/text/typewriter";
 import type { GridItem } from "./data";
+import { useHoverCapable } from "./HoverFocusBox";
+import MediaSkeleton from "../media-skeleton";
 
 interface GridCellProps {
   item: GridItem;
@@ -27,6 +29,8 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
   // Typewriter always animates on mount, so it can't play on load otherwise.
   const [hoverKey, setHoverKey] = useState(0);
   const [hasHovered, setHasHovered] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const hoverCapable = useHoverCapable();
 
   const media =
     item.kind === "video" ? (
@@ -38,6 +42,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
         preload="metadata"
         poster={item.poster}
         src={item.src}
+        onLoadedData={() => setLoaded(true)}
       />
     ) : (
       <Image
@@ -47,6 +52,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
         sizes="(max-width: 768px) 60vw, 260px"
         priority={priority}
         className="object-cover"
+        onLoad={() => setLoaded(true)}
       />
     );
 
@@ -57,6 +63,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
         className="relative w-full overflow-hidden bg-primary/5"
         style={{ height: mediaHeight }}
       >
+        <MediaSkeleton loaded={loaded} />
         {media}
       </div>
       {item.description &&
@@ -79,6 +86,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
   );
 
   const handleMouseEnter = () => {
+    if (!hoverCapable) return;
     setHasHovered(true);
     setHoverKey((k) => k + 1);
   };
@@ -91,6 +99,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
         style={style}
         className={focusRing}
         onMouseEnter={handleMouseEnter}
+        data-cursor-ignore
       >
         {inner}
       </Link>
@@ -106,6 +115,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
       className={focusRing}
       onMouseEnter={handleMouseEnter}
       onClick={() => onOpen?.(item)}
+      data-cursor-ignore
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();

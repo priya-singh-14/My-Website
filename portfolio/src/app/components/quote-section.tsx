@@ -7,8 +7,8 @@ interface QuoteSectionProps {
 
 export default function QuoteSection({ sectionDetails }: QuoteSectionProps) {
   return (
-    <div className="w-full h-full p-20">
-      <div className="px-10 grid grid-cols-2 gap-10">
+    <div className="w-full h-full p-6 md:p-20">
+      <div className="md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         {sectionDetails.quotes.map((quote, index) => (
           <QuoteCard key={index} quote={quote} index={index} />
         ))}

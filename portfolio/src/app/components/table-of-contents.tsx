@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export interface TocItem {
   id: string;
@@ -42,7 +43,12 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   if (items.length === 0) return null;
 
   return (
-    <nav className="hidden lg:flex lg:flex-col gap-2 fixed ml-5">
+    <motion.nav
+      className="hidden lg:flex lg:flex-col gap-2 fixed ml-5"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       {items.map(({ id, label, scrollTarget }) => (
         <a
           key={id}
@@ -57,6 +63,6 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
           {label}
         </a>
       ))}
-    </nav>
+    </motion.nav>
   );
 }
