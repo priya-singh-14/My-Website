@@ -55,22 +55,6 @@ export interface DataVisSection extends ProjectSection {
   captions: Array<string>;
 }
 
-export interface DDSection extends ProjectSection {
-  type: "dd";
-  decisions: Array<string>;
-}
-
-export interface UXRSection extends ProjectSection {
-  type: "uxr";
-  carousel: Array<string>;
-}
-
-
-export interface QuoteSection extends ProjectSection {
-  type: "quote";
-  quotes: Array<string>;
-}
-
 export interface IterationSection extends ProjectSection {
   type: "iteration";
   wireframes?: string;
@@ -87,12 +71,6 @@ export interface DemoSection extends ProjectSection {
   caption?: string;
 }
 
-export interface FeedbackSection extends ProjectSection {
-  type: "feedback";
-  subheading: string;
-  feedback: Array<string>;
-}
-
 export interface NoteSection extends ProjectSection {
   type: "note";
   body: string;
@@ -103,22 +81,18 @@ export type AllSectionTypes =
   | MetaSection
   | OverviewSection
   | DataVisSection
-  | DDSection
   | ProcessSection
-  | UXRSection
-  | QuoteSection
   | IterationSection
   | DemoSection
-  | FeedbackSection
   | OutcomesSection
   | NoteSection;
 
+// A project is just a URL and the sections that render on its page. Card copy
+// (title, cover, blurb, tags) lives in the landing page markup, and the
+// on-page heading comes from the project's own `header` section.
 export interface NewProject {
-  id: string;
-  title: string;
-  coverImage: string;
-  description: string;
-  subtitle?: string;
-  tags: Array<string>;
+  // Drives the /project-details/<slug> URL. Kept explicit rather than derived
+  // from a title so renaming one can never silently break a live URL.
+  slug: string;
   sections?: Array<AllSectionTypes>;
 }

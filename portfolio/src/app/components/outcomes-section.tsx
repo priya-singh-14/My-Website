@@ -15,7 +15,7 @@ export default function OutcomesSection({
         Outcomes
       </h4>
       <motion.p
-        className="font-generalSans font-light text-[20px] max-w-2xl leading-relaxed mb-12"
+        className="font-manrope font-light text-[20px] max-w-2xl leading-relaxed mb-12"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}

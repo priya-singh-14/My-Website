@@ -37,7 +37,7 @@ export default function Home() {
           colSpan={8}
           title={"Klaviyo"}
           subtitle={"Ascent Design System"}
-          path={"/project-details/3"}
+          path={"/project-details/klaviyo"}
           priority
           rawImg
         ></LandingCard>
@@ -47,7 +47,7 @@ export default function Home() {
           colSpan={4}
           title={"Code4Community"}
           subtitle={"Building equitable software for US-based nonprofits"}
-          path={"/project-details/5"}
+          path={"/project-details/c4c"}
         ></LandingVideo>
       </div>
       <div className="flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-x-5 w-full md:h-[465px] mt-4 pb-10 px-5">
@@ -59,7 +59,7 @@ export default function Home() {
           subtitle={
             "Mitigating customer churn with autonomous data aggregation"
           }
-          path={"/project-details/4"}
+          path={"/project-details/verizon"}
         ></LandingCard>
         <LandingCard
           cover={"landing-page-assets/receipt_cover2.png"}
@@ -69,7 +69,7 @@ export default function Home() {
           subtitle={
             "Teaching financial literacy as a sustainable practice among Gen Z"
           }
-          path={"/project-details/1"}
+          path={"/project-details/receipt"}
         ></LandingCard>
         <LandingCard
           cover={"landing-page-assets/cairn_cover.png"}
@@ -77,7 +77,7 @@ export default function Home() {
           colSpan={4}
           title={"Cairn"}
           subtitle={"Trip scheduling for constraint-based travel"}
-          path={"/project-details/2"}
+          path={"/project-details/cairn"}
         ></LandingCard>
       </div>
     </div>

@@ -28,11 +28,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        mono: ["'IBM Plex Mono'"],
-        sans: ["'IBM Plex Sans'"],
-        condensed: ["'IBM Plex Sans Condensed'"],
         manrope: ["var(--font-manrope)"],
-        generalSans: ["var(--font-general-sans)"],
       },
       fontSize: {
         h1: [
