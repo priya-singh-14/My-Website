@@ -1,22 +1,32 @@
 "use client";
+import { useState } from "react";
 import { DemoSection } from "../utils/types";
 import Link from "next/link";
+import MediaSkeleton from "./media-skeleton";
+import { noteTextClass } from "./note-section";
 
 interface DemoSectionProps {
   sectionDetails: DemoSection;
 }
 
 export default function DemoSection({ sectionDetails }: DemoSectionProps) {
+  const [loaded, setLoaded] = useState(false);
+
   const Video = () => {
     const video = sectionDetails.demo;
 
     return (
-      <div className="mt-4 w-full md:mt-0 md:w-3/4 m-auto">
+      <div className="relative w-full aspect-video m-auto border border-[#E3E3E3] rounded-lg overflow-hidden">
+        <MediaSkeleton loaded={loaded} />
         <video
-          className="overflow-hidden object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-label={sectionDetails.caption ?? "Product demo"}
           src={video}
+          autoPlay
+          muted
+          loop
           playsInline
-          controls
+          onLoadedData={() => setLoaded(true)}
         />
       </div>
     );
@@ -30,12 +40,12 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
     }
 
     return (
-      <div >
+      <div>
         <Link
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="uppercase underline font-mono font-light px-5 text-greyPrimary opacity-70 hover:text-bluePrimary"
+          className="font-manrope text-[14px] underline text-greyPrimary hover:text-bluePrimary"
         >
           Explore the Prototype Here
         </Link>
@@ -44,13 +54,16 @@ export default function DemoSection({ sectionDetails }: DemoSectionProps) {
   };
 
   return (
-    <div id="final-solution" className="w-full h-full p-5 md:p-10">
-      <h4 className="text-h4 font-mono uppercase px-5 md:mr-20 md:pb-3 text-blackPrimary">
-        Final Solution
-      </h4>
+    <div id="final-solution" className="w-full px-5 md:px-[8.33%] py-10">
       <LinkItem></LinkItem>
-      <div className="p-5 mt-10 md:p-0">
+      <div className="mt-8">
         <Video></Video>
+        {/* mt-3 rather than a note section's own py-3 plus the gap between
+            sections -- a caption belongs to the demo above it, so it sits
+            tight against it. */}
+        {sectionDetails.caption && (
+          <p className={`mt-3 ${noteTextClass}`}>{sectionDetails.caption}</p>
+        )}
       </div>
     </div>
   );

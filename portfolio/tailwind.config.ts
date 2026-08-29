@@ -9,10 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FFFFFC",
-        greyPrimary: "#433D3C",
+        primary: "#FFFFFF",
+        greyPrimary: "#5E5E5B",
         blackPrimary: "#0B1215",
         greyLight: "#C3C2C1",
+        greyAccent: "#939291",
+        tag: "#E0E0E0",
         blueAccent: "#576981",
         //
         bluePrimary: "#006AF5",
@@ -26,10 +28,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        mono: ["'IBM Plex Mono'"],
-        sans: ["'IBM Plex Sans'"],
-        condensed: ["'IBM Plex Sans Condensed'"],
-
+        manrope: ["var(--font-manrope)"],
       },
       fontSize: {
         h1: [
@@ -64,21 +63,21 @@ export default {
           "18px",
           {
             lineHeight: "1.5",
-            fontWeight: "400",
+            fontWeight: "200",
           },
         ],
         p2: [
           "16px",
           {
             lineHeight: "1.5",
-            fontWeight: "400",
+            fontWeight: "300",
           },
         ],
         li: [
-          "20px",
+          "16px",
           {
             lineHeight: "1.6",
-            fontWeight: "400",
+            fontWeight: "300",
           },
         ],
       },
@@ -89,6 +88,15 @@ export default {
       },
       blur: {
         xs: "1px",
+      },
+      keyframes: {
+        blink: {
+          "0%, 50%": { opacity: "1" },
+          "50.01%, 100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        blink: "blink 1s step-end infinite",
       },
     },
   },

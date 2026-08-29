@@ -1,48 +1,89 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { colSpanClasses } from "../utils/grid";
+import MediaSkeleton from "./media-skeleton";
 
 interface LandingCardProps {
   cover: string;
   width: number;
-  height?: number;
-  aspect?: string;
-  hoverCaption?: string;
-  path: string;
+  title?: string;
+  subtitle?: string;
+  path?: string;
+  priority?: boolean;
+  colSpan?: number;
+  rawImg?: boolean;
 }
 
 export default function LandingCard(props: LandingCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const widthStyle = { flexGrow: props.width, flexBasis: 0 };
+  const gridClass = props.colSpan ? colSpanClasses[props.colSpan] : "";
 
-  const widthStyle = { width: `${props.width * 100}%` };
-
-  return (
-    <div
-      className={`aspect-${props.aspect} relative cursor-pointer`}
-      style={widthStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Image
-        src={"/" + props.cover}
-        width={500}
-        height={500}
-        className={`aspect-${
-          props.aspect
-        } w-full h-full object-cover transition-all ${
-          isHovered && props.hoverCaption
-            ? "md:blur-xs md:brightness-[.65]"
-            : ""
-        }`}
-        alt="Landing Card"
-      ></Image>
+  const content = (
+    <>
       <div
-        className={`absolute bottom-0 left-0 p-4 text-white font-mono font-light transition-opacity ${
-          isHovered ? "md:opacity-100 opacity-0" : "opacity-0"
+        className={`relative w-full min-h-[280px] md:min-h-0 md:flex-1 flex items-center justify-center overflow-hidden ${
+          props.rawImg ? "bg-blackPrimary" : ""
         }`}
       >
-        <div className="bg-opacity-50 px-3 py-2">{props.hoverCaption}</div>
+        <MediaSkeleton loaded={loaded} />
+        {props.rawImg ? (
+          <img
+            src={"/" + props.cover}
+            alt={props.title ? `${props.title} project cover` : "Project cover"}
+            width={480}
+            ref={(el) => {
+              if (el?.complete) setLoaded(true);
+            }}
+            onLoad={() => setLoaded(true)}
+          />
+        ) : (
+          <Image
+            src={"/" + props.cover}
+            fill
+            priority={props.priority}
+            quality={90}
+            sizes={
+              props.colSpan
+                ? `(max-width: 768px) 100vw, ${Math.round(
+                    (props.colSpan / 12) * 100
+                  )}vw`
+                : "100vw"
+            }
+            className="object-cover"
+            alt={props.title ? `${props.title} project cover` : "Project cover"}
+            onLoad={() => setLoaded(true)}
+          ></Image>
+        )}
       </div>
+      {props.title && (
+        <div className="pt-3 shrink-0">
+          <p className="font-semibold text-greyPrimary">{props.title}</p>
+          {props.subtitle && (
+            <p className="text-greyPrimary text-sm opacity-70">
+              {props.subtitle}
+            </p>
+          )}
+        </div>
+      )}
+    </>
+  );
+
+  const rootClassName = `flex flex-col min-w-0 md:h-full ${gridClass}`;
+
+  if (props.path) {
+    return (
+      <Link href={props.path} style={widthStyle} className={rootClassName}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <div style={widthStyle} className={rootClassName}>
+      {content}
     </div>
   );
 }

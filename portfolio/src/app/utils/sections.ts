@@ -4,23 +4,26 @@ export const receiptSections: AllSectionTypes[] = [
   {
     type: "header",
     title: "Re:ceipt",
-    subtitle: "Design Case Study 01 / May 2025",
     description:
-      "Re:ceipt is a mobile application designed to help financially-independent young adults develop sustainable spending habits by integrating financial tracking with eco-friendly purchase suggestions.",
-    tags: ["figma", "notion", "miro"],
-    detailedTags: [
-      "Cornell UX Design-a-thon Winner",
-      "Design-a-thon",
-      "Designer",
-      "Team Project",
-    ],
-    mockups: "/receipt-assets/mockup.png",
+      "Mobile budget-tracking designed to help young adults develop sustainable financial literacy through eco-friendly purchase suggestions.",
+    mockups: "/receipt-assets/cover.png",
+  },
+  {
+    type: "meta",
+    role: "UX Designer",
+    duration: "2025",
+    skills: "Product Design, UX Research",
+    team: "Casey Lee",
   },
   {
     type: "overview",
     problem:
-      "College students and young adults lack a centralized platform to develop environmentally-sustainable financial habits, leading to overconsumption, excessive waste generation, and an overall larger carbon footprint. / Without financial guidance during this formative period, students can fall victim to environmentally harmful patterns of overconsumption that can persist throughout adulthood.",
-    uxr: "RE:CEIPT is a comprehensive mobile application for young adults who struggle with balancing newfound financial responsibilities and social pressures to spend money. The app helps users develop sustainable consumption habits while making sound financial decisions, promoting proactive fiscal and environmental responsibility in young adulthood.",
+      "Your early twenties are when money habits set. As young adults face pressure to spend socially, wasteful consumption patterns emerge and tend to persist for decades.",
+    uxr: "Re:ceipt embeds sustainable suggestions directly where people track their spending, with a positive reinforcement strategy informed by user research.",
+  },
+  {
+    type: "demo",
+    demo: "/receipt-assets/demo.mp4",
   },
   {
     type: "datavis",
@@ -48,49 +51,44 @@ export const receiptSections: AllSectionTypes[] = [
       },
     ],
     captions: [
-      "Convenience (41.9%) and Cost (38.7%) were the top barriers to sustainable shopping.",
-      "67.7% of respondents rated themselves above 5/10 in sustainable practices, yet many said they lacked visibility into the environmental impact of their purchases.",
-      "Top overspending categories included Eating Out (90.3%), Clothing (41.9%), and Entertainment & Subscriptions (29%).",
+      "The two biggest blockers were convenience (42%) and cost (39%).",
+      "68% rated themselves above a 5 out of 10 on sustainability. Almost none of them could actually see the impact of what they bought.",
+      "Overspending showed up most in eating out (90%), clothing (42%), and subscriptions (29%).",
     ],
   },
   {
-    type: "dd",
-    decisions: [
-      "Social Influence/User research revealed that users tend to spend to fit in with peers, so we created community features that redirect social pressure toward sustainable choices.",
-      "Rejecting Shame Culture/Our findings showed users respond better to encouragement and empowerment rather than judgment about existing behaviors. We shaped Re:ceipts tone and messaging to focus on positive, achievable steps toward sustainability rather than criticizing current choices.",
-      "Providing educational value/Benchmarking competitive banking apps showed a lack of sustainability guidance. Since participants valued simplicity and convenience but struggled to find time for additional research on sustainable practices, we integrated financial literacy directly into core features.",
+    type: "process",
+    heading: "Key Design Decisions",
+    items: [
+      {
+        title: "Social Influence",
+        body: "People spend to keep up with their friends. Instead of fighting that, we used it. The community features reward the sustainable choices.",
+      },
+      {
+        title: "Rejecting Shame Culture",
+        body: "Users responded better to empowerment over strict accountability. We shaped Re:ceipt's messaging to focus on positive, achievable steps rather than highlighting failures.",
+      },
+      {
+        title: "Providing Educational Value",
+        body: "None of the banking apps we looked at said a word about sustainability, and our users stated a lack of motivation to research it themselves, so we built the learning directly into the app.",
+      },
     ],
-  },
-  {
-    type: "uxr",
-    carousel: [
-      "/receipt-assets/userstory1.png",
-      "/receipt-assets/userstory2.png",
-      "/receipt-assets/userstory3.png",
-      "/receipt-assets/sitemap.png",
-    ],
-  },
-  {
-    type: "iteration",
-    wireframes: "/receipt-assets/hifi.png",
-    system: "/receipt-assets/lofi.png",
-    microint: "/receipt-assets/features.png",
-    colortype: "/receipt-assets/colorstype.png",
   },
   {
     type: "demo",
-    demo: "/receipt-assets/demo.mp4",
-    link: "https://www.figma.com/proto/Sq8TPvfGQCSByfO4OIbr6s/Re-ceipt?page-id=30%3A2&node-id=33-303&viewport=359%2C-31%2C0.16&t=4ldiJUVVxb9PhPN2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=33%3A282&show-proto-sidebar=1",
+    demo: "/receipt-assets/demo2.mp4",
   },
   {
-    type: "feedback",
-    subheading: "",
-    feedback: [
+    type: "outcomes",
+    summary:
+      "Won the New Designer Award at the Cornell UX Design-a-thon after presenting our work to a live panel of industry design leaders.",
+    takeaways: [
+      "Targeting two forms of sustainability in one product could have introduced scope creep quickly. Keeping the research tightly scoped is what helped us maintain the core purpose of the application.",
       "Working asynchronously 300 miles apart required high-level communication and trust between designers.",
-      "Balancing Economic and Environmental Sustainability in one platform needed very focused user research to prevent scope creep.",
-      "Visual elements need stronger contrast as elements start to clash with one another.",
-      "How can the app or users keep up to date on company changes that affect its sustainability score?'",
-      "Users may already track spending elsewhere, so an adoption strategy is needed for app users.",
+    ],
+    retrospective: [
+      "The visual hierarchy needs development. Certain elements compete with others for attention or distract from the contents of the app.",
+      "Sustainability scores go out of date as companies evolve. In production we'd need a real process to keep them up to date, or risk eroding user trust.",
     ],
   },
 ];
@@ -99,47 +97,41 @@ export const cairnSections: AllSectionTypes[] = [
   {
     type: "header",
     title: "Cairn",
-    subtitle: "Development Case Study 01 / January 2025",
     description:
-      "A trip scheduling platform for travelers who want to get the most out of their vacation, without foregoing their commitments and travel constraints.",
-    tags: [
-      "React",
-      "Typescript",
-      "tailwind",
-      "express",
-      "vite",
-      "figma",
-      "adobe cc",
-      "azure",
-      "linear",
-      "notion",
-    ],
-    detailedTags: ["Personal Project", "Designer/Developer"],
-    mockups: "/cairn-assets/mockup.png",
+      "A trip planner that drops the attractions you want into an hour-by-hour schedule and pushes the whole thing to your calendar.",
+    mockups: "/cairn-assets/cover.png",
+  },
+  {
+    type: "meta",
+    role: "Designer & Developer",
+    duration: "2025",
+    skills: "Full-Stack, UX/UI",
+    team: "Aahil Nishaad, Afnan Tuffaha, Luis Sarmiento, Vichu Selveraju, Kai Tjia",
   },
   {
     type: "overview",
     problem:
-      "Travelers find it hard to plan fulfilling trips according to pre-existing schedules. Ensuring that their events match up takes time, and mistakes could be costly and even more time consuming to resolve.",
-    uxr: "Cairn allows its users to schedule events they find interesting while recommending a schedule that works around their current constraints, finding attractions that match their interests, offering suggested times for those activities, and easily incorporating them into a personalized schedule— saving users time and reducing the mental load of trip planning.",
+      "Planning a trip around activities that are already locked in, like a flight or a wedding, is slow and easy to get wrong. And once you've booked around a mistake, unwinding it is difficult and time-consuming.",
+    uxr: "Cairn starts from what's already on your calendar and builds around it. You tell it what you're into, and it recommends activities, times, and slots things in automatically.",
+  },
+  {
+    type: "demo",
+    demo: "/cairn-assets/demo1.mp4",
   },
   {
     type: "datavis",
     subheading:
-      "In October 2024, Talker Research conducted a random double-opt-in survey of 2,000 U.S. residents who have traveled either domestically or internationally at least three times per year. Respondents' ages varied from 18-85, with an average age of 45. 45% identified as female, 56% identified as male, and 1% identified as other.",
+      "We leaned on secondary research, primarily a 2024 Talker Research survey of 2,000 Americans who travel at least three times a year.",
     stats: [
       {
         values: new Map([
-          ["Choose a vacation destination based on price", 51],
+          ["Choose a destination based on price", 51],
           ["Worry about overspending", 44],
-          ["Dislike packing", 26],
-          ["Dislike trip planning", 23],
-          ["Worry about missing flights or travel", 21],
         ]),
       },
       {
         values: new Map([
-          ["Accomodations", 21],
+          ["Accommodations", 21],
           ["Transport", 20],
           ["Food", 15],
         ]),
@@ -153,26 +145,32 @@ export const cairnSections: AllSectionTypes[] = [
       },
     ],
     captions: [
-      "Affordability and overspending are the two biggest pain-points mentioned by surveyors, as 44% worry about spending too much, and 51% say they pick a vacation destination based on price.",
-      "What are people worried about overspending on? The top three categories are accommodation, transport, and food.",
-      "The vast majority of travelers use search engines (60%) like Google, as well as online travel agency sites (54%), to plan their trips.",
+      "Affordability and overspending are the two biggest pain points. 44% worry about spending too much, and 51% say they pick a vacation destination based on price.",
+      "Those money worries cluster around lodging, transport, and food.",
+      "Most people plan through search engines (60%) and travel agency sites (54%), which is what Cairn has to emulate.",
     ],
   },
   {
-    type: "dd",
-    decisions: [
-      "Ephemeral Scheduling/Cairn enables a start-to-end workflow that begins with a schedule of user commitments, and ends with a trip itinerary with events scheduled around those commitments— without storing any user data.",
-      "Speed/The transient nature of Cairn encourages quick scheduling rather than hours poured into research as they survey findings suggest.",
-      "Tailored Recommendations/Affordability and overspending were credited as the two largest pain points among user groups. Therefore Cairn builds off of a comprehensive onboarding flow to ensure recommendations fit user interests, budget, and lifestyle habits.",
+    type: "process",
+    heading: "Key Design & Engineering Decisions",
+    items: [
+      {
+        title: "Stateless by design",
+        body: "Cairn retains nothing. The user provides their schedule, the application gives back an itinerary, then it forgets you were there. We gave up saved trips for privacy and speed.",
+      },
+      {
+        title: "Built for speed",
+        body: "There's no account to set up, so planning takes minutes. Research showed that users dreaded the hours of planning, so we kept the application lean.",
+      },
+      {
+        title: "Tailored recommendations",
+        body: "Money was the top complaint, so before Cairn suggests anything, onboarding asks about your budget, what you like, and how you travel.",
+      },
     ],
   },
   {
-    type: "uxr",
-    carousel: [
-      "/cairn-assets/userstory1.png",
-      "/cairn-assets/userstory2.png",
-      "/cairn-assets/diagram.png",
-    ],
+    type: "demo",
+    demo: "/cairn-assets/demo2.mp4",
   },
   {
     type: "iteration",
@@ -182,244 +180,217 @@ export const cairnSections: AllSectionTypes[] = [
     colortype: "/cairn-assets/colorstype.png",
   },
   {
-    type: "demo",
-    demo: "/cairn-assets/demo.mp4",
-    link: "https://github.com/selvarajuv/cairn",
-  },
-  {
-    type: "feedback",
-    subheading: "",
-    feedback: [
-      "Gained exposure to new technologies: TypeScript + Azure Container Apps",
-      "Experienced rapid iteration cycle from UXR to Design to Development in team environment",
-      "Applied Agile methodology in team-based development process",
-      "Found alternative UXR strategies considering lack of access to concrete user base for research and testing validation",
-      "In the future, consider implementing user profiles and database integration for users wanting to maintain trips within interface",
+    type: "outcomes",
+    summary:
+      "Shipped a full-stack application end to end within two weeks, from UX research through a React/Express app running on Azure.",
+    takeaways: [
+      "Ran a fast UXR-to-design-to-development cycle in a team environment, working in Agile the whole way.",
+      "Picked up new technologies like Azure Container Apps in the process.",
+    ],
+    retrospective: [
+      "With no real user base to test against, we had to lean on other UXR strategies to validate the work.",
+      "User profiles and a database would let people save and manage trips in the app but could contradict the quick and ephemeral values of the platform.",
     ],
   },
 ];
 
-export const ssfSections: AllSectionTypes[] = [
+export const ascentSections: AllSectionTypes[] = [
   {
     type: "header",
-    title: "Securing Safe Food",
-    subtitle: "Design Case Study 02 / January 2025",
+    title: "Klaviyo",
     description:
-      "Securing Safe Food (SSF) is a national nonprofit dedicated to fighting food insecurity among individuals with food allergies and improving access to allergen-free foods.",
-    tags: ["figma", "trello", "miro"],
-    detailedTags: ["Client Work", "Designer"],
-    mockups: "/ssf-assets/mockup.png",
+      "Klaviyo is an AI-first B2C marketing/CRM platform that helps consumer brands turn their customer data into personalized email, SMS, and push campaigns. It supports fast-growing DTC customers like Glossier and Liquid Death to household names like Mattel.",
+    mockups: "/klaviyo-assets/cover.png",
+  },
+  {
+    type: "meta",
+    role: "Product Design Co-op",
+    duration: "2026",
+    skills: "Design Systems, Design Engineering, AI",
+    team: "Core Infrastructure",
   },
   {
     type: "overview",
     problem:
-      "Securing Safe Food (SSF) is dedicated to fighting food insecurity among individuals with food allergies and improving access to allergen-free foods. Through partnerships, communication, research, and education, SSF aims to revolutionize food options for under-resourced, allergen-avoidant families by providing nutritionally balanced alternatives.",
-    uxr: "To facilitate the connection of food manufacturers to pantries around the country, SSF requires comprehensive and intuitive admin and volunteer dashboards for their contributors to easily connect allergen-safe food to victims of food insecurity.",
+      "Ascent is Klaviyo's enterprise design system. My contributions to the system include a carousel incentivized by growing screen density, and new content organization patterns built to accommodate enterprise customer needs.",
+    uxr: "I worked as a product designer with codebase access, which meant I owned the work the whole way through spec, code, review, and into production.",
   },
   {
-    type: "uxr",
-    carousel: [
-      "/ssf-assets/sitemap.png",
-      "/ssf-assets/sitemap-1.png",
-      "/ssf-assets/sitemap-2.png",
-      "/ssf-assets/sitemap-3.png",
+    type: "demo",
+    demo: "/klaviyo-assets/demo.mp4",
+  },
+  {
+    type: "process",
+    heading: "Key Contributions",
+    items: [
+      {
+        title: "Reduced code redundancy and maintenance",
+        body: "Cut down on six custom carousel implementations and closed the accessibility gaps that all the custom one-off versions had.",
+      },
+      {
+        title: "Tackled legacy UX debt for scaling customers",
+        body: "Enterprise customers needed a sturdier way to manage their account assets, so I reworked the patterns for a folder-based design pattern that introduced hierarchical categorization.",
+      },
+      {
+        title: "Owned to production",
+        body: "10+ Figma specs, taken all the way to a merged beta-library component with full test coverage.",
+      },
     ],
   },
   {
-    type: "dd",
-    decisions: [
-      "Safety-First Workflow Management / Food pantries require specialized separation and tracking systems for allergen-free products, as improper handling can result in life-threatening reactions for recipients. The dashboard must prioritize fail-safe workflows that prevent cross-contamination through clear visual hierarchies, mandatory safety checkpoints, and error-prevention mechanisms built directly into the user interface.",
-      "Adaptive Interfaces/The dashboard needs adaptive interface complexity that scales based on user experience levels, with integrated educational resources and features for inexperienced volunteers handling necessary tasks.",
-      "Documentation and History/Food bank partnerships involve complex logistics between manufacturers, distributors, and pantries, with accountability challenges in maintaining food quality and availability. Maintaining visual clarity without neglecting proper reporting and documentation is necessary.",
+    type: "demo",
+    demo: "/klaviyo-assets/demo2.mp4",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
+  },
+  {
+    type: "outcomes",
+    summary:
+      "Total contributions touched more than 56% of Klaviyo's app surfaces.",
+    takeaways: [
+      "Owning a component from Figma spec through code review taught me to design with the build in mind. Knowing what's expensive to implement helped tailor my specs to production patterns.",
+      "Closing accessibility gaps at the component level fixes them across every surface at once.",
+    ],
+    retrospective: [
+      "Migrating six teams off their custom versions outlasted my co-op scope. I built the component but I didn't get to finish moving everyone onto it.",
+      "Deep over broad categorization fits enterprise needs, but depth introduces more places to look, more clicks to navigate, and more friction along the way. It is a trade-off that needs additional validation and testing.",
+    ],
+  },
+];
+
+export const c4cSections: AllSectionTypes[] = [
+  {
+    type: "header",
+    title: "Code4Community",
+    description:
+      "Code4Community (C4C) is a student-run organization at Northeastern that builds and maintains software for nonprofits at no cost.",
+    mockups: "/ssf-assets/cover.png",
+  },
+  {
+    type: "meta",
+    role: "Director of Design",
+    duration: "2025 – Present",
+    skills: "Product Design, Design Leadership",
+    team: "15 Designers / 6 concurrent projects",
+  },
+  {
+    type: "note",
+    body: "As Director of Design, I oversee and manage all client projects for a given semester. One client project that I had direct design involvement in (Securing Safe Food) is shared below for context.",
+  },
+  {
+    type: "demo",
+    demo: "/ssf-assets/demo1.mp4",
+  },
+  {
+    type: "overview",
+    problem:
+      "Securing Safe Food connects allergen-free food donations from manufacturers to food pantries across the country. They needed an efficient way to track ingress and egress donations, food orders, and requests from pantries in their partner network.",
+    uxr: "I built the donation management system through several rounds of iteration, building the project design system and wireframes, while running design for the rest of the studio at the same time.",
+  },
+  {
+    type: "process",
+    heading: "Key Design Decisions",
+    items: [
+      {
+        title: "A mishandled item can send someone to the hospital",
+        body: "The unsafe path needed intentional friction. Allergen separation lives in the visual hierarchy, safety checks are unavoidable in the workflow, and volunteers only ever see the manufacturers stocking the specific allergen-safe item that's been requested.",
+      },
+
+      {
+        title: "Inherited & rearchitected",
+        body: "The embedded relationship between orders, donations, and requests across four user roles required a UI that is consistent and retraceable across isolated dashboards. The design system had to support clarity as a primary value.",
+      },
+      {
+        title: "Documentation under the hood",
+        body: "Every item moves through manufacturers, volunteers, and pantries, and when something goes wrong, it has to be traced backwards. A paper trail is built underneath the flow of donation stock for administrative ease.",
+      },
     ],
   },
   {
     type: "iteration",
-    wireframes: "/ssf-assets/cl.png",
-    system: "/ssf-assets/styles.png",
-    microint: "/ssf-assets/features.png",
+    wireframes: "/ssf-assets/demo.svg",
     colortype: "/ssf-assets/colorstype.png",
   },
   {
     type: "demo",
-    demo: "/ssf-assets/demo.mp4",
-    link: "https://www.figma.com/proto/2Y0g8UL3sjWaIo1dAVgnGa/Admin-Dashboard-WF---Volunteer-Dashboard-WF?page-id=174%3A516&node-id=174-517&viewport=25%2C339%2C0.02&t=k5VtLwKvXVOY3GLi-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=174%3A543",
+    demo: "/ssf-assets/carousel.mp4",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
-    type: "feedback",
-    subheading: "",
-    feedback: [
-      "Developed a comprehensive design system from scratch including components, patterns, and documentation",
-      "Successfully iterated through complex stakeholder requirements while maintaining design consistency",
-      "Led design operations and collaborated with engineering team to streamline design-to-development handoff process",
-      "Engaged in design reviews and critique sessions to refine solutions and validate design decisions",
-      "Design scalability needs revisiting as the current system may not accommodate future feature expansion",
-      "Information density is high, consider condensing the amount of information shown at once for better usability for new users",
+    type: "outcomes",
+    summary:
+      "Took Securing Safe Food from an undocumented handoff to a shipped system across four user roles, owning the client relationship, product, IA, and design system.",
+    takeaways: [
+      "On a messy inherited project, the first thing worth delivering wasn't polished visuals, but rather a clear picture of how the whole system works.",
+      "Setting up the systems that let every other designer do good work allowed for agile systems to thrive.",
+    ],
+    retrospective: [
+      "Detailed and thoughtful documentation played a huge role in the success of this project as contributors changed between semesters.",
+      "The complexity of the workflow means that information density is high. Condensing the amount of information shown at once could lead to easier onboarding.",
     ],
   },
 ];
-
-export const rosterSections: AllSectionTypes[] = [
+export const vzSections: AllSectionTypes[] = [
   {
     type: "header",
-    title: "The Roster",
-    subtitle: "Design Case Study 03 / December 2024",
+    title: "Verizon",
     description:
-      "The Roster is a comprehensive learning and community-building platform that helps users of all levels understand soccer, stay up to date on teams and players, and foster meaningful connections with like-minded fans.",
-    tags: ["figma", "adobe cc", "miro"],
-    detailedTags: ["Personal Project", "Designer"],
-    mockups: "/roster-assets/mockup.png",
+      "A data aggregation tool that reads real-time public sentiment and outage data to identify churn-risk customers, pairing each signal with a mitigation strategy.",
+    mockups: "/vz-assets/cover.png",
+  },
+  {
+    type: "meta",
+    role: "Software Engineer, UX Designer",
+    duration: "2025",
+    skills: "Full Stack, UX",
+    team: "Aahil Nishaad, Afnan Tuffaha, Luis Sarmiento, Vichu Selveraju, Kai Tjia",
   },
   {
     type: "overview",
     problem:
-      "As a global interest in soccer rises, many new fans are eager to engage with the rich, historic culture but face barriers due to a lack of welcoming communities and accessible guidance. Existing platforms often assume prior knowledge, leaving newcomers overwhelmed by the sport’s complexity and culture. This leads to missed opportunities for both fans seeking connection and the broader soccer ecosystem looking to grow its audience.",
-    uxr: "The Roster is an inclusive platform designed to help new and curious soccer fans learn the game, stay informed on matches and players, and build community. It offers personalized team recommendations, player insights, and real-time discussions, all within a supportive, judgment-free zone. Unlike traditional sports apps, The Roster is built specifically for fans without existing networks, making it easier to feel connected and confident in their soccer journey.",
-  },
-  {
-    type: "datavis",
-    subheading:
-      "Four interviews were conducted with young women, aged 23-27 and based out of major american cities, who interacted with soccer content for at least 3 hours per week.  The interviews followed a semi-structured format with a basic interview script that allowed for deviation based on the interviewee’s responses.",
-    stats: [
-      {
-        values: new Map([
-          ["Longtime Fans (6+ years)", 33],
-          ["Mid-Term Fans (2–5 years)", 28],
-          ["New Fans (Joined in the last 12 months)", 39],
-        ]),
-      },
-      {
-        values: new Map([
-          ["Female", 45],
-          ["Male", 42],
-          ["Other/Prefer not to say", 3],
-        ]),
-      },
-      {
-        values: new Map([
-          ["Follow Multiple Leagues", 66],
-          ["Follow One League", 34],
-        ]),
-      },
-    ],
-    captions: [
-      "Nearly 40% of U.S. soccer fans became supporters within the last year (as of 2024), reflecting a major influx of new fans who are still forming their understanding of the sport and its culture.",
-      "Almost half of new soccer fans identify as female, signaling a shift toward a more diverse and inclusive fan base",
-      "Two-thirds of American fans follow multiple leagues, underscoring the need for tools that help users navigate complex team dynamics, player transfers, and overlapping competitions.",
-    ],
-  },
-  {
-    type: "quote",
-    quotes: [
-      "Interest began during an International tournament /All participants mentioned their interest starting due to an international tournament and cited the passion, atmosphere, and the ubiquity of the culture to be part of the appeal. $I remember watching the [2022 World Cup] final in my apartment and hearing my next door neighbor cheer through the wall$, $I watched the second half at the airport lounge surrounded by strangers huddled around a TV.$.",
-      "Majority of social interaction online/Participants mentioned the constant need to prove that they understand the sport due to gender and nationality, forced to test out multiple physical environments until they found a stable community without that judgement.$It’s always like name five soccer players whenever you’re at a sports bar.$",
-      "Ambiguity of choice/Participants struggled to articulate why they support the teams they do. Answers ranged from legacy and nationality to attraction and “vibe.” As U.S.-based fans, they lacked geographic loyalty.$After the World Cup, we started watching the EPL because we thought it would be more fun. I liked [Christian] Pulisic from the World Cup and he ended up playing for Chelsea, so it was kind of a right place right time thing.$",
-      "Community/Most participants had been exposed to soccer before, but their passion grew once friends got involved. A shared, understanding friend group made it easier to stay invested.$I’ve been watching for 14 years, but it wasn’t until I started posting content on twitter and building a following that I had a real fun community to interact with.$",
-    ],
-  },
-  {
-    type: "dd",
-    decisions: [
-      "Judgment-free spaces to learn and engage/Participants, especially women, faced constant pressure to demonstrate their understanding of the sport due to gender and nationality biases. The platform should create welcoming, educational-first interfaces that normalize asking questions and learning, avoiding intimidating jargon or assuming baseline knowledge.",
-      "Emotional connection to team selection/When choosing teams or players to support, participants struggled to articulate clear reasons, often citing intangible factors like 'vibe,' personality, or attractiveness alongside more traditional factors. Recommendation systems should account for subjective, emotional factors beyond statistics—incorporating personality insights, visual content, and community sentiment alongside performance data.",
-      "Community connection accelerates engagement and retention/Having friends who share soccer interest was stated as making the experience significantly more enjoyable and easier to navigate. Social features should be central to the platform, facilitating friend connections, group discussions, and shared viewing experiences to recreate that supportive community environment.",
-    ],
-  },
-  {
-    type: "uxr",
-    carousel: [
-      "/roster-assets/userstory1.png",
-      "/roster-assets/userstory2.png",
-      "/roster-assets/userstory3.png",
-      "/roster-assets/storyboards1.png",
-      "/roster-assets/storyboards2.png",
-      "/roster-assets/lofi.png",
-      "/roster-assets/sitemap.png",
-    ],
-  },
-  {
-    type: "iteration",
-    wireframes: "/roster-assets/hifi.png",
-    system: "/roster-assets/lofi2.png",
-    microint: "/roster-assets/lofi.png",
-    colortype: "/roster-assets/colorstype.png",
+      "Verizon reads churn from its own data (support tickets, billing, feedback forms), but most of that surfaces only after someone's already gone. The public signals that surface prior to churn, like reviews, social posts, complaint threads, and outage reports, go unreported. At a 1.13% quarterly churn rate on postpaid connections, that blind spot works out to more than $150M lost in a single quarter.",
+    uxr: "The dashboard pulls from five public sources, runs NLP over them for sentiment, keywords, and topics, and ties every finding to a specific, definable action. The point was to stop reacting to churn and start treating it pre-emptively.",
   },
   {
     type: "demo",
-    demo: "/roster-assets/demo.mp4",
-    link: "https://www.figma.com/proto/O750ndrFJbdkG5839WBfdM/Interaction-Design?page-id=235%3A1801&node-id=235-1802&viewport=273%2C335%2C0.03&t=7j8IcZ8Fww9wrFTT-1&scaling=scale-down&content-scaling=fixed"
+    demo: "/vz-assets/demo1.mp4",
+    caption:
+      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
-    type: "feedback",
-    subheading: "",
-    feedback: [
-      "Chat functionality resonates well with users as an engagement feature",
-      "Benchmarking analysis provided crisp, actionable takeaways for stakeholders",
-      "Beginner user journey could be unclear, need clearer starting point for complete newcomers to soccer",
-      "ADA contrast compliance needs attention",
-      "Role and value of roster feature must be clarified or highlighted more prominently",
+    type: "process",
+    heading: "Key Design Decisions",
+    items: [
+      {
+        title: "The only product voice on an engineering team",
+        body: "I was the only designer and product-oriented contributor who could also write code. Verizon's stakeholders described what they wanted in pretty abstract terms, and my job was turning that into features a very technical, non-product team could actually scope and build.",
+      },
+      {
+        title: "Designing for the role, not just the user",
+        body: "A two-week async questionnaire turned up something useful: regional and central analysts care about completely different numbers. That pushed the whole product toward role-specific workflows, the same regional-interface need Verizon later flagged as a priority.",
+      },
+      {
+        title: "Full pipeline under a two-week clock",
+        body: "Abstract client needs → async research → personas and scenarios → lo-fi → hi-fi in Verizon's brand system, presented to execs. Tight timelines meant parallelizing this process alongside development.",
+      },
     ],
-  },
-];
-
-export const polarisSections: AllSectionTypes[] = [
-  {
-    type: "header",
-    title: "Polaris",
-    subtitle: "Development Case Study 02 / December 2024",
-    description:
-      "A peer-guidance platform that connects students to mentors, helping them find career resources, apply to jobs, and grow their career network.",
-    tags: ["Python", "Flask", "Streamlit", "MySQL", "Docker", "Git"],
-    detailedTags: ["Personal Project", "Developer"],
-    mockups: "/polaris-assets/mockup.png",
-  },
-  {
-    type: "overview",
-    problem:
-      "Students navigating the co-op and early career search often struggle to find tailored guidance from people who have successfully been through the process. Current university resources can be generalized, leaving gaps in specific industry knowledge and personalized support. Employers also lack efficient ways to discover and connect with students who fit their hiring needs. Advisors face difficulty managing these relationships at scale while ensuring quality mentorship.",
-    uxr: "Polaris is a multi-user platform where students (mentees), alumni or upperclassmen (mentors), advisors, and employers collaborate to enhance career readiness and opportunities./Mentees get matched with mentors in their field, receive guidance, build public profiles, and apply directly to positions.Mentors track mentee progress, offer targeted feedback, and receive advisor guidance. Advisors manage matches, host networking events, and oversee platform engagement. Employers browse student profiles, receive applications, and connect via events.",
-  },
-  {
-    type: "dd",
-    decisions: [
-      "System Design / A containerized microservices architecture with separate services for API, frontend, and database, orchestrated using Docker Compose.",
-      "API Design/ RESTful API built with Flask to handle CRUD operations for user profiles, applications, event management, and chat. Ensures modular endpoints for each persona’s needs.",
-      "Database Schema/ MySQL database with tables for users, mentorship_matches, events, applications, and chat_logs. Foreign keys ensure relationships between personas and their interactions.",
-    ],
-  },
-  {
-    type: "uxr",
-    carousel: [
-      "/polaris-assets/userstory1.png",
-      "/polaris-assets/userstory2.png",
-      "/polaris-assets/userstory3.png",
-      "/polaris-assets/userstory4.png",
-      "/polaris-assets/erdiagram.png",
-      "/polaris-assets/dbdiagram.png",
-      "/polaris-assets/sitemap.png",
-    ],
-  },
-  {
-    type: "iteration",
-    wireframes: "/polaris-assets/hifi.png",
-    system: "/polaris-assets/lofi.png",
-    microint: "/polaris-assets/features.png",
-    colortype: "/polaris-assets/colorstype.png",
   },
   {
     type: "demo",
-    demo: "/polaris-assets/demo.mp4",
-    link: "https://github.com/priya-singh-14/Polaris",
+    demo: "/vz-assets/demo2.mp4",
   },
   {
-    type: "feedback",
-    subheading: "",
-    feedback: [
-      "Gained experience with full-stack development using Flask + Streamlit",
-      "Learned Docker containerization and environment configuration.",
-      "Overcame team-based development challenges when building software with varying software development skill levels.",
-      "In the future, add authentication for data privacy and security",
-      "Enhance mentor-mentee matching with machine learning for better recommendations.",
+    type: "outcomes",
+    summary:
+      "Pulled together 170,000+ public data points and surfaced churn drivers that Verizon's own reporting had never caught.",
+    takeaways: [
+      "Being the only design and product voice on an engineering team was an exercise in translation. Reducing stakeholder requests into features and condensing tens of thousands of raw data points into a scannable screen became a critical skill.",
+      "I owned the NLP and analysis layer, sentiment, keywords, and topic modeling, with contributions to data sourcing, collection, and cleaning. Constructing the full pipeline across five messy public sources in four months required streamlined engineering to hit deployment deadlines.",
+    ],
+    retrospective: [
+      "Company sentiment is averaged on each post's overall label, so a post that criticizes Verizon while praising a competitor still counts as positive for Verizon. Per-entity sentiment was deferred to future work, and deprioritized to accommodate deadlines.",
+      "Topic modeling relies on a hand-built mapping from raw clusters to business categories. It works today, but as carriers rename plans and new complaints surface, that mapping needs constant manual upkeep.",
     ],
   },
 ];

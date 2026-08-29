@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "./components/navbar"
+import "./components/navbar";
 import NavBar from "./components/navbar";
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Condensed } from "next/font/google";
+import SiteFooter from "./components/site-footer";
+import CursorDot from "./components/cursor-dot";
+import { Manrope } from "next/font/google";
 
-const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["100","200","300","400", "700"] });
-const sans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["100","200","300","400", "700"] });
-const condensed = IBM_Plex_Sans_Condensed({ subsets: ["latin"], weight: ["100","200","300","400", "700"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
   title: "Priya Singh",
@@ -20,11 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="bg-primary"
-      >
-      <NavBar></NavBar>
+      <body className={`bg-primary ${manrope.className} ${manrope.variable}`}>
+        <NavBar></NavBar>
+        <CursorDot />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

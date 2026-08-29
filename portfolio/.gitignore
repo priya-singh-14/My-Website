@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+#fonts
+/src/app/fonts
+
 # next.js
 /.next/
 /out/

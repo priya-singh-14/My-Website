@@ -1,52 +1,67 @@
 "use client";
-import React, { useState } from "react";
-import { Suspense } from 'react'
+import { Suspense, useState } from "react";
+import Link from "next/link";
+import { colSpanClasses } from "../utils/grid";
+import MediaSkeleton from "./media-skeleton";
 
 interface LandingVideoProps {
   cover: string;
   width: number;
-  height?: number;
-  aspect?: string;
-  hoverCaption?: string;
-  path: string;
+  title?: string;
+  subtitle?: string;
+  path?: string;
+  colSpan?: number;
 }
 
 export default function LandingVideo(props: LandingVideoProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const widthStyle = { flexGrow: props.width, flexBasis: 0 };
+  const gridClass = props.colSpan ? colSpanClasses[props.colSpan] : "";
 
-  const widthStyle = { width: `${props.width * 100}%` };
+  const content = (
+    <>
+      <div className="relative w-full min-h-[280px] md:min-h-0 md:h-full md:flex-1 overflow-hidden">
+        <MediaSkeleton loaded={loaded} />
+        <Suspense fallback={null}>
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            aria-label={props.title ? `${props.title} preview` : "Project preview"}
+            src={props.cover}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls={false}
+            onLoadedData={() => setLoaded(true)}
+          />
+        </Suspense>
+      </div>
+      {props.title && (
+        <div className="pt-3 shrink-0">
+          <p className="font-semibold text-greyPrimary">{props.title}</p>
+          {props.subtitle && (
+            <p className="text-greyPrimary text-sm opacity-70">
+              {props.subtitle}
+            </p>
+          )}
+        </div>
+      )}
+    </>
+  );
+
+  const rootClassName = `flex flex-col min-w-0 md:h-full ${gridClass}`;
+
+  if (props.path) {
+    return (
+      <Link href={props.path} style={widthStyle} className={rootClassName}>
+        {content}
+      </Link>
+    );
+  }
 
   return (
-    <div
-      className={`aspect-${props.aspect} relative`}
-      style={widthStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Suspense fallback={<p>Loading video...</p>}>
-        <video
-          className={`aspect-${
-            props.aspect
-          } w-full h-full object-cover transition-all ${
-            isHovered && props.hoverCaption
-              ? "cursor-pointer md:md:blur-xs md:brightness-[.65]"
-              : ""
-          }`}
-          src={props.cover}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
-        />
-      </Suspense>
-      <div
-        className={`absolute bottom-0 left-0 p-4 text-white font-mono transition-opacity ${
-          isHovered ? "md:opacity-100 opacity-0" : "opacity-0"
-        }`}
-      >
-        <div className="bg-opacity-50 px-3 py-2">{props.hoverCaption}</div>
-      </div>
+    <div style={widthStyle} className={rootClassName}>
+      {content}
     </div>
   );
 }
