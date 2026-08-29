@@ -99,6 +99,7 @@ export default function AboutContent() {
             src="/about-assets/me.jpeg"
             alt="Priya Singh"
             fill
+            quality={90}
             sizes="(max-width: 768px) 100vw, 66vw"
             className="object-cover"
             priority
@@ -112,6 +113,7 @@ export default function AboutContent() {
               src="/about-assets/tile.png"
               alt="Decorative tile pattern"
               fill
+              quality={90}
               sizes="(max-width: 768px) 50vw, 23vw"
               className="object-cover"
               onLoad={markLoaded("tile")}
@@ -123,6 +125,7 @@ export default function AboutContent() {
               src="/about-assets/flw.png"
               alt="Flowers against a wall"
               fill
+              quality={90}
               sizes="(max-width: 768px) 50vw, 23vw"
               className="object-cover"
               onLoad={markLoaded("flw")}

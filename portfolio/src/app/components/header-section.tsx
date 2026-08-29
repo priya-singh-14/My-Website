@@ -25,7 +25,11 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
           src={sectionDetails.mockups}
           fill
           priority
-          quality={100}
+          quality={90}
+          // Full width of the 1440px content column, which is inset by 8.33%
+          // either side on desktop and by px-5 on mobile. Without this the
+          // `fill` above makes Next assume 100vw and serve the 3840px variant.
+          sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1440px) 83vw, 1200px"
           className="object-cover"
           alt={`${sectionDetails.title} mockup`}
           onLoad={() => setLoaded(true)}

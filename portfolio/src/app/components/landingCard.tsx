@@ -44,14 +44,12 @@ export default function LandingCard(props: LandingCardProps) {
             src={"/" + props.cover}
             fill
             priority={props.priority}
-            quality={100}
-            // Matches the actual rendered width (colSpan/12 of the row on
-            // desktop, full width on mobile where cards stack) so Next
-            // requests an appropriately-sized variant instead of defaulting
-            // to 100vw for every card regardless of how narrow it renders.
+            quality={90}
             sizes={
               props.colSpan
-                ? `(max-width: 768px) 100vw, ${Math.round((props.colSpan / 12) * 100)}vw`
+                ? `(max-width: 768px) 100vw, ${Math.round(
+                    (props.colSpan / 12) * 100
+                  )}vw`
                 : "100vw"
             }
             className="object-cover"

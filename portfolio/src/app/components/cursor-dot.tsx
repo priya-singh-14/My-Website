@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
-import { useHoverCapable } from "./archive-grid/HoverFocusBox";
+import { useHoverCapable } from "./archive-grid/hover-focus-box";
 
 const INTERACTIVE_SELECTOR =
   'a, button, [role="button"], input, textarea, select, label';

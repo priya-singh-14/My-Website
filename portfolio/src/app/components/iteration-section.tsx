@@ -6,9 +6,6 @@ interface IterationSectionProps {
   sectionDetails: IterationSection;
 }
 
-// Each slot always holds the same kind of artefact, so the alt text can be
-// described once here rather than repeated across the three responsive layouts
-// that render the same four images.
 const ALT = {
   wireframes: "Wireframes",
   system: "Design system",
@@ -16,18 +13,14 @@ const ALT = {
   colortype: "Color and typography styles",
 };
 
-// The content column is 83.3vw on desktop (px-[8.33%]) and full-bleed on
-// mobile. Each slot renders at a different width within the four-image grid,
-// so they get their own hint rather than all claiming full width.
 const SIZES = {
   mobile: "100vw",
-  // Sits beside the one-third column, so it renders at roughly two thirds.
   wide: "(max-width: 768px) 100vw, 55vw",
-  // The stacked w-1/3 column.
   narrow: "(max-width: 768px) 100vw, 28vw",
-  // Spans the full content column.
   full: "(max-width: 768px) 100vw, 83vw",
 };
+
+const QUALITY = 90;
 
 export default function IterationSection({
   sectionDetails,
@@ -50,6 +43,7 @@ export default function IterationSection({
             alt={ALT.wireframes}
             width={0}
             height={0}
+            quality={QUALITY}
             sizes={SIZES.mobile}
             className="w-full h-auto"
           />
@@ -60,6 +54,7 @@ export default function IterationSection({
             alt={ALT.system}
             width={0}
             height={0}
+            quality={QUALITY}
             sizes={SIZES.mobile}
             className="w-full h-auto"
           />
@@ -70,6 +65,7 @@ export default function IterationSection({
             alt={ALT.microint}
             width={0}
             height={0}
+            quality={QUALITY}
             sizes={SIZES.mobile}
             className="w-full h-auto"
           />
@@ -80,6 +76,7 @@ export default function IterationSection({
             alt={ALT.colortype}
             width={0}
             height={0}
+            quality={QUALITY}
             sizes={SIZES.mobile}
             className="w-full h-auto"
           />
@@ -94,6 +91,7 @@ export default function IterationSection({
                 alt={ALT.wireframes}
                 width={0}
                 height={0}
+                quality={QUALITY}
                 sizes={SIZES.wide}
                 className="flex-1 min-w-0 w-full h-auto"
               />
@@ -106,6 +104,7 @@ export default function IterationSection({
                     alt={ALT.system}
                     width={0}
                     height={0}
+                    quality={QUALITY}
                     sizes={SIZES.narrow}
                     className="w-full h-auto"
                   />
@@ -116,6 +115,7 @@ export default function IterationSection({
                     alt={ALT.microint}
                     width={0}
                     height={0}
+                    quality={QUALITY}
                     sizes={SIZES.narrow}
                     className="w-full h-auto"
                   />
@@ -129,6 +129,7 @@ export default function IterationSection({
               alt={ALT.colortype}
               width={0}
               height={0}
+              quality={QUALITY}
               sizes={SIZES.full}
               className="hidden md:block md:mt-5 w-full h-auto"
             />
@@ -142,6 +143,7 @@ export default function IterationSection({
               alt={ALT.wireframes}
               width={0}
               height={0}
+              quality={QUALITY}
               sizes={SIZES.full}
               className="w-full h-auto"
             />
@@ -152,6 +154,7 @@ export default function IterationSection({
               alt={ALT.system}
               width={0}
               height={0}
+              quality={QUALITY}
               sizes={SIZES.full}
               className="w-full h-auto"
             />
@@ -162,6 +165,7 @@ export default function IterationSection({
               alt={ALT.microint}
               width={0}
               height={0}
+              quality={QUALITY}
               sizes={SIZES.full}
               className="w-full h-auto"
             />
@@ -172,6 +176,7 @@ export default function IterationSection({
               alt={ALT.colortype}
               width={0}
               height={0}
+              quality={QUALITY}
               sizes={SIZES.full}
               className="w-full h-auto"
             />

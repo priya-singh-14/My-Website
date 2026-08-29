@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Typewriter from "@/components/fancy/text/typewriter";
 import type { GridItem } from "./data";
-import { useHoverCapable } from "./HoverFocusBox";
+import { useHoverCapable } from "./hover-focus-box";
 import MediaSkeleton from "../media-skeleton";
 
 interface GridCellProps {
@@ -12,7 +12,6 @@ interface GridCellProps {
   style: CSSProperties;
   mediaHeight: number;
   priority?: boolean;
-  // TODO: wire this to a lightbox/detail view for items with no href.
   onOpen?: (item: GridItem) => void;
 }
 
@@ -50,6 +49,7 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
         src={item.src}
         alt={alt}
         fill
+        quality={90}
         sizes="(max-width: 768px) 60vw, 260px"
         priority={priority}
         className="object-cover"

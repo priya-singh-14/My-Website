@@ -13,8 +13,8 @@ import {
   cellWidthForContainer,
 } from "./config";
 import { useVideoAutoplay } from "./use-video-autoplay";
-import GridCell from "./GridCell";
-import HoverFocusBox from "./HoverFocusBox";
+import GridCell from "./grid-cell";
+import HoverFocusBox from "./hover-focus-box";
 
 interface InfiniteGridProps {
   items: GridItem[];

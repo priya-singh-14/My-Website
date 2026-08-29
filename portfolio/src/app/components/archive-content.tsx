@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import InfiniteGrid from "./archive-grid/InfiniteGrid";
-import GridSkeleton from "./archive-grid/GridSkeleton";
+import InfiniteGrid from "./archive-grid/infinite-grid";
+import GridSkeleton from "./archive-grid/grid-skeleton";
 import type { GridItem } from "./archive-grid/data";
 import { fetchArenaChannelItems } from "./archive-grid/arena";
 

@@ -8,7 +8,7 @@ export interface GridItem {
   kind: MediaKind;
   src: string; // /public path or remote URL; image -> next/image, video -> <video src>
   poster?: string; // required for video: a still to show before/without playback
-  width: number; // intrinsic px -- drives the rendered aspect ratio, see InfiniteGrid.tsx
+  width: number; // intrinsic px -- drives the rendered aspect ratio, see infinite-grid.tsx
   height: number; // intrinsic px
   description?: string;
   href?: string; // where a tap navigates, if anywhere

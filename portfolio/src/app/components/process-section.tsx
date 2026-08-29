@@ -38,6 +38,8 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
             <Image
               src={mockup}
               fill
+              quality={90}
+              sizes="240px"
               className="object-contain object-top"
               alt={`${heading} mockup`}
               onLoad={() => setLoaded(true)}
