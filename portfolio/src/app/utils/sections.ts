@@ -23,7 +23,7 @@ export const receiptSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/receipt-assets/demo.mov",
+    demo: "/receipt-assets/demo.mp4",
   },
   {
     type: "datavis",
@@ -76,7 +76,7 @@ export const receiptSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/receipt-assets/demo2.mov",
+    demo: "/receipt-assets/demo2.mp4",
   },
   {
     type: "outcomes",
@@ -116,7 +116,7 @@ export const cairnSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/cairn-assets/demo1.mov",
+    demo: "/cairn-assets/demo1.mp4",
   },
   {
     type: "datavis",
@@ -170,7 +170,7 @@ export const cairnSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/cairn-assets/demo2.mov",
+    demo: "/cairn-assets/demo2.mp4",
   },
   {
     type: "iteration",
@@ -200,7 +200,7 @@ export const ascentSections: AllSectionTypes[] = [
     title: "Klaviyo",
     description:
       "Klaviyo is an AI-first B2C marketing/CRM platform that helps consumer brands turn their customer data into personalized email, SMS, and push campaigns. It supports fast-growing DTC customers like Glossier and Liquid Death to household names like Mattel.",
-    mockups: "/klaviyo-assets/cover.svg",
+    mockups: "/klaviyo-assets/cover.png",
   },
   {
     type: "meta",
@@ -217,7 +217,7 @@ export const ascentSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/klaviyo-assets/demo.mov",
+    demo: "/klaviyo-assets/demo.mp4",
   },
   {
     type: "process",
@@ -239,7 +239,7 @@ export const ascentSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/klaviyo-assets/demo2.mov",
+    demo: "/klaviyo-assets/demo2.mp4",
     caption:
       "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
@@ -279,7 +279,7 @@ export const c4cSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/ssf-assets/demo1.mov",
+    demo: "/ssf-assets/demo1.mp4",
   },
   {
     type: "overview",
@@ -313,7 +313,7 @@ export const c4cSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/ssf-assets/carousel.mov",
+    demo: "/ssf-assets/carousel.mp4",
     caption:
       "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
@@ -354,7 +354,7 @@ export const vzSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/vz-assets/demo1.mov",
+    demo: "/vz-assets/demo1.mp4",
     caption:
       "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
@@ -378,7 +378,7 @@ export const vzSections: AllSectionTypes[] = [
   },
   {
     type: "demo",
-    demo: "/vz-assets/demo2.mov",
+    demo: "/vz-assets/demo2.mp4",
   },
   {
     type: "outcomes",

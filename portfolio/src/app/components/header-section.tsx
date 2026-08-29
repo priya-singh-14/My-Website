@@ -24,6 +24,8 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
         <Image
           src={sectionDetails.mockups}
           fill
+          priority
+          sizes="(max-width: 768px) 100vw, 83vw"
           className="object-cover"
           alt={`${sectionDetails.title} mockup`}
           onLoad={() => setLoaded(true)}

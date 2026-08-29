@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -49,9 +50,15 @@ export default function UXRSection({ sectionDetails }: UXRSectionProps) {
             <div key={index} className="pb-5">
               <div className="relative w-full aspect-[4/3]">
                 <MediaSkeleton loaded={Boolean(loadedMap[index])} />
-                <img
+                <Image
                   src={img}
-                  className="absolute inset-0 h-full w-full object-contain"
+                  alt={`User research finding ${index + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 83vw"
+                  className="object-contain"
+                  // next/image forwards the ref to the underlying <img>, so the
+                  // cached-image check still works: onLoad never fires for an
+                  // image the browser already has.
                   ref={(el) => {
                     if (el?.complete) {
                       setLoadedMap((prev) =>

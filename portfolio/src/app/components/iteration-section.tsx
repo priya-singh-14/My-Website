@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { IterationSection } from "../utils/types";
 
 interface IterationSectionProps {
@@ -13,6 +14,19 @@ const ALT = {
   system: "Design system",
   microint: "Micro-interactions",
   colortype: "Color and typography styles",
+};
+
+// The content column is 83.3vw on desktop (px-[8.33%]) and full-bleed on
+// mobile. Each slot renders at a different width within the four-image grid,
+// so they get their own hint rather than all claiming full width.
+const SIZES = {
+  mobile: "100vw",
+  // Sits beside the one-third column, so it renders at roughly two thirds.
+  wide: "(max-width: 768px) 100vw, 55vw",
+  // The stacked w-1/3 column.
+  narrow: "(max-width: 768px) 100vw, 28vw",
+  // Spans the full content column.
+  full: "(max-width: 768px) 100vw, 83vw",
 };
 
 export default function IterationSection({
@@ -31,50 +45,136 @@ export default function IterationSection({
       </h4>
       <div className="md:hidden flex flex-wrap gap-y-2">
         {wireframes && (
-          <img className="w-full object-contain" src={wireframes} alt={ALT.wireframes}></img>
+          <Image
+            src={wireframes}
+            alt={ALT.wireframes}
+            width={0}
+            height={0}
+            sizes={SIZES.mobile}
+            className="w-full h-auto"
+          />
         )}
-        {system && <img className="w-full object-contain" src={system} alt={ALT.system}></img>}
-        {microint && <img className="w-full object-cover" src={microint} alt={ALT.microint}></img>}
+        {system && (
+          <Image
+            src={system}
+            alt={ALT.system}
+            width={0}
+            height={0}
+            sizes={SIZES.mobile}
+            className="w-full h-auto"
+          />
+        )}
+        {microint && (
+          <Image
+            src={microint}
+            alt={ALT.microint}
+            width={0}
+            height={0}
+            sizes={SIZES.mobile}
+            className="w-full h-auto"
+          />
+        )}
         {colortype && (
-          <img className="w-full object-cover" src={colortype} alt={ALT.colortype}></img>
+          <Image
+            src={colortype}
+            alt={ALT.colortype}
+            width={0}
+            height={0}
+            sizes={SIZES.mobile}
+            className="w-full h-auto"
+          />
         )}
       </div>
       {isFullGrid ? (
         <>
           <div className="hidden md:flex md:gap-x-4">
             {wireframes && (
-              <img className="flex-1 min-w-0 object-cover" src={wireframes} alt={ALT.wireframes}></img>
+              <Image
+                src={wireframes}
+                alt={ALT.wireframes}
+                width={0}
+                height={0}
+                sizes={SIZES.wide}
+                className="flex-1 min-w-0 w-full h-auto"
+              />
             )}
             {(system || microint) && (
               <div className="w-1/3 shrink-0 flex flex-col gap-y-4">
                 {system && (
-                  <img className="w-full object-cover" src={system} alt={ALT.system}></img>
+                  <Image
+                    src={system}
+                    alt={ALT.system}
+                    width={0}
+                    height={0}
+                    sizes={SIZES.narrow}
+                    className="w-full h-auto"
+                  />
                 )}
                 {microint && (
-                  <img className="w-full object-cover" src={microint} alt={ALT.microint}></img>
+                  <Image
+                    src={microint}
+                    alt={ALT.microint}
+                    width={0}
+                    height={0}
+                    sizes={SIZES.narrow}
+                    className="w-full h-auto"
+                  />
                 )}
               </div>
             )}
           </div>
           {colortype && (
-            <img
-              className="hidden md:block md:w-full md:mt-5 md:object-contain"
+            <Image
               src={colortype}
               alt={ALT.colortype}
-            ></img>
+              width={0}
+              height={0}
+              sizes={SIZES.full}
+              className="hidden md:block md:mt-5 w-full h-auto"
+            />
           )}
         </>
       ) : (
         <div className="hidden md:flex md:flex-col md:gap-y-4">
           {wireframes && (
-            <img className="w-full object-cover" src={wireframes} alt={ALT.wireframes}></img>
+            <Image
+              src={wireframes}
+              alt={ALT.wireframes}
+              width={0}
+              height={0}
+              sizes={SIZES.full}
+              className="w-full h-auto"
+            />
           )}
-          {system && <img className="w-full object-cover" src={system} alt={ALT.system}></img>}
+          {system && (
+            <Image
+              src={system}
+              alt={ALT.system}
+              width={0}
+              height={0}
+              sizes={SIZES.full}
+              className="w-full h-auto"
+            />
+          )}
           {microint && (
-            <img className="w-full object-cover" src={microint} alt={ALT.microint}></img>
+            <Image
+              src={microint}
+              alt={ALT.microint}
+              width={0}
+              height={0}
+              sizes={SIZES.full}
+              className="w-full h-auto"
+            />
           )}
           {colortype && (
-            <img className="w-full object-contain" src={colortype} alt={ALT.colortype}></img>
+            <Image
+              src={colortype}
+              alt={ALT.colortype}
+              width={0}
+              height={0}
+              sizes={SIZES.full}
+              className="w-full h-auto"
+            />
           )}
         </div>
       )}
