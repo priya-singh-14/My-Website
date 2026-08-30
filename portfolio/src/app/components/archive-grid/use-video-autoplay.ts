@@ -6,7 +6,10 @@ import type { RefObject } from "react";
 export function useVideoAutoplay(
   containerRef: RefObject<HTMLElement | null>,
   reducedMotion: boolean,
-  renderKey: string
+  renderKey: string,
+  // For layouts that scroll in the page rather than panning inside the
+  // container -- there, the container never clips, so it can't be the root.
+  rootIsViewport = false
 ) {
   useEffect(() => {
     const container = containerRef.current;
@@ -48,7 +51,7 @@ export function useVideoAutoplay(
       },
       // Margin keeps a video playing through the fade band at the edges, so it
       // isn't restarting from the poster right as it becomes fully visible.
-      { root: container, rootMargin: "200px", threshold: 0 }
+      { root: rootIsViewport ? null : container, rootMargin: "200px", threshold: 0 }
     );
 
     videos.forEach((video) => observer.observe(video));
@@ -56,5 +59,5 @@ export function useVideoAutoplay(
       observer.disconnect();
       if (flushTimeout) clearTimeout(flushTimeout);
     };
-  }, [containerRef, reducedMotion, renderKey]);
+  }, [containerRef, reducedMotion, renderKey, rootIsViewport]);
 }
