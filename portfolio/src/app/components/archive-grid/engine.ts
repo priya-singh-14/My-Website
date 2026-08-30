@@ -1,22 +1,19 @@
-// Per-item wrapping drag/pan engine for the infinite grid.
-// One rAF loop, one transform write per item per frame, no layout reads
-// inside the loop.
+// Per-item wrapping drag/pan engine for the infinite grid. One rAF loop, one
+// transform write per item per frame, no layout reads inside the loop.
 
-// ---- Feel knobs -----------------------------------------------------------
 export const defaultConfig = {
   friction: 0.92,
-  ease: 1, // 1 = rendered position snaps straight to target (no extra lag)
+  ease: 1,
   dragThresholdPx: 6,
   wheelSensitivity: 1,
   velocityEpsilon: 0.02,
-  // Hover "nudge" -- the whole viewport leans slightly toward whatever's
-  // hovered. Spring-integrated (not eased) so it has a slight bounce/settle
-  // rather than a dead stop. strength is the fraction of the raw
-  // center-to-center distance used as the spring's target displacement.
+  // Lean toward the hovered cell. Overdamped -- glides in, no rebound.
   nudgeStrength: 0.06,
   nudgeMax: 18,
-  nudgeStiffness: 0.08,
-  nudgeDamping: 0.72,
+  nudgeStiffness: 0.14,
+  nudgeDamping: 0.55,
+  // Fade band at each viewport edge, so the wrap teleport is never visible.
+  edgeFadeBand: 120,
 };
 
 export type EngineConfig = typeof defaultConfig;
@@ -32,46 +29,55 @@ export interface EngineOptions {
   items: EngineItemHandle[];
   tileW: number;
   tileH: number;
+  itemW: number;
+  itemH: number;
   reducedMotion: boolean;
   config?: Partial<EngineConfig>;
 }
 
 export interface EngineHandle {
   destroy: () => void;
-  // Called with the hovered item's center offset from the viewport's center
-  // (in px) to lean the viewport toward it; null to clear (return to center).
-  setNudgeTarget: (dx: number | null, dy: number | null) => void;
+  setFocus: (el: HTMLElement | null) => void;
 }
 
 const mod = (v: number, size: number) => ((v % size) + size) % size;
 
-// Requires tileW/tileH >= the viewport in their axis (enforced by the
-// console.warn below) -- otherwise wrapped copies leave gaps.
 function wrapAxis(base: number, off: number, size: number, viewport: number) {
   let p = mod(base + off, size);
   if (p > viewport) p -= size;
   return p;
 }
 
+// 0 while the item is outside the viewport, ramping to 1 once `band` px inside.
+function edgeAlpha(pos: number, size: number, viewportSize: number, band: number) {
+  if (band <= 0) return 1;
+  const inset = Math.min(pos + size, viewportSize - pos);
+  if (inset <= 0) return 0;
+  if (inset >= band) return 1;
+  const t = inset / band;
+  return t * t * (3 - 2 * t);
+}
+
 export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
-  const { viewport, items, tileW, tileH, reducedMotion } = options;
+  const { viewport, items, tileW, tileH, itemW, itemH, reducedMotion } = options;
   const config: EngineConfig = { ...defaultConfig, ...options.config };
+  const count = items.length;
 
   let viewportW = viewport.clientWidth;
   let viewportH = viewport.clientHeight;
 
+  // The tile must clear the viewport by a whole cell, or wrapped items land
+  // part-way inside the near edge and appear out of nowhere.
   function checkTileSize() {
-    if (viewportW > tileW || viewportH > tileH) {
+    if (viewportW + itemW > tileW || viewportH + itemH > tileH) {
       console.warn(
-        "[InfiniteGrid] viewport exceeds tile size -- wrapped tiling may show gaps. " +
-          "Increase columns/cell size or shrink the grid container."
+        "[InfiniteGrid] tile is not at least one cell larger than the viewport -- " +
+          "wrapped items will pop in at the edges. Add a layout column/row."
       );
     }
   }
   checkTileSize();
 
-  // Unbounded accumulated offset, driven by input. `render` is the (optionally
-  // eased) value actually painted each frame.
   let targetX = 0;
   let targetY = 0;
   let renderX = 0;
@@ -79,15 +85,14 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
   let velocityX = 0;
   let velocityY = 0;
 
-  // Hover nudge: a small spring-integrated offset layered on top of the pan
-  // position, independent of drag/momentum.
   let nudgeTargetX = 0;
   let nudgeTargetY = 0;
   let nudgeX = 0;
   let nudgeY = 0;
   let nudgeVX = 0;
   let nudgeVY = 0;
-  let nudging = false;
+
+  let focusIndex = -1;
 
   let pointerId: number | null = null;
   let isPointerDown = false;
@@ -108,7 +113,6 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     const first = samples[0];
     const last = samples[samples.length - 1];
     const dt = Math.max(1, last.t - first.t);
-    // px per ~frame (16.67ms), so it composes directly with friction below.
     return {
       vx: ((last.x - first.x) / dt) * 16.67,
       vy: ((last.y - first.y) / dt) * 16.67,
@@ -118,17 +122,49 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
   let rafId: number | null = null;
   let running = false;
 
+  const lastAlpha = new Float32Array(count).fill(-1);
+
   function writeTransforms() {
     const offX = renderX + nudgeX;
     const offY = renderY + nudgeY;
-    for (const item of items) {
+    for (let i = 0; i < count; i++) {
+      const item = items[i];
       const x = wrapAxis(item.baseX, offX, tileW, viewportW);
       const y = wrapAxis(item.baseY, offY, tileH, viewportH);
       item.el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+      const alpha =
+        edgeAlpha(x, itemW, viewportW, config.edgeFadeBand) *
+        edgeAlpha(y, itemH, viewportH, config.edgeFadeBand);
+      if (Math.abs(alpha - lastAlpha[i]) > 0.004) {
+        // Opacity alone doesn't stop hit-testing, so drop faded items out too.
+        const firstWrite = lastAlpha[i] < 0;
+        const wasInteractive = lastAlpha[i] >= 0.35;
+        const isInteractive = alpha >= 0.35;
+        if (firstWrite || isInteractive !== wasInteractive) {
+          item.el.style.pointerEvents = isInteractive ? "" : "none";
+        }
+        item.el.style.opacity = alpha.toFixed(3);
+        lastAlpha[i] = alpha;
+      }
     }
   }
 
   function tick() {
+    // Derived from engine state, not measured off the DOM: reading the item's
+    // live rect would feed the applied nudge back into its own input.
+    if (focusIndex >= 0 && !reducedMotion) {
+      const clamp = (v: number) =>
+        Math.max(-config.nudgeMax, Math.min(config.nudgeMax, v * config.nudgeStrength));
+      const ux = wrapAxis(items[focusIndex].baseX, renderX, tileW, viewportW);
+      const uy = wrapAxis(items[focusIndex].baseY, renderY, tileH, viewportH);
+      nudgeTargetX = clamp(ux + itemW / 2 - viewportW / 2);
+      nudgeTargetY = clamp(uy + itemH / 2 - viewportH / 2);
+    } else {
+      nudgeTargetX = 0;
+      nudgeTargetY = 0;
+    }
+
     if (!isPointerDown) {
       targetX += velocityX;
       targetY += velocityY;
@@ -141,12 +177,8 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     renderX += (targetX - renderX) * config.ease;
     renderY += (targetY - renderY) * config.ease;
 
-    // Simple spring-damper integrator (position + velocity), not just an
-    // ease, so it can slightly overshoot the nudge target before settling.
-    const ax = (nudgeTargetX - nudgeX) * config.nudgeStiffness;
-    const ay = (nudgeTargetY - nudgeY) * config.nudgeStiffness;
-    nudgeVX = (nudgeVX + ax) * config.nudgeDamping;
-    nudgeVY = (nudgeVY + ay) * config.nudgeDamping;
+    nudgeVX = (nudgeVX + (nudgeTargetX - nudgeX) * config.nudgeStiffness) * config.nudgeDamping;
+    nudgeVY = (nudgeVY + (nudgeTargetY - nudgeY) * config.nudgeStiffness) * config.nudgeDamping;
     nudgeX += nudgeVX;
     nudgeY += nudgeVY;
 
@@ -154,16 +186,15 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
 
     const settled =
       Math.abs(targetX - renderX) < 0.01 && Math.abs(targetY - renderY) < 0.01;
+    // Not gated on "is something focused" -- the focused item is re-evaluated
+    // every frame during a hover, which would pin the loop at 60fps.
     const nudgeSettled =
-      !nudging &&
       Math.abs(nudgeTargetX - nudgeX) < 0.05 &&
       Math.abs(nudgeTargetY - nudgeY) < 0.05 &&
       Math.abs(nudgeVX) < 0.05 &&
       Math.abs(nudgeVY) < 0.05;
-    const idle =
-      !isPointerDown && velocityX === 0 && velocityY === 0 && settled && nudgeSettled;
 
-    if (idle) {
+    if (!isPointerDown && velocityX === 0 && velocityY === 0 && settled && nudgeSettled) {
       running = false;
       rafId = null;
       return;
@@ -178,19 +209,18 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     }
   }
 
-  function setNudgeTarget(dx: number | null, dy: number | null) {
-    if (reducedMotion) return;
-    if (dx === null || dy === null) {
-      nudging = false;
-      nudgeTargetX = 0;
-      nudgeTargetY = 0;
-    } else {
-      nudging = true;
-      const clamp = (v: number) =>
-        Math.max(-config.nudgeMax, Math.min(config.nudgeMax, v * config.nudgeStrength));
-      nudgeTargetX = clamp(dx);
-      nudgeTargetY = clamp(dy);
+  function setFocus(el: HTMLElement | null) {
+    let next = -1;
+    if (el) {
+      for (let i = 0; i < count; i++) {
+        if (items[i].el === el) {
+          next = i;
+          break;
+        }
+      }
     }
+    if (next === focusIndex) return;
+    focusIndex = next;
     wake();
   }
 
@@ -205,7 +235,6 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     velocityY = 0;
     samples.length = 0;
     pushSample(e.clientX, e.clientY);
-    viewport.setPointerCapture(e.pointerId);
     wake();
   }
 
@@ -217,10 +246,12 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     lastY = e.clientY;
 
     if (!isDragging) {
-      const moved = Math.hypot(e.clientX - downX, e.clientY - downY);
-      if (moved > config.dragThresholdPx) {
+      if (Math.hypot(e.clientX - downX, e.clientY - downY) > config.dragThresholdPx) {
         isDragging = true;
         dragHappened = true;
+        // Captured only now. Taking it on pointerdown would retarget the
+        // trailing click to the viewport, so links inside a cell never fire.
+        viewport.setPointerCapture(e.pointerId);
       }
     }
 
@@ -248,10 +279,7 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
     wake();
   }
 
-  // Tap-vs-drag: suppress the click on whatever item is under the pointer if
-  // this gesture crossed the drag threshold. Capture phase runs before the
-  // item's own (bubble-phase) onClick, so this cleanly blocks it without the
-  // engine needing to know about individual items as click targets.
+  // Suppress the click a pan ends in, so dragging across a cell can't open it.
   function onClickCapture(e: MouseEvent) {
     if (dragHappened) {
       e.stopPropagation();
@@ -293,7 +321,7 @@ export function createInfiniteGridEngine(options: EngineOptions): EngineHandle {
   writeTransforms();
 
   return {
-    setNudgeTarget,
+    setFocus,
     destroy() {
       if (rafId !== null) cancelAnimationFrame(rafId);
       if (resizeTimeout) clearTimeout(resizeTimeout);

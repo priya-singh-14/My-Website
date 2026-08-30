@@ -3,12 +3,10 @@
 import { useEffect } from "react";
 import type { RefObject } from "react";
 
-// Plays/pauses each <video> in `containerRef` based on whether it's currently
-// on screen, so concurrent playback is bounded to what's actually visible
-// regardless of how far the grid has been panned. Independent of the rAF loop.
 export function useVideoAutoplay(
   containerRef: RefObject<HTMLElement | null>,
-  reducedMotion: boolean
+  reducedMotion: boolean,
+  renderKey: string
 ) {
   useEffect(() => {
     const container = containerRef.current;
@@ -18,28 +16,45 @@ export function useVideoAutoplay(
     if (videos.length === 0) return;
 
     if (reducedMotion) {
-      // Poster only -- no autoplay, no decode.
       videos.forEach((video) => video.pause());
       return;
     }
+    
+    const pending = new Map<HTMLVideoElement, boolean>();
+    let flushTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    const flush = () => {
+      flushTimeout = null;
+      pending.forEach((shouldPlay, video) => {
+        if (shouldPlay === !video.paused) return;
+        if (shouldPlay) {
+          video.play().catch(() => {
+            // Autoplay can be rejected by the browser; poster stays visible.
+          });
+        } else {
+          video.pause();
+        }
+      });
+      pending.clear();
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting) {
-            video.play().catch(() => {
-              // Autoplay can be rejected by the browser; poster stays visible.
-            });
-          } else {
-            video.pause();
-          }
+          pending.set(entry.target as HTMLVideoElement, entry.isIntersecting);
         }
+        if (flushTimeout) clearTimeout(flushTimeout);
+        flushTimeout = setTimeout(flush, 120);
       },
-      { root: container, threshold: 0.1 }
+      // Margin keeps a video playing through the fade band at the edges, so it
+      // isn't restarting from the poster right as it becomes fully visible.
+      { root: container, rootMargin: "200px", threshold: 0 }
     );
 
     videos.forEach((video) => observer.observe(video));
-    return () => observer.disconnect();
-  }, [containerRef, reducedMotion]);
+    return () => {
+      observer.disconnect();
+      if (flushTimeout) clearTimeout(flushTimeout);
+    };
+  }, [containerRef, reducedMotion, renderKey]);
 }

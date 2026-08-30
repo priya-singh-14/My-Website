@@ -94,9 +94,18 @@ export default {
           "0%, 50%": { opacity: "1" },
           "50.01%, 100%": { opacity: "0" },
         },
+        // Archive grid entrance. Transform here is safe -- it runs on the
+        // cell's inner wrapper, not the cell, which the grid engine drives.
+        "archive-cell-in": {
+          from: { opacity: "0", transform: "translate3d(0, 14px, 0) scale(0.94)" },
+          to: { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
+        },
       },
       animation: {
         blink: "blink 1s step-end infinite",
+        // `both` so the cell holds at opacity 0 through its stagger delay
+        // instead of flashing in at full opacity first.
+        "archive-cell-in": "archive-cell-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },
