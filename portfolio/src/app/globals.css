@@ -3,15 +3,9 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -26,13 +20,6 @@ body {
     cursor: none !important;
   }
 
-  /* Next's dev error overlay renders into a shadow root under this host. A
-     compile error tears down the React tree -- and with it the custom dot --
-     so without this you're left with no cursor at all, on the one screen you
-     most need to click. `*` can't reach into a shadow tree, but `cursor`
-     inherits across the boundary, so resetting the host covers the whole
-     overlay. Type selectors outrank `*`, so this wins despite both being
-     !important. Dev-only markup; renders nothing in production. */
   nextjs-portal,
   nextjs-portal * {
     cursor: auto !important;
