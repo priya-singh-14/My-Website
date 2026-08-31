@@ -123,10 +123,10 @@ const GridCell = forwardRef<HTMLElement, GridCellProps>(function GridCell(
               speed={20}
               loop={false}
               showCursor={false}
-              className="line-clamp-2 text-li font-light text-primary/40"
+              className="line-clamp-2 text-li font-light text-primary/70"
             />
           ) : (
-            <p className="line-clamp-2 text-li font-light text-primary/40">
+            <p className="line-clamp-2 text-li font-light text-primary/70">
               {item.description}
             </p>
           ))}
