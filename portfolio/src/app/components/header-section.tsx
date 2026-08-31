@@ -15,7 +15,7 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-5 md:px-[8.33%]">
       <motion.div
-        className="relative w-full h-[400px] sm:h-[360px] md:h-[450px] overflow-hidden mb-6 rounded-2xl md:rounded-[8px]"
+        className="relative w-full aspect-video md:aspect-auto md:h-[450px] overflow-hidden mb-6 rounded-2xl md:rounded-[8px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
