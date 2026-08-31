@@ -13,8 +13,30 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://priyasingh.dev"),
   title: "Priya Singh",
-  description: "My Development and Design Portfolio",
+  description: "priyasingh.dev",
+  openGraph: {
+    title: "Priya Singh",
+    description: "priyasingh.dev",
+    url: "/",
+    siteName: "priyasingh.dev",
+    type: "website",
+    images: [
+      {
+        url: "/meta.png",
+        width: 1200,
+        height: 630,
+        alt: "portfolio thumbnail",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Priya Singh",
+    description: "priyasingh.dev — product design portfolio",
+    images: ["/meta.png"],
+  },
 };
 
 export default function RootLayout({
