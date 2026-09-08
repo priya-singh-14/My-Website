@@ -5,6 +5,7 @@ import NavBar from "./components/navbar";
 import SiteFooter from "./components/site-footer";
 import CursorDot from "./components/cursor-dot";
 import { Manrope } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
         <CursorDot />
         {children}
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
