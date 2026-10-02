@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import Typewriter from "@/components/fancy/text/typewriter";
 import MediaSkeleton from "./media-skeleton";
 
 interface Photo {
-  // Leave out to show a grey placeholder (with its caption) until the image exists.
   src?: string;
   alt: string;
   caption?: string;
@@ -16,7 +15,7 @@ type PhotoSetKey = "default" | "travel" | "hike" | "eats";
 
 const photoSets: Record<PhotoSetKey, Photo[]> = {
   default: [
-    { src: "/about-assets/me.png", alt: "Priya Singh", caption: "That's me!" },
+    { src: "/about-assets/me.jpeg", alt: "Priya Singh", caption: "That's me!" },
   ],
   travel: [
     {
@@ -24,7 +23,11 @@ const photoSets: Record<PhotoSetKey, Photo[]> = {
       alt: "",
       caption: "Walking around the Amsterdam canals",
     },
-    { src: "/about-assets/travel3.png", alt: "", caption: "Navigating the U-Bahn in Berlin" },
+    {
+      src: "/about-assets/travel3.png",
+      alt: "",
+      caption: "Navigating the U-Bahn in Berlin",
+    },
     {
       src: "/about-assets/travel1.png",
       alt: "",
@@ -234,44 +237,53 @@ export default function AboutContent({ onOpenArchive }: AboutContentProps) {
           set the row's height: the text column does, and the photos flex to
           fit it rather than pushing the GitHub/Resume links down. */}
       <div className="relative hidden md:block md:w-[48%] md:shrink-0">
-        <motion.div
-          key={activeSet}
-          className="absolute inset-0 flex flex-col gap-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
-          {photos.length === 1 ? (
-            <PhotoFrame
-              className="min-h-0 flex-1"
-              aspect="min-h-0 flex-1"
-              caption={photos[0].caption}
-            >
-              <AboutPhoto photo={photos[0]} sizes="48vw" priority />
-            </PhotoFrame>
-          ) : (
-            <>
+        <AnimatePresence initial={false} mode="wait">
+          <motion.div
+            key={activeSet}
+            className="absolute inset-0 flex flex-col gap-5"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.25, ease: "easeOut" },
+            }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 0.12, ease: "easeIn" },
+            }}
+          >
+            {photos.length === 1 ? (
               <PhotoFrame
-                className="min-h-0 flex-1"
+                className="my-auto h-[94%] w-[88%] self-end"
                 aspect="min-h-0 flex-1"
-                caption={photos[0]?.caption}
+                caption={photos[0].caption}
               >
-                <AboutPhoto photo={photos[0]} sizes="48vw" priority />
+                <AboutPhoto photo={photos[0]} sizes="43vw" priority />
               </PhotoFrame>
-              <div className="grid shrink-0 grid-cols-2 gap-5">
-                {[photos[1], photos[2]].map((photo, i) => (
-                  <PhotoFrame
-                    key={i}
-                    aspect="aspect-[5/4]"
-                    caption={photo?.caption}
-                  >
-                    <AboutPhoto photo={photo} sizes="24vw" />
-                  </PhotoFrame>
-                ))}
-              </div>
-            </>
-          )}
-        </motion.div>
+            ) : (
+              <>
+                <PhotoFrame
+                  className="min-h-0 flex-1"
+                  aspect="min-h-0 flex-1"
+                  caption={photos[0]?.caption}
+                >
+                  <AboutPhoto photo={photos[0]} sizes="48vw" priority />
+                </PhotoFrame>
+                <div className="grid shrink-0 grid-cols-2 gap-5">
+                  {[photos[1], photos[2]].map((photo, i) => (
+                    <PhotoFrame
+                      key={i}
+                      aspect="aspect-[5/4]"
+                      caption={photo?.caption}
+                    >
+                      <AboutPhoto photo={photo} sizes="24vw" />
+                    </PhotoFrame>
+                  ))}
+                </div>
+              </>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

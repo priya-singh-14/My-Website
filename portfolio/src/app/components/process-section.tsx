@@ -14,20 +14,15 @@ const fadeIn = {
   animate: { opacity: 1, y: 0 },
 };
 
-function DecisionMedia({ src, alt }: { src?: string; alt: string }) {
+function DecisionMedia({ src, alt }: { src: string; alt: string }) {
   const [loaded, setLoaded] = useState(false);
-
-  // No media yet: leave the grey frame in place as a static placeholder.
-  if (!src) {
-    return <div className="absolute inset-0 bg-greyLight/40" aria-hidden="true" />;
-  }
 
   return (
     <>
       <MediaSkeleton loaded={loaded} />
       {/\.(mp4|webm|mov)$/i.test(src) ? (
         <video
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           aria-label={alt}
           src={src}
           autoPlay
@@ -42,7 +37,7 @@ function DecisionMedia({ src, alt }: { src?: string; alt: string }) {
           fill
           quality={90}
           sizes="(max-width: 768px) calc(100vw - 40px), 50vw"
-          className="object-cover"
+          className="object-cover object-center"
           alt={alt}
           onLoad={() => setLoaded(true)}
         />
@@ -63,7 +58,7 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
         {heading}
       </h4>
       <div className="flex flex-col md:flex-row gap-10 md:gap-16">
-        <div className="w-full md:w-5/12">
+        <div className={`w-full ${item.media ? "md:w-5/12" : ""}`}>
           <div role="tablist" aria-label={heading} className="flex gap-1 mb-8">
             {items.map((decision, i) => (
               <button
@@ -107,15 +102,17 @@ export default function ProcessSection({ sectionDetails }: ProcessSectionProps) 
             </motion.p>
           </div>
         </div>
-        <motion.div
-          key={`media-${active}`}
-          className="relative w-full md:w-7/12 aspect-[16/10] overflow-hidden rounded-[8px]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <DecisionMedia src={item.media} alt={`${item.title} mockup`} />
-        </motion.div>
+        {item.media && (
+          <motion.div
+            key={`media-${active}`}
+            className="relative w-full md:w-7/12 aspect-[16/10] overflow-hidden rounded-[8px] border border-[#E3E3E3]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <DecisionMedia src={item.media} alt={`${item.title} mockup`} />
+          </motion.div>
+        )}
       </div>
     </div>
   );

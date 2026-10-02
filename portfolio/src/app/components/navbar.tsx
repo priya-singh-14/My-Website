@@ -74,26 +74,20 @@ export default function Navbar() {
         </button>
       </nav>
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-6 text-2xl font-manrope">
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                openPanel("about");
-              }}
-              className="text-black py-1"
-            >
-              About
-            </button>
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                openPanel("archive");
-              }}
-              className="text-black py-1"
-            >
-              Archive
-            </button>
+        <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-20">
+          <div className="flex flex-col px-5 font-manrope">
+            {(["about", "archive"] as const).map((key) => (
+              <button
+                key={key}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  openPanel(key);
+                }}
+                className="w-full border-b border-[#E3E3E3] py-6 text-left text-[20px] capitalize text-blackPrimary"
+              >
+                {key}
+              </button>
+            ))}
           </div>
         </div>
       )}

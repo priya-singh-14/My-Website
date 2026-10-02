@@ -22,7 +22,6 @@ export interface MetaSection extends ProjectSection {
 export interface ProcessDecision {
   title: string;
   body: string;
-  // Image or video shown beside the decision; a grey placeholder renders until set.
   media?: string;
 }
 
