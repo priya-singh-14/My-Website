@@ -22,13 +22,13 @@ export interface MetaSection extends ProjectSection {
 export interface ProcessDecision {
   title: string;
   body: string;
+  media?: string;
 }
 
 export interface ProcessSection extends ProjectSection {
   type: "process";
   heading?: string;
   items: Array<ProcessDecision>;
-  mockup?: string;
 }
 
 export interface OutcomesSection extends ProjectSection {

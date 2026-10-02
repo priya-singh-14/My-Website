@@ -18,8 +18,8 @@ export const receiptSections: AllSectionTypes[] = [
   {
     type: "overview",
     problem:
-      "Your early twenties are when money habits set. As young adults face pressure to spend socially, wasteful consumption patterns emerge and tend to persist for decades.",
-    uxr: "Re:ceipt embeds sustainable suggestions directly where people track their spending, with a positive reinforcement strategy informed by user research.",
+      "Young adults want to spend sustainably, but convenience and cost get in the way, and budgeting apps show where their money goes without showing its impact.",
+    uxr: "Re:ceipt adds sustainable suggestions where people already track spending, focused on the categories where they overspend most.",
   },
   {
     type: "demo",
@@ -28,7 +28,7 @@ export const receiptSections: AllSectionTypes[] = [
   {
     type: "datavis",
     subheading:
-      "To better understand the financial and sustainability behaviors of young adults, we surveyed 31 students and recent graduates (aged 18–26). Our questions aimed to identify blockers preventing mindful consumption.",
+      "To better understand the financial and sustainability behaviors of young adults, We surveyed 31 people, mostly aged 18–24, about their spending and sustainability habits.",
     stats: [
       {
         values: new Map([
@@ -61,16 +61,19 @@ export const receiptSections: AllSectionTypes[] = [
     heading: "Key Design Decisions",
     items: [
       {
-        title: "Social Influence",
-        body: "People spend to keep up with their friends. Instead of fighting that, we used it. The community features reward the sustainable choices.",
+        title: "Suggestions where the spending happens",
+        body: "About a third of surveyors wanted to know more about brands' impact, but few would research it on their own. Since convenience was also the biggest blocker mentioned by surveyors, we had suggestions appear inside the transaction feed, next to the purchase they relate to for quick scanning.",
+        media: "/receipt-assets/vis1.svg",
       },
       {
-        title: "Rejecting Shame Culture",
-        body: "Users responded better to empowerment over strict accountability. We shaped Re:ceipt's messaging to focus on positive, achievable steps rather than highlighting failures.",
+        title: "Building on social spending",
+        body: "A third of survey responses indicated that most social spending happens with friends, so community features reward sustainable choices rather than restricting spending.",
+        media: "/receipt-assets/vid1.mov",
       },
       {
-        title: "Providing Educational Value",
-        body: "None of the banking apps we looked at said a word about sustainability, and our users stated a lack of motivation to research it themselves, so we built the learning directly into the app.",
+        title: "Subverting shame culture",
+        body: "Users responded better to empowerment over strict accountability. Re:ceipt's messaging focuses on small, achievable steps instead of flagging overspending.",
+        media: "/receipt-assets/vis3.svg",
       },
     ],
   },
@@ -81,7 +84,7 @@ export const receiptSections: AllSectionTypes[] = [
   {
     type: "outcomes",
     summary:
-      "Won the New Designer Award at the Cornell UX Design-a-thon after presenting our work to a live panel of industry design leaders.",
+      "Won the New Designer Award at the Cornell UX Design-a-thon judged by a live panel of industry design leaders.",
     takeaways: [
       "Targeting two forms of sustainability in one product could have introduced scope creep quickly. Keeping the research tightly scoped is what helped us maintain the core purpose of the application.",
       "Working asynchronously 300 miles apart required high-level communication and trust between designers.",
@@ -206,34 +209,37 @@ export const ascentSections: AllSectionTypes[] = [
     type: "meta",
     role: "Product Design Co-op",
     duration: "2026",
-    skills: "Design Systems, Design Engineering, AI",
+    skills: "Design Systems, Design Engineering",
     team: "Core Infrastructure",
   },
   {
     type: "overview",
     problem:
-      "Ascent is Klaviyo's enterprise design system. My contributions to the system include a carousel incentivized by growing screen density, and new content organization patterns built to accommodate enterprise customer needs.",
-    uxr: "I worked as a product designer with codebase access, which meant I owned the work the whole way through spec, code, review, and into production.",
+      "Klaviyo stored content in flat, tag-based lists, so enterprise teams had no reliable way to organize or navigate large amounts of content. Product teams had started building one-off fixes, which created inconsistent patterns and growing UX debt.",
+    uxr: "I researched and shipped a folder system, with pattern guidelines and four new components, that made hierarchical organization a platform-level pattern.",
   },
   {
     type: "demo",
     demo: "/klaviyo-assets/demo.mp4",
+    caption: "Folder patterns and components in production.",
   },
   {
     type: "process",
     heading: "Key Contributions",
     items: [
       {
-        title: "Reduced code redundancy and maintenance",
-        body: "Cut down on six custom carousel implementations and closed the accessibility gaps that all the custom one-off versions had.",
+        title: "Simplifying load-bearing tags",
+        body: "Tags were used as both the metadata layer and the navigation layer. Because tags and objects are many-to-many, nothing had a single location in the interface, making content hard to index and keep track of. Folders absorbed the navigation use-case, giving every object one home and clarifying the role of tags.",
+        media: "/klaviyo-assets/vis1.png",
       },
       {
-        title: "Tackled legacy UX debt for scaling customers",
-        body: "Enterprise customers needed a sturdier way to manage their account assets, so I reworked the patterns for a folder-based design pattern that introduced hierarchical categorization.",
+        title: "Shifting the mental model",
+        body: "Folders changed how the platform thinks about content holistically and warranted adoption by multiple feature teams. I ran working sessions with product owners to identify how a new system would fit enterprise workflows in various feature areas to solidify patterns that would extend to every surface.",
       },
       {
-        title: "Owned to production",
-        body: "10+ Figma specs, taken all the way to a merged beta-library component with full test coverage.",
+        title: "Building the system sustainably",
+        body: "I built the folders as four composable components so any team could adopt them, which replaced multiple custom implementations with one canonical pattern, inclusive of accessibility patterns.",
+        media: "/klaviyo-assets/vis.png",
       },
     ],
   },
@@ -241,19 +247,19 @@ export const ascentSections: AllSectionTypes[] = [
     type: "demo",
     demo: "/klaviyo-assets/demo2.mp4",
     caption:
-      "Sorry! Some of this work is proprietary. Please reach out for further details",
+      "Some of this work is proprietary! Please reach out for details, as well as information about other component projects.",
   },
   {
     type: "outcomes",
     summary:
-      "Total contributions touched more than 56% of Klaviyo's app surfaces.",
+      "Folders were reinstated as a platform-level pattern after deprecation, backed by published content hierarchy guidelines and new components.",
     takeaways: [
-      "Owning a component from Figma spec through code review taught me to design with the build in mind. Knowing what's expensive to implement helped tailor my specs to production patterns.",
-      "Closing accessibility gaps at the component level fixes them across every surface at once.",
+      "Owning components from design spec through code review taught me to design with the technical build in mind. Knowing what's expensive to implement helped tailor my specs to our production code patterns.",
+      "Closing accessibility gaps at the folder component level fixes them across every surface at once, which incentivized a future accessibility hook package.",
     ],
     retrospective: [
-      "Migrating six teams off their custom versions outlasted my co-op scope. I built the component but I didn't get to finish moving everyone onto it.",
-      "Deep over broad categorization fits enterprise needs, but depth introduces more places to look, more clicks to navigate, and more friction along the way. It is a trade-off that needs additional validation and testing.",
+      "Depth-based content hierarchy fits enterprise needs, but depth introduces more places to look and more clicks to navigate. It is a trade-off that needs additional validation.",
+      "Bringing back a deprecated system meant first understanding why it was cut. The case for reinstating folders could only be made after I could show how the customer need had changed.",
     ],
   },
 ];
@@ -275,7 +281,7 @@ export const c4cSections: AllSectionTypes[] = [
   },
   {
     type: "note",
-    body: "As Director of Design, I oversee and manage all client projects for a given semester. One client project that I had direct design involvement in (Securing Safe Food) is shared below for context.",
+    body: "As Director of Design, I oversee and manage all client projects for a given semester. One client project is shared below. For information about additional client projects, please reach out.",
   },
   {
     type: "demo",
@@ -284,8 +290,8 @@ export const c4cSections: AllSectionTypes[] = [
   {
     type: "overview",
     problem:
-      "Securing Safe Food connects allergen-free food donations from manufacturers to food pantries across the country. They needed an efficient way to track ingress and egress donations, food orders, and requests from pantries in their partner network.",
-    uxr: "I built the donation management system through several rounds of iteration, building the project design system and wireframes, while running design for the rest of the studio at the same time.",
+      "Securing Safe Food connects allergen-free food donations from manufacturers to food pantries nationwide. They needed an efficient way to track ingress and egress donations, orders, and food requests from pantries in their partner network.",
+    uxr: "I mapped the inherited system, rebuilt its information architecture, and designed the donation management workflows and design system across all four roles.",
   },
   {
     type: "process",
@@ -293,42 +299,43 @@ export const c4cSections: AllSectionTypes[] = [
     items: [
       {
         title: "A mishandled item can send someone to the hospital",
-        body: "The unsafe path needed intentional friction. Allergen separation lives in the visual hierarchy, safety checks are unavoidable in the workflow, and volunteers only ever see the manufacturers stocking the specific allergen-safe item that's been requested.",
-      },
-
-      {
-        title: "Inherited & rearchitected",
-        body: "The embedded relationship between orders, donations, and requests across four user roles required a UI that is consistent and retraceable across isolated dashboards. The design system had to support clarity as a primary value.",
+        body: "The unsafe path needed intentional friction. Allergen separation lives in the visual hierarchy, safety checks are built in the workflow, and conditional logic prevents volunteers from allocating allergen-risk item to an order.",
+        media: "/ssf-assets/vid1.mov",
       },
       {
-        title: "Documentation under the hood",
-        body: "Every item moves through manufacturers, volunteers, and pantries, and when something goes wrong, it has to be traced backwards. A paper trail is built underneath the flow of donation stock for administrative ease.",
+        title: "Connecting isolated workflows",
+        body: "The embedded relationship between orders, donations, and requests across four user roles required a UI that is consistent and re-traceable across isolated dashboards. The system had to emphasize clarity as a primary value, maintained by constrained visuals and limited components.",
+        media: "/ssf-assets/vis2.png",
+      },
+      {
+        title: "Designing around the allocation moment",
+        body: "Volunteers are the only role working across the whole system, matching donations to requests as stock changes. I defined how each lifecycle action affects stock totals, so stock already promised to an order never shows as available, and made those states visible where volunteers allocate.",
+        media: "/ssf-assets/vis3.png",
       },
     ],
   },
   {
     type: "iteration",
     wireframes: "/ssf-assets/demo.svg",
-    colortype: "/ssf-assets/colorstype.png",
-  },
-  {
-    type: "demo",
-    demo: "/ssf-assets/carousel.mp4",
-    caption:
-      "Sorry! Some of this work is proprietary. Please reach out for further details",
   },
   {
     type: "outcomes",
     summary:
       "Took Securing Safe Food from an undocumented handoff to a shipped system across four user roles, owning the client relationship, product, IA, and design system.",
     takeaways: [
-      "On a messy inherited project, the first thing worth delivering wasn't polished visuals, but rather a clear picture of how the whole system works.",
-      "Setting up the systems that let every other designer do good work allowed for agile systems to thrive.",
+      "Since this was an inherited project, defining the product terminology, outlining the IA, and creating clear guidelines for lifecycle actions needed to be completed with technical stakeholders upfront.",
+      "Detailed and thoughtful documentation played a huge role in the success of this project as contributors changed between semesters.",
     ],
     retrospective: [
-      "Detailed and thoughtful documentation played a huge role in the success of this project as contributors changed between semesters.",
-      "The complexity of the workflow means that information density is high. Condensing the amount of information shown at once could lead to easier onboarding.",
+      "The workflow is complex, so the dashboards are dense. I'd like to test ways to show less at once, like progressive disclosure, to make onboarding easier for new volunteers.",
+      "Since most of my user input came through the client representative rather than volunteers directly, I would've liked to get early iterations in front of the people doing allocations.",
     ],
+  },
+  {
+    type: "demo",
+    demo: "/ssf-assets/carousel.mp4",
+    caption:
+      "As Director of Design, I've managed 10+ client projects like this one! Please reach out for details about other products.",
   },
 ];
 export const vzSections: AllSectionTypes[] = [
@@ -349,8 +356,8 @@ export const vzSections: AllSectionTypes[] = [
   {
     type: "overview",
     problem:
-      "Verizon reads churn from its own data (support tickets, billing, feedback forms), but most of that surfaces only after someone's already gone. The public signals that surface prior to churn, like reviews, social posts, complaint threads, and outage reports, go unreported. At a 1.13% quarterly churn rate on postpaid connections, that blind spot works out to more than $150M lost in a single quarter.",
-    uxr: "The dashboard pulls from five public sources, runs NLP over them for sentiment, keywords, and topics, and ties every finding to a specific, definable action. The point was to stop reacting to churn and start treating it pre-emptively.",
+      "Verizon tracks churn with internal data that surfaces only after customers leave. Public warning signs like reviews, social posts, and outage reports go untracked, while churn costs more than $150M a quarter.",
+    uxr: "We built a dashboard that pulls daily data from five public sources, uses NLP to surface churn drivers, and pairs each one with a mitigation strategy.",
   },
   {
     type: "demo",
@@ -363,16 +370,17 @@ export const vzSections: AllSectionTypes[] = [
     heading: "Key Design Decisions",
     items: [
       {
-        title: "The only product voice on an engineering team",
-        body: "I was the only designer and product-oriented contributor who could also write code. Verizon's stakeholders described what they wanted in pretty abstract terms, and my job was turning that into features a very technical, non-product team could actually scope and build.",
+        title: "Scoping our Machine Learning",
+        body: "We originally scoped a dashboard of structured metrics relating to network connectivity, but once we started data collection, most of the data turned out to be unstructured text, so I researched and owned the addition of an NLP layer for sentiment, keywords, and topics. The dashboard now shows themes and sentiment trends in conjunction with network connectivity trends.",
+        media: "/vz-assets/vis1.png",
       },
       {
-        title: "Designing for the role, not just the user",
-        body: "A two-week async questionnaire turned up something useful: regional and central analysts care about completely different numbers. That pushed the whole product toward role-specific workflows, the same regional-interface need Verizon later flagged as a priority.",
+        title: "Every signal needs an action",
+        body: "Early versions reported what was happening. Interviews with Verizon stakeholders showed they needed to know what to do about it, so we paired each churn driver with a specific mitigation strategy.",
       },
       {
-        title: "Full pipeline under a two-week clock",
-        body: "Abstract client needs → async research → personas and scenarios → lo-fi → hi-fi in Verizon's brand system, presented to execs. Tight timelines meant parallelizing this process alongside development.",
+        title: "Designing for every role",
+        body: "At first, we approached the problem from a singular user role, but a two-week async questionnaire revealed that regional and central analysts care about completely different metrics. From there, we pivoted the whole product toward role-specific workflows, which enabled more specific mitigation strategies.",
       },
     ],
   },
@@ -385,12 +393,12 @@ export const vzSections: AllSectionTypes[] = [
     summary:
       "Pulled together 170,000+ public data points and surfaced churn drivers that Verizon's own reporting had never caught.",
     takeaways: [
-      "Being the only design and product voice on an engineering team was an exercise in translation. Reducing stakeholder requests into features and condensing tens of thousands of raw data points into a scannable screen became a critical skill.",
-      "I owned the NLP and analysis layer, sentiment, keywords, and topic modeling, with contributions to data sourcing, collection, and cleaning. Constructing the full pipeline across five messy public sources in four months required streamlined engineering to hit deployment deadlines.",
+      "As the only design/product voice on an engineering team, a large part of my role was translation. It took practice to understand how abstract requests can be parsed into scoped features.",
+      "Three major product decisions came from what we learned mid-build, not from the original scope. Being able to reassess and pivot made a huge positive impact on our end product.",
     ],
     retrospective: [
-      "Company sentiment is averaged on each post's overall label, so a post that criticizes Verizon while praising a competitor still counts as positive for Verizon. Per-entity sentiment was deferred to future work, and deprioritized to accommodate deadlines.",
-      "Topic modeling relies on a hand-built mapping from raw clusters to business categories. It works today, but as carriers rename plans and new complaints surface, that mapping needs constant manual upkeep.",
+      "Sentiment is scored per post, so a post that criticizes Verizon while praising a competitor still counts as positive. Per-entity sentiment is stored in the system, but visualizing it was deferred to future work.",
+      "I'd like to revisit our topic model to have the clusters update autonomously. Topic modeling relies on a hand-built mapping from raw clusters to business categories, so that mapping needs manual upkeep against industry trends as it is currently implemented.",
     ],
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { AnimatePresence, motion } from "motion/react";
 import Modal from "./modal";
 import { useEffect, useState } from "react";
 
@@ -12,8 +13,15 @@ const ArchiveContent = dynamic(() => import("./archive-content"), { ssr: false }
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isArchiveOpen, setIsArchiveOpen] = useState(false);
+  // About and Archive share one modal so About can hand off to Archive by
+  // cross-fading the content under a single scrim. `panel` is kept after
+  // closing so the content stays mounted through the modal's exit fade.
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [panel, setPanel] = useState<"about" | "archive">("about");
+  const openPanel = (next: "about" | "archive") => {
+    setPanel(next);
+    setIsModalOpen(true);
+  };
 
   // Warms the chunk cache shortly after the page settles so the modal
   // content is already loaded by the time someone opens it, instead of
@@ -31,8 +39,8 @@ export default function Navbar() {
         </Link>
         {/* navbar */}
         <div className="font-manrope text-li hidden md:flex space-x-12">
-          <button onClick={() => setIsAboutOpen(true)}>About</button>
-          <button onClick={() => setIsArchiveOpen(true)}>Archive</button>
+          <button onClick={() => openPanel("about")}>About</button>
+          <button onClick={() => openPanel("archive")}>Archive</button>
         </div>
 
         {/* hamburger menu */}
@@ -66,34 +74,39 @@ export default function Navbar() {
         </button>
       </nav>
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-24">
-          <div className="flex flex-col items-start px-8 space-y-6 text-2xl font-manrope">
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsAboutOpen(true);
-              }}
-              className="text-black py-1"
-            >
-              About
-            </button>
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                setIsArchiveOpen(true);
-              }}
-              className="text-black py-1"
-            >
-              Archive
-            </button>
+        <div className="md:hidden fixed inset-0 bg-primary z-20 flex flex-col justify-start pt-20">
+          <div className="flex flex-col px-5 font-manrope">
+            {(["about", "archive"] as const).map((key) => (
+              <button
+                key={key}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  openPanel(key);
+                }}
+                className="w-full border-b border-[#E3E3E3] py-6 text-left text-[20px] capitalize text-blackPrimary"
+              >
+                {key}
+              </button>
+            ))}
           </div>
         </div>
       )}
-      <Modal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)}>
-        <AboutContent />
-      </Modal>
-      <Modal isOpen={isArchiveOpen} onClose={() => setIsArchiveOpen(false)}>
-        <ArchiveContent />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={panel}
+            className="flex min-h-0 flex-1 flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 0.3, ease: "easeOut" } }}
+            exit={{ opacity: 0, transition: { duration: 0.15, ease: "easeIn" } }}
+          >
+            {panel === "about" ? (
+              <AboutContent onOpenArchive={() => setPanel("archive")} />
+            ) : (
+              <ArchiveContent />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </Modal>
     </>
   );
