@@ -68,7 +68,7 @@ export const receiptSections: AllSectionTypes[] = [
       {
         title: "Building on social spending",
         body: "A third of survey responses indicated that most social spending happens with friends, so community features reward sustainable choices rather than restricting spending.",
-        media: "/receipt-assets/vid1.mov",
+        media: "/receipt-assets/vid1.mp4",
       },
       {
         title: "Subverting shame culture",
@@ -300,7 +300,7 @@ export const c4cSections: AllSectionTypes[] = [
       {
         title: "A mishandled item can send someone to the hospital",
         body: "The unsafe path needed intentional friction. Allergen separation lives in the visual hierarchy, safety checks are built in the workflow, and conditional logic prevents volunteers from allocating allergen-risk item to an order.",
-        media: "/ssf-assets/vid1.mov",
+        media: "/ssf-assets/vid1.mp4",
       },
       {
         title: "Connecting isolated workflows",
