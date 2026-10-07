@@ -76,8 +76,20 @@ export interface NoteSection extends ProjectSection {
   body: string;
 }
 
+export interface AiProcessPart {
+  title: string;
+  body: Array<string>;
+}
+
+export interface AiProcessSection extends ProjectSection {
+  type: "ai";
+  heading: string;
+  parts: Array<AiProcessPart>;
+}
+
 export type AllSectionTypes =
   | HeaderSection
+  | AiProcessSection
   | MetaSection
   | OverviewSection
   | DataVisSection

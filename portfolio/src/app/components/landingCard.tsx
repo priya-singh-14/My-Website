@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { colSpanClasses } from "../utils/grid";
 import MediaSkeleton from "./media-skeleton";
+import Tag from "./tag";
 
 interface LandingCardProps {
   cover: string;
@@ -14,6 +15,7 @@ interface LandingCardProps {
   priority?: boolean;
   colSpan?: number;
   rawImg?: boolean;
+  tags?: Array<string>;
 }
 
 export default function LandingCard(props: LandingCardProps) {
@@ -60,7 +62,10 @@ export default function LandingCard(props: LandingCardProps) {
       </div>
       {props.title && (
         <div className="pt-3 shrink-0">
-          <p className="font-semibold text-greyPrimary">{props.title}</p>
+          <div className="flex items-center gap-2">
+            <p className="font-semibold text-greyPrimary">{props.title}</p>
+            {props.tags?.map((tag) => <Tag key={tag} label={tag} />)}
+          </div>
           {props.subtitle && (
             <p className="text-greyPrimary text-sm opacity-70">
               {props.subtitle}

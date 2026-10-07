@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { HeaderSection } from "../utils/types";
 import MediaSkeleton from "./media-skeleton";
+import Tag from "./tag";
 
 interface HeaderSectionProps {
   sectionDetails: HeaderSection;
@@ -51,6 +52,21 @@ export default function HeaderSection({ sectionDetails }: HeaderSectionProps) {
       >
         {sectionDetails.description}
       </motion.p>
+      {sectionDetails.tags && sectionDetails.tags.length > 0 && (
+        <motion.ul
+          aria-label="Tags"
+          className="flex flex-wrap gap-1.5"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+        >
+          {sectionDetails.tags.map((tag) => (
+            <li key={tag}>
+              <Tag label={tag} />
+            </li>
+          ))}
+        </motion.ul>
+      )}
     </div>
   );
 }

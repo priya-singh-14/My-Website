@@ -209,7 +209,7 @@ export const ascentSections: AllSectionTypes[] = [
     type: "meta",
     role: "Product Design Co-op",
     duration: "2026",
-    skills: "Design Systems, Design Engineering",
+    skills: "Design Systems, Design Engineering, AI",
     team: "Core Infrastructure",
   },
   {
@@ -248,6 +248,27 @@ export const ascentSections: AllSectionTypes[] = [
     demo: "/klaviyo-assets/demo2.mp4",
     caption:
       "Some of this work is proprietary! Please reach out for details, as well as information about other component projects.",
+  },
+  {
+    type: "ai",
+    heading: "AI Iteration",
+    parts: [
+      {
+        title: "Pressure-testing the structure",
+        body: [
+          "Before handoff, I used a custom Figma MCP-Claude Code workflow to build all four components in staging so I could test how they fit into the existing platform.",
+          "It exposed gaps in our drag-and-drop library and where customizing it would hit its limits, and let me test how modular the content was and how easy the depth-based structure was to navigate.",
+        ],
+      },
+      {
+        title: "Auditing hooks for accessibility",
+        body: [
+          "I had Claude audit our existing hooks package against what the new components needed for accessibility.",
+          "It flagged that drag and drop capabilities needed new hooks or alternatives to account for motor impairment and keyboard-only surfaces.",
+          "Focus management and ARIA were scoped before development instead of retrofitted.",
+        ],
+      },
+    ],
   },
   {
     type: "outcomes",

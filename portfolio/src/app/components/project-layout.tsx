@@ -9,6 +9,7 @@ import DataVisSection from "./datavis-section";
 import ProcessSection from "./process-section";
 import OutcomesSection from "./outcomes-section";
 import NoteSection from "./note-section";
+import AiProcessSection from "./ai-process-section";
 import TableOfContents from "./table-of-contents";
 
 const sectionLabels: Partial<Record<AllSectionTypes["type"], string>> = {
@@ -16,6 +17,7 @@ const sectionLabels: Partial<Record<AllSectionTypes["type"], string>> = {
   datavis: "Research",
   process: "Process",
   iteration: "Iteration",
+  ai: "AI Process",
   outcomes: "Outcomes",
 };
 
@@ -39,7 +41,12 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
     tocItems.push({
       id: sectionIds[index],
       label: sectionLabels[section.type]!,
-      scrollTarget: section.type === "overview" ? "header" : undefined,
+      scrollTarget:
+        section.type === "overview"
+          ? "header"
+          : section.type === "ai"
+            ? "ai-process"
+            : undefined,
     });
   });
 
@@ -63,6 +70,8 @@ export default function ProjectLayout({ project }: ProjectLayoutProps) {
         return <DemoSection sectionDetails={section} />
       case "note":
         return <NoteSection sectionDetails={section} />
+      case "ai":
+        return <AiProcessSection sectionDetails={section} />
       default:
         return null;
     }

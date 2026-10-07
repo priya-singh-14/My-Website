@@ -38,6 +38,7 @@ export default function Home() {
           title={"Klaviyo"}
           subtitle={"Ascent Design System"}
           path={"/project-details/klaviyo"}
+          tags={["AI workflow"]}
           priority
           rawImg
         ></LandingCard>
